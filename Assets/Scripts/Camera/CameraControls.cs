@@ -4,14 +4,16 @@ public class CameraControls : PlayerControls {
     public Camera Camera;
     private Vector2 LastPoint;
 
-    public float sensitivity = 0.15f;
-    private Vector2 targetPosition = Vector2.zero;
-    private Rect screenRect = Rect.zero;
+    public float Sensitivity = 0.15f;
+    private Vector2 TargetPosition = Vector2.zero;
+    private Rect ScreenRect = Rect.zero;
     [Space (8)]
-    public float offsetMoveSpeed = 25f;
-    private Vector3 cameraOffset = Vector2.zero;
+    public float OffsetMoveSpeed = 25f;
+    private Vector3 CameraOffset = Vector2.zero;
 
-    public Transform playerTrasnform;
+    public Transform PlayerTrasnform;
+
+    private Vector2 MousePosition;
 
     protected override void AddListeners(PlayerInput input) {
         input.Camera.PointerPosition.performed += Pointer_performed;
@@ -22,16 +24,18 @@ public class CameraControls : PlayerControls {
     }
 
     private void Pointer_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj) {
-        Vector2 mousePos = obj.ReadValue<Vector2>();
+        MousePosition = obj.ReadValue<Vector2>();
+    }
 
-        screenRect = new Rect (0f, 0f, Screen.width, Screen.height);
+    private void Update () {
+        ScreenRect = new Rect (0f, 0f, Screen.width, Screen.height);
 
-        cameraOffset.x = Mathf.MoveTowards (cameraOffset.x, 0f, offsetMoveSpeed * Time.fixedDeltaTime);
+        CameraOffset.x = Mathf.MoveTowards (CameraOffset.x, 0f, OffsetMoveSpeed * Time.fixedDeltaTime);
 
-        if (screenRect.Contains (mousePos))
-            targetPosition = Camera.main.ScreenToWorldPoint (mousePos) + cameraOffset;
+        if (ScreenRect.Contains (MousePosition))
+            TargetPosition = Camera.ScreenToWorldPoint (MousePosition) + CameraOffset;
 
-        Vector2 linearInterpolation = Vector2.Lerp (playerTrasnform.position, targetPosition, sensitivity);
+        Vector2 linearInterpolation = Vector2.Lerp (PlayerTrasnform.position, TargetPosition, Sensitivity);
         Camera.transform.position = new Vector3(linearInterpolation.x, linearInterpolation.y, -10);
     }
 

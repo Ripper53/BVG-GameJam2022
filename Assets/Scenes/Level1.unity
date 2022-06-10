@@ -278,10 +278,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Camera: {fileID: 519420031}
-  sensitivity: 0.15
-  movementOffset: 10
-  offsetMoveSpeed: 25
-  playerTrasnform: {fileID: 286989712}
+  Sensitivity: 0.15
+  OffsetMoveSpeed: 25
+  PlayerTrasnform: {fileID: 286989712}
 --- !u!1 &2041606437
 GameObject:
   m_ObjectHideFlags: 0
