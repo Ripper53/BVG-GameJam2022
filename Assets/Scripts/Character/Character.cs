@@ -15,10 +15,10 @@ public class Character : ObjectPoolable<Character> {
         Movement.enabled = GroundCheck.Evalute();
         switch (HorizontalDirection) {
             case HorizontalMovementDirection.Right:
-                Movement.Move(new Vector2(MovementSpeed * Time.fixedDeltaTime, 0f));
+                Movement.Move(MovementSpeed * Time.fixedDeltaTime);
                 break;
             case HorizontalMovementDirection.Left:
-                Movement.Move(new Vector2(-MovementSpeed * Time.fixedDeltaTime, 0f));
+                Movement.Move(-MovementSpeed * Time.fixedDeltaTime);
                 break;
         }
     }

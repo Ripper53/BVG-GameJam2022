@@ -105,6 +105,15 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""LiftOff"",
+                    ""type"": ""Button"",
+                    ""id"": ""a89a17f6-76fd-43b4-9f72-cafefacbff71"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -116,6 +125,17 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
                     ""action"": ""Direction"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b4d6bc3f-e12f-4182-9368-c0d4691afcef"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""LiftOff"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -176,6 +196,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         // Flying
         m_Flying = asset.FindActionMap("Flying", throwIfNotFound: true);
         m_Flying_Direction = m_Flying.FindAction("Direction", throwIfNotFound: true);
+        m_Flying_LiftOff = m_Flying.FindAction("LiftOff", throwIfNotFound: true);
         // Camera
         m_Camera = asset.FindActionMap("Camera", throwIfNotFound: true);
         m_Camera_PointerPosition = m_Camera.FindAction("PointerPosition", throwIfNotFound: true);
@@ -280,11 +301,13 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Flying;
     private IFlyingActions m_FlyingActionsCallbackInterface;
     private readonly InputAction m_Flying_Direction;
+    private readonly InputAction m_Flying_LiftOff;
     public struct FlyingActions
     {
         private @PlayerInput m_Wrapper;
         public FlyingActions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
         public InputAction @Direction => m_Wrapper.m_Flying_Direction;
+        public InputAction @LiftOff => m_Wrapper.m_Flying_LiftOff;
         public InputActionMap Get() { return m_Wrapper.m_Flying; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -297,6 +320,9 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 @Direction.started -= m_Wrapper.m_FlyingActionsCallbackInterface.OnDirection;
                 @Direction.performed -= m_Wrapper.m_FlyingActionsCallbackInterface.OnDirection;
                 @Direction.canceled -= m_Wrapper.m_FlyingActionsCallbackInterface.OnDirection;
+                @LiftOff.started -= m_Wrapper.m_FlyingActionsCallbackInterface.OnLiftOff;
+                @LiftOff.performed -= m_Wrapper.m_FlyingActionsCallbackInterface.OnLiftOff;
+                @LiftOff.canceled -= m_Wrapper.m_FlyingActionsCallbackInterface.OnLiftOff;
             }
             m_Wrapper.m_FlyingActionsCallbackInterface = instance;
             if (instance != null)
@@ -304,6 +330,9 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 @Direction.started += instance.OnDirection;
                 @Direction.performed += instance.OnDirection;
                 @Direction.canceled += instance.OnDirection;
+                @LiftOff.started += instance.OnLiftOff;
+                @LiftOff.performed += instance.OnLiftOff;
+                @LiftOff.canceled += instance.OnLiftOff;
             }
         }
     }
@@ -358,6 +387,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
     public interface IFlyingActions
     {
         void OnDirection(InputAction.CallbackContext context);
+        void OnLiftOff(InputAction.CallbackContext context);
     }
     public interface ICameraActions
     {
