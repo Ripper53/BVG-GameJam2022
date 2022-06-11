@@ -24,8 +24,6 @@ public class UI_Sprite_Animation : MonoBehaviour
 
     private float delayedStart = 0.0f;
 
-    private bool isActive = false;
-
     void Start()
     {
         image = GetComponent<Image>();

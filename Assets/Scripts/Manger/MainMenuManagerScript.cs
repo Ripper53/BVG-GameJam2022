@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MainMenuManagerScript : MonoBehaviour
 {
@@ -8,8 +9,11 @@ public class MainMenuManagerScript : MonoBehaviour
     //Sounds
     private GameObject soundControllerObject;
 
-    private int songIndex = 1;
-    private int sfxIndex = 1;
+    public int MainMenuSongIndex = 1;
+    public int MainMenuPirateSFXIndex = 1;
+
+    public int OnHoverStartSFXIndex = 2;
+    public int OnHoverQuitSFXIndex = 3;
 
     // Start is called before the first frame update
     void Start()
@@ -17,15 +21,20 @@ public class MainMenuManagerScript : MonoBehaviour
 
         soundControllerObject = GameObject.Find("SoundController");
 
-        soundControllerObject.SendMessage("PlayMusic", songIndex);
+        soundControllerObject.SendMessage("PlayMusic", MainMenuSongIndex);
 
-        soundControllerObject.SendMessage("PlayEffects", sfxIndex);
+        soundControllerObject.SendMessage("PlayEffects", MainMenuPirateSFXIndex);
 
     }
 
-    // Update is called once per frame
-    void Update()
+
+    public void OnHoverStartSFX()
     {
-        
+        soundControllerObject.SendMessage("PlayEffects", OnHoverStartSFXIndex);
+    }
+
+    public void OnHoverQuitSFX()
+    {
+        soundControllerObject.SendMessage("PlayEffects", OnHoverQuitSFXIndex);
     }
 }

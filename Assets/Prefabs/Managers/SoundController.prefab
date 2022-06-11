@@ -52,6 +52,8 @@ MonoBehaviour:
   effectsSFX:
   - {fileID: 8300000, guid: 1e0d8b4c99e550a498ed36928a8f24d7, type: 3}
   - {fileID: 8300000, guid: 1619d84dc3df8324c9373c243af1c705, type: 3}
+  - {fileID: 8300000, guid: f93b47f98fed269408cf7d1df9231233, type: 3}
+  - {fileID: 8300000, guid: a529c82cf67e4a44d86b6b72dcd0931d, type: 3}
   musicSource: {fileID: 9011948421967246591}
   effectsSource: {fileID: 4095918553117279132}
 --- !u!1 &8330432508743595925
