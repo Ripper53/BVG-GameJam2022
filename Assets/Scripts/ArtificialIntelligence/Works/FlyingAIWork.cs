@@ -18,6 +18,13 @@ namespace ArtificialIntelligence {
             isFlying = false;
         }
 
+        protected void OnDisable() {
+            if (isFlying) {
+                isFlying = false;
+                EnableGroundMovement(true);
+            }
+        }
+
         protected override void Execute() {
             if (target.Get(out Vector2 t)) {
                 if (!isFlying) {
