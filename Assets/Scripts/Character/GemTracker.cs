@@ -8,6 +8,10 @@ public class GemTracker : MonoBehaviour
     private int BlueGemsQuantity = 0;
 
     public void CollectGem (Gem gem) {
+        if (gem.IsCollected) {
+            return;
+        }
+
         GemColour gemColour = gem.Colour;
         switch (gemColour)
         {
@@ -28,9 +32,13 @@ public class GemTracker : MonoBehaviour
         Debug.Log($"Blue gems amount: {BlueGemsQuantity}");
         Debug.Log($"Green gems amount: {GreenGemsQuantity}");
 
+        Renderer gemRenderer = gem.gameObject.GetComponent<Renderer>();
+        gemRenderer.enabled = false;
+        AudioSource gemAudio = gem.GetComponent<AudioSource>();
+        gemAudio.Play();
+        Destroy(gem.gameObject, gemAudio.clip.length);
+
         //TODO
-        // Trigger audio
-        // Destroy the gem object
         // Spawn another gem?
         // Gave power to player
     }
