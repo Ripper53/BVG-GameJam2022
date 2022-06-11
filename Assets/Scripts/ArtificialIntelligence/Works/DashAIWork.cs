@@ -1,10 +1,14 @@
 using ArtificialIntelligence.Dependency;
+using Audio;
+using Audio.Pooler;
 using UnityEngine;
+using Utility.Pooling;
 
 namespace ArtificialIntelligence {
     public class DashAIWork : InAirAIWork {
         public float Speed;
         public float Duration;
+        public OneShotAudioEffectPooler EffectPooler;
 
         protected FlyingAIWork flying;
         protected AbilityDependency abilityDependency;
@@ -37,7 +41,11 @@ namespace ArtificialIntelligence {
         protected override void EnableGroundMovement(bool value) {
             base.EnableGroundMovement(value);
             flying.enabled = value;
-            if (!value) dashTimer = Duration;
+            if (!value) {
+                dashTimer = Duration;
+                if (EffectPooler.Get(out OneShotAudioEffect effect))
+                    effect.Set(rigidbody.position);
+            }
         }
 
     }
