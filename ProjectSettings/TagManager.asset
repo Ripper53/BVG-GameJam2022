@@ -41,3 +41,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: BackgroundOne
+    uniqueID: 4114616401
+    locked: 0
+  - name: BackgroundTwo
+    uniqueID: 3727905919
+    locked: 0
+  - name: Character
+    uniqueID: 2718405693
+    locked: 0
+  - name: UI
+    uniqueID: 2277090727
+    locked: 0
