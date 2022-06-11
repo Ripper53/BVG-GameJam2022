@@ -146,6 +146,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Ability",
+            "id": "e05637aa-6cc9-4b3d-b821-86def00d2c70",
+            "actions": [
+                {
+                    "name": "Primary",
+                    "type": "Button",
+                    "id": "4762766c-f695-4903-9d1e-98475ee67b8f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "cba8e26b-a18c-40d0-8e3b-93dfc4ec5a59",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Primary",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [
