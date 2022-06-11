@@ -7,11 +7,12 @@ public class Gem : MonoBehaviour
 
     public bool IsCollected = false;
 
-    private void OnTriggerEnter2D(Collider2D other) {
-        other.GetComponent<GemTracker>().CollectGem(this);
-
-        this.IsCollected = true;
-
+    protected virtual void CollectGem (Collider2D other) {
+        other.GetComponent<GemTracker>().CollectCollectableGem(this);
         Debug.Log($"Touched a {Colour} gem");
+    }
+
+    protected void OnTriggerEnter2D(Collider2D other) {
+        this.CollectGem(other);
     }
 }
