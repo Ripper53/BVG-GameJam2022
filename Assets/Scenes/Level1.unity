@@ -209,7 +209,7 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: fb5b85e8f9d4bdd4ca8cf3913db34be0, type: 2}
     - target: {fileID: 2874399583592902310, guid: d36c21b965691574eb53ee792b6ecf36, type: 3}
       propertyPath: m_Name
-      value: YellowGem
+      value: RedGem
       objectReference: {fileID: 0}
     - target: {fileID: 2900906862287308766, guid: d36c21b965691574eb53ee792b6ecf36, type: 3}
       propertyPath: m_RootOrder
@@ -258,11 +258,11 @@ PrefabInstance:
     - target: {fileID: 4403420866132840390, guid: d36c21b965691574eb53ee792b6ecf36, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: fb5b85e8f9d4bdd4ca8cf3913db34be0, type: 2}
+      objectReference: {fileID: 9100000, guid: 91fed0504d40ec74080973165be025e2, type: 2}
     - target: {fileID: 8345294902007193876, guid: d36c21b965691574eb53ee792b6ecf36, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 815895536, guid: 794196fe2b990004c9c70118a37581f0, type: 3}
+      objectReference: {fileID: -1887588920, guid: 2577929e616d7464c8a5f866e147a489, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d36c21b965691574eb53ee792b6ecf36, type: 3}
 --- !u!1 &286989693 stripped
