@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
     //Load level 1
     public void LoadLevel1()
     {
-        SceneManager.LoadScene("Level1_Scene");
+        SceneManager.LoadScene("Level1");
     }
 
     public void ExitGame()
