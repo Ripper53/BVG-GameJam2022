@@ -168,6 +168,34 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Ability"",
+            ""id"": ""e05637aa-6cc9-4b3d-b821-86def00d2c70"",
+            ""actions"": [
+                {
+                    ""name"": ""Primary"",
+                    ""type"": ""Button"",
+                    ""id"": ""4762766c-f695-4903-9d1e-98475ee67b8f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""cba8e26b-a18c-40d0-8e3b-93dfc4ec5a59"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Primary"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -200,6 +228,9 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         // Camera
         m_Camera = asset.FindActionMap("Camera", throwIfNotFound: true);
         m_Camera_PointerPosition = m_Camera.FindAction("PointerPosition", throwIfNotFound: true);
+        // Ability
+        m_Ability = asset.FindActionMap("Ability", throwIfNotFound: true);
+        m_Ability_Primary = m_Ability.FindAction("Primary", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -370,6 +401,39 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         }
     }
     public CameraActions @Camera => new CameraActions(this);
+
+    // Ability
+    private readonly InputActionMap m_Ability;
+    private IAbilityActions m_AbilityActionsCallbackInterface;
+    private readonly InputAction m_Ability_Primary;
+    public struct AbilityActions
+    {
+        private @PlayerInput m_Wrapper;
+        public AbilityActions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Primary => m_Wrapper.m_Ability_Primary;
+        public InputActionMap Get() { return m_Wrapper.m_Ability; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(AbilityActions set) { return set.Get(); }
+        public void SetCallbacks(IAbilityActions instance)
+        {
+            if (m_Wrapper.m_AbilityActionsCallbackInterface != null)
+            {
+                @Primary.started -= m_Wrapper.m_AbilityActionsCallbackInterface.OnPrimary;
+                @Primary.performed -= m_Wrapper.m_AbilityActionsCallbackInterface.OnPrimary;
+                @Primary.canceled -= m_Wrapper.m_AbilityActionsCallbackInterface.OnPrimary;
+            }
+            m_Wrapper.m_AbilityActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Primary.started += instance.OnPrimary;
+                @Primary.performed += instance.OnPrimary;
+                @Primary.canceled += instance.OnPrimary;
+            }
+        }
+    }
+    public AbilityActions @Ability => new AbilityActions(this);
     private int m_KeyboardSchemeIndex = -1;
     public InputControlScheme KeyboardScheme
     {
@@ -392,5 +456,9 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
     public interface ICameraActions
     {
         void OnPointerPosition(InputAction.CallbackContext context);
+    }
+    public interface IAbilityActions
+    {
+        void OnPrimary(InputAction.CallbackContext context);
     }
 }

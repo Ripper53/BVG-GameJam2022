@@ -5,19 +5,30 @@ public class PlayerTargetControls : PlayerControls {
     public Camera Camera;
     public Rigidbody2D Rigidbody;
     public PlayerTargetDependency TargetDependency;
+    public PlayerAbilityDependency AbilityDependency;
 
     protected override void AddListeners(PlayerInput input) {
+        pointerPosition = Rigidbody.position;
+
         input.Flying.LiftOff.performed += LiftOff_performed;
         input.Flying.LiftOff.canceled += LiftOff_canceled;
+
+        input.Ability.Primary.performed += Primary_performed;
 
         input.Flying.Direction.performed += Direction_performed;
     }
 
     protected override void RemoveListeners(PlayerInput input) {
-        input.Flying.LiftOff.performed += LiftOff_performed;
-        input.Flying.LiftOff.canceled += LiftOff_canceled;
+        input.Flying.LiftOff.performed -= LiftOff_performed;
+        input.Flying.LiftOff.canceled -= LiftOff_canceled;
+
+        input.Ability.Primary.performed -= Primary_performed;
 
         input.Flying.Direction.performed -= Direction_performed;
+    }
+
+    private void Primary_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj) {
+        AbilityDependency.Triggered = true;
     }
 
     private void LiftOff_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj) {
@@ -28,8 +39,15 @@ public class PlayerTargetControls : PlayerControls {
         TargetDependency.Active = false;
     }
 
+    private Vector2 pointerPosition;
     private void Direction_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj) {
-        TargetDependency.Target = Camera.ScreenToWorldPoint(obj.ReadValue<Vector2>());
+        pointerPosition = obj.ReadValue<Vector2>();
+    }
+
+    protected void Update() {
+        Vector2 target = Camera.ScreenToWorldPoint(pointerPosition);
+        TargetDependency.Target = target;
+        AbilityDependency.Target = target;
     }
 
 }
