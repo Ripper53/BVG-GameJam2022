@@ -26,6 +26,14 @@ public class SplashScreenManager : MonoBehaviour
     //Name of the main menu level to be loaded
     public string MainMenu;
 
+    //Sounds
+    private GameObject soundControllerObject;
+
+    private int songIndex = 0;
+    private int sfxIndex = 0;
+
+    private bool playSFXOnce = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +48,10 @@ public class SplashScreenManager : MonoBehaviour
         ShowBVGLogoImage(true);
         ShowGameNameImage(false);
 
+        //Setup the music
+        soundControllerObject = GameObject.Find("SoundController");
+        soundControllerObject.SendMessage("PlayMusic", songIndex);
+
     }
 
     // Update is called once per frame
@@ -50,11 +62,16 @@ public class SplashScreenManager : MonoBehaviour
 
         if(timer > 12f)
         {
-            SceneManager.LoadScene(MainMenu);
+            GameManager.Singleton.MainMenu();
         }
         else if(timer > 8f)
         {
             ShowGameNameImage(true);
+            if(playSFXOnce)
+            {
+                soundControllerObject.SendMessage("PlayEffects", sfxIndex);
+                playSFXOnce = false;
+            }
         }
         else if(timer > 6f)
         {

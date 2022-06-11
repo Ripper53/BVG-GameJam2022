@@ -5,11 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance;
+    public static GameManager Singleton = null;
 
     void Awake()
     {
-        Instance = this;
+        DontDestroyOnLoad(this.gameObject);
+        if (Singleton == null)
+        {
+            Singleton = this;
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     //Load in the different levels
@@ -29,4 +37,9 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("Level1_Scene");
     }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }    
 }
