@@ -825,6 +825,79 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 819981989}
   m_CullTransparentMesh: 1
+--- !u!1001 &860898385
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3014983847372125145, guid: 45c0e1260a3eecd4da4fc173a12184c0, type: 3}
+      propertyPath: m_Color.b
+      value: 0.990566
+      objectReference: {fileID: 0}
+    - target: {fileID: 3014983847372125145, guid: 45c0e1260a3eecd4da4fc173a12184c0, type: 3}
+      propertyPath: m_Color.g
+      value: 0.081791334
+      objectReference: {fileID: 0}
+    - target: {fileID: 3014983847372125145, guid: 45c0e1260a3eecd4da4fc173a12184c0, type: 3}
+      propertyPath: m_Color.r
+      value: 0.051397298
+      objectReference: {fileID: 0}
+    - target: {fileID: 7462376123880766066, guid: 45c0e1260a3eecd4da4fc173a12184c0, type: 3}
+      propertyPath: Colour
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8234050997543195923, guid: 45c0e1260a3eecd4da4fc173a12184c0, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8234050997543195923, guid: 45c0e1260a3eecd4da4fc173a12184c0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 8234050997543195923, guid: 45c0e1260a3eecd4da4fc173a12184c0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 8234050997543195923, guid: 45c0e1260a3eecd4da4fc173a12184c0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8234050997543195923, guid: 45c0e1260a3eecd4da4fc173a12184c0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8234050997543195923, guid: 45c0e1260a3eecd4da4fc173a12184c0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8234050997543195923, guid: 45c0e1260a3eecd4da4fc173a12184c0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8234050997543195923, guid: 45c0e1260a3eecd4da4fc173a12184c0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8234050997543195923, guid: 45c0e1260a3eecd4da4fc173a12184c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8234050997543195923, guid: 45c0e1260a3eecd4da4fc173a12184c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8234050997543195923, guid: 45c0e1260a3eecd4da4fc173a12184c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9071592820631305323, guid: 45c0e1260a3eecd4da4fc173a12184c0, type: 3}
+      propertyPath: m_Name
+      value: BluePowerGem
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 45c0e1260a3eecd4da4fc173a12184c0, type: 3}
 --- !u!1 &1004236140
 GameObject:
   m_ObjectHideFlags: 0
@@ -901,6 +974,83 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1004236140}
   m_CullTransparentMesh: 1
+--- !u!1001 &1109643821
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3014983847372125145, guid: 45c0e1260a3eecd4da4fc173a12184c0, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3014983847372125145, guid: 45c0e1260a3eecd4da4fc173a12184c0, type: 3}
+      propertyPath: m_Color.b
+      value: 0.30588236
+      objectReference: {fileID: 0}
+    - target: {fileID: 3014983847372125145, guid: 45c0e1260a3eecd4da4fc173a12184c0, type: 3}
+      propertyPath: m_Color.g
+      value: 0.5254902
+      objectReference: {fileID: 0}
+    - target: {fileID: 3014983847372125145, guid: 45c0e1260a3eecd4da4fc173a12184c0, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7462376123880766066, guid: 45c0e1260a3eecd4da4fc173a12184c0, type: 3}
+      propertyPath: Colour
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8234050997543195923, guid: 45c0e1260a3eecd4da4fc173a12184c0, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8234050997543195923, guid: 45c0e1260a3eecd4da4fc173a12184c0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 8234050997543195923, guid: 45c0e1260a3eecd4da4fc173a12184c0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.73
+      objectReference: {fileID: 0}
+    - target: {fileID: 8234050997543195923, guid: 45c0e1260a3eecd4da4fc173a12184c0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8234050997543195923, guid: 45c0e1260a3eecd4da4fc173a12184c0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8234050997543195923, guid: 45c0e1260a3eecd4da4fc173a12184c0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8234050997543195923, guid: 45c0e1260a3eecd4da4fc173a12184c0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8234050997543195923, guid: 45c0e1260a3eecd4da4fc173a12184c0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8234050997543195923, guid: 45c0e1260a3eecd4da4fc173a12184c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8234050997543195923, guid: 45c0e1260a3eecd4da4fc173a12184c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8234050997543195923, guid: 45c0e1260a3eecd4da4fc173a12184c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9071592820631305323, guid: 45c0e1260a3eecd4da4fc173a12184c0, type: 3}
+      propertyPath: m_Name
+      value: GreenPowerGem
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 45c0e1260a3eecd4da4fc173a12184c0, type: 3}
 --- !u!1001 &1131296442
 PrefabInstance:
   m_ObjectHideFlags: 0
