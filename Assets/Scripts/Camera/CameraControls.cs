@@ -11,7 +11,7 @@ public class CameraControls : PlayerControls {
     public float OffsetMoveSpeed = 25f;
     private Vector3 CameraOffset = Vector2.zero;
 
-    public Transform PlayerTrasnform;
+    public Transform PlayerTransform;
 
     private Vector2 MousePosition;
 
@@ -35,7 +35,7 @@ public class CameraControls : PlayerControls {
         if (ScreenRect.Contains (MousePosition))
             TargetPosition = Camera.ScreenToWorldPoint (MousePosition) + CameraOffset;
 
-        Vector2 linearInterpolation = Vector2.Lerp (PlayerTrasnform.position, TargetPosition, Sensitivity);
+        Vector2 linearInterpolation = Vector2.Lerp (PlayerTransform.position, TargetPosition, Sensitivity);
         Camera.transform.position = new Vector3(linearInterpolation.x, linearInterpolation.y, -10);
     }
 
