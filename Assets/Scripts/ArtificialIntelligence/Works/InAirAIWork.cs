@@ -6,28 +6,28 @@ namespace ArtificialIntelligence {
         protected GroundFriction friction;
         protected new Rigidbody2D rigidbody;
 
-        private bool inAir;
+        public bool InAir { get; private set; }
 
         protected override bool GetDependencies() {
             return TryGetComponent(out friction) && TryGetComponent(out rigidbody);
         }
 
         protected void OnEnable() {
-            inAir = false;
+            InAir = false;
         }
 
         protected void OnDisable() {
-            if (inAir)
+            if (InAir)
                 EnableGroundMovement(true);
         }
 
         protected override void Execute() {
             if (GetTarget(out Vector2 target)) {
-                if (!inAir) {
+                if (!InAir) {
                     EnableGroundMovement(false);
                 }
                 ExecuteFlight(target);
-            } else if (inAir) {
+            } else if (InAir) {
                 EnableGroundMovement(true);
             }
         }
@@ -35,7 +35,7 @@ namespace ArtificialIntelligence {
         protected abstract bool GetTarget(out Vector2 target);
 
         protected virtual void EnableGroundMovement(bool value) {
-            inAir = !value;
+            InAir = !value;
             friction.enabled = value;
             if (value) {
                 rigidbody.gravityScale = 1f;
