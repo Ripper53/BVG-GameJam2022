@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro;
 
 public class GemTracker : MonoBehaviour
 {
@@ -10,6 +11,10 @@ public class GemTracker : MonoBehaviour
     private bool IsBluePowerGemCollected = false;
     private bool IsRedPowerGemCollected = false;
     private bool IsGreenPowerGemCollected = false;
+
+    public TMP_Text redGemText;
+    public TMP_Text greenGemText;
+    public TMP_Text blueGemText;
 
     private void DestroyGem (Gem gem) {
         Renderer gemRenderer = gem.gameObject.GetComponent<Renderer>();
@@ -31,6 +36,7 @@ public class GemTracker : MonoBehaviour
             case GemColour.Red:
                 if (this.IsRedPowerGemCollected) {
                     this.RedGemsQuantity++;
+                    redGemText.text = $"x{this.RedGemsQuantity}/10";
                     gem.IsCollected = true;
                     this.DestroyGem(gem);
                     Debug.Log($"Red gems amount: {RedGemsQuantity}");
@@ -39,6 +45,7 @@ public class GemTracker : MonoBehaviour
             case GemColour.Blue:
                 if (this.IsBluePowerGemCollected) {
                     this.BlueGemsQuantity++;
+                    blueGemText.text = $"x{this.BlueGemsQuantity}/10";
                     gem.IsCollected = true;
                     this.DestroyGem(gem);
                     Debug.Log($"Blue gems amount: {BlueGemsQuantity}");
@@ -47,6 +54,7 @@ public class GemTracker : MonoBehaviour
             case GemColour.Green:
                 if (this.IsGreenPowerGemCollected) {
                     this.GreenGemsQuantity++;
+                    greenGemText.text = $"x{this.GreenGemsQuantity}/10";
                     gem.IsCollected = true;
                     this.DestroyGem(gem);
                     Debug.Log($"Green gems amount: {GreenGemsQuantity}");
