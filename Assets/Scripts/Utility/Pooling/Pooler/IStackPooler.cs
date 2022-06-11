@@ -12,7 +12,6 @@ namespace Utility.Pooling.Base {
                 return true;
             }
             if (CreateIfNotMax(out value)) {
-                value = CreateNew();
                 value.InPool = false;
                 return true;
             }
