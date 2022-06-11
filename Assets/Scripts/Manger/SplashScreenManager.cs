@@ -33,6 +33,7 @@ public class SplashScreenManager : MonoBehaviour
         colour = BlackScreen.color;
         colour.a = 1;
         BlackScreen.color = colour;
+        BlackScreen.gameObject.SetActive(true);
         
         //Show the BVG Logo First 
         ShowGameBackgroundImage(false);
