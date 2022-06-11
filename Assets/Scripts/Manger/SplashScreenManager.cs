@@ -60,10 +60,16 @@ public class SplashScreenManager : MonoBehaviour
         //Add to the timer
         timer += Time.deltaTime;
 
-        if(timer > 12f)
+        if(timer > 15f)
         {
             GameManager.Singleton.MainMenu();
         }
+        else if(timer > 12f)
+        {
+            colour.a += FadeRate * 2.0f;
+            BlackScreen.color = colour;
+        }
+
         else if(timer > 8f)
         {
             ShowGameNameImage(true);
