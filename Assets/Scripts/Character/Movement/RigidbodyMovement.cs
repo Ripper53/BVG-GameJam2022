@@ -10,7 +10,7 @@ namespace Movement {
         }
 
         protected override void ExecuteMovement(float amount) {
-            Rigidbody.velocity = new Vector2(amount / Time.fixedDeltaTime, Rigidbody.velocity.y);
+            Rigidbody.velocity = new Vector2(amount / Time.fixedDeltaTime, Rigidbody.velocity.y * 0.25f);
         }
 
     }
