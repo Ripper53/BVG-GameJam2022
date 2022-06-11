@@ -71,6 +71,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player Rigidbody Character Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 7255661162053235591, guid: 7cd96bf0296aab44b8a848ad5f99ff97, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 8317896348939649700, guid: 7cd96bf0296aab44b8a848ad5f99ff97, type: 3}
       propertyPath: LeftSideCheck
       value: 
@@ -187,6 +191,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 20
   Duration: 0.25
+  EffectPooler: {fileID: 0}
 --- !u!114 &8122388094407800598
 MonoBehaviour:
   m_ObjectHideFlags: 0
