@@ -141,8 +141,6 @@ GameObject:
   - component: {fileID: 3677289409881718100}
   - component: {fileID: 3839493293025900611}
   - component: {fileID: 4767339035617849720}
-  - component: {fileID: 5291102621699732777}
-  - component: {fileID: 9062267848622707907}
   m_Layer: 0
   m_Name: GroundCheck
   m_TagString: Untagged
@@ -198,38 +196,6 @@ MonoBehaviour:
   Check1: {fileID: 7184727157945265826}
   Check2: {fileID: 1177741148734970666}
   Check3: {fileID: 7238685473238557120}
---- !u!114 &5291102621699732777
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3807417663689906204}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f8e7bb52ae5cb94fb5b40183da091f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BoxShape: {fileID: 9062267848622707907}
-  Filter:
-    serializedVersion: 2
-    m_Bits: 64
---- !u!114 &9062267848622707907
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3807417663689906204}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26e258b9fac59c94da7590d97b425a5b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Origin: {fileID: 3677289409881718100}
-  offset: {x: 0, y: -0.5}
-  size: {x: 0.9375, y: 0.125}
-  angle: 0
 --- !u!1 &4726628233261950023
 GameObject:
   m_ObjectHideFlags: 0
@@ -369,7 +335,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1576561603
-  m_SortingLayer: 3
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 990fb52ee49728f42addb07abb914f49, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

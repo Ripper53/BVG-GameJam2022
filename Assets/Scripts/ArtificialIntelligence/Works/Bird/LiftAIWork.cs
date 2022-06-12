@@ -6,7 +6,10 @@ namespace ArtificialIntelligence {
     public class LiftAIWork : AIWork {
         public GetCollider LiftGetCollider;
         public float GripStrength;
+        public float GripOffset;
         public GetCollider OpenGetCollider;
+
+        public GroundFriction Friction;
 
         protected new Rigidbody2D rigidbody;
         protected AbilityDependency abilityDependency;
@@ -15,14 +18,15 @@ namespace ArtificialIntelligence {
             return TryGetComponent(out abilityDependency) && TryGetComponent(out rigidbody);
         }
 
+        private Rigidbody2D equippedRigidbody = null;
         private TargetJoint2D equipped = null;
+        private float equippedMass;
         protected override void Execute() {
             if (abilityDependency.GetHold() && (equipped || PickUp())) {
                 // Picked/Picking Up
                 equipped.target = rigidbody.position;
             } else if (equipped) {
-                Destroy(equipped);
-                equipped = null;
+                Unequip();
             } else if (abilityDependency.GetTrigger() && OpenGetCollider.Get(out Collider2D collider) && collider.TryGetComponent(out IOpenable openable)) {
                 openable.Open();
             }
@@ -30,9 +34,16 @@ namespace ArtificialIntelligence {
 
         private bool PickUp() {
             if (LiftGetCollider.Get(out Collider2D collider) && collider.attachedRigidbody && collider.attachedRigidbody.bodyType == RigidbodyType2D.Dynamic) {
+                Friction.enabled = false;
+                rigidbody.drag = 0f;
+
+                equippedRigidbody = collider.attachedRigidbody;
+                equippedMass = collider.attachedRigidbody.mass;
+                equippedRigidbody.mass = 1f;
+
                 equipped = collider.gameObject.AddComponent<TargetJoint2D>();
                 Vector2 diff = rigidbody.position - collider.attachedRigidbody.position;
-                equipped.anchor = diff + (diff.normalized * 0.1f);
+                equipped.anchor = GripOffset * diff.normalized;
                 equipped.frequency = GripStrength;
                 equipped.dampingRatio = 1f;
                 return true;
@@ -41,10 +52,16 @@ namespace ArtificialIntelligence {
         }
 
         protected void OnDisable() {
-            if (equipped) {
-                Destroy(equipped);
-                equipped = null;
-            }
+            if (equipped)
+                Unequip();
+        }
+
+        private void Unequip() {
+            Friction.enabled = true;
+            Destroy(equipped);
+            equipped = null;
+            equippedRigidbody.mass = equippedMass;
+            equippedRigidbody = null;
         }
 
     }
