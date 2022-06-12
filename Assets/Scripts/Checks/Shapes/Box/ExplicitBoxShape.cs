@@ -25,7 +25,9 @@ namespace Physics.Shapes {
 #if UNITY_EDITOR
         protected void OnDrawGizmosSelected() {
             if (!Origin) return;
-            Gizmos.color = Color.green;
+            Color color = Color.green;
+            color.a = 0.5f;
+            Gizmos.color = color;
             Gizmos.matrix = Matrix4x4.TRS(Position, Quaternion.Euler(0f, 0f, Angle), Size);
             Gizmos.DrawCube(Vector3.zero, Vector3.one);
         }

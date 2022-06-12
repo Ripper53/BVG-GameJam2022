@@ -28,6 +28,7 @@ public class GemTracker : MonoBehaviour
     public BluePowerData BluePower;
     [System.Serializable]
     public struct BluePowerData {
+        public LiftAIWork Power;
         public float MovementSpeed;
     }
     public GreenPowerData GreenPower;
@@ -122,6 +123,7 @@ public class GemTracker : MonoBehaviour
                 break;
             case GemColour.Blue:
                 this.IsBluePowerGemCollected = true;
+                BluePower.Power.enabled = true;
                 SetSpeed(BluePower.MovementSpeed);
                 break;
             case GemColour.Green:
@@ -137,6 +139,7 @@ public class GemTracker : MonoBehaviour
 
     private void DisableAllPowers() {
         RedPower.Power.enabled = false;
+        BluePower.Power.enabled = false;
     }
 
     private void SetSpeed(float speed) {
