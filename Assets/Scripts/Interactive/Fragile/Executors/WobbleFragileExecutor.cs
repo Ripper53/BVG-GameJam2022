@@ -1,4 +1,3 @@
-using ArtificialIntelligence;
 using Physics.GetColliders;
 using UnityEngine;
 
@@ -15,12 +14,11 @@ public class WobbleFragileExecutor : FragileExecution {
     public override void Frail(Vector2 velocity) {
         wobbleTimer = WobbleDuration;
         direction = velocity.x;
-        maxTilt = Mathf.Clamp(direction, MinTilt, MaxTilt);
+        maxTilt = Mathf.Clamp(Mathf.Abs(direction), MinTilt, MaxTilt);
         enabled = true;
         foreach (Collider2D col in SoundGetCollider.Get()) {
-            if (col.TryGetComponent(out IDistract distract)) {
+            if (col.TryGetComponent(out IDistract distract))
                 distract.Noise(DistractionPoint.position);
-            }
         }
     }
 
