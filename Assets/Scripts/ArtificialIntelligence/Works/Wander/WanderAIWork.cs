@@ -1,4 +1,6 @@
 using ArtificialIntelligence.Dependency;
+using Physics.GetColliders;
+using Physics.Shapes;
 using UnityEngine;
 
 namespace ArtificialIntelligence {
@@ -11,6 +13,8 @@ namespace ArtificialIntelligence {
         public WanderJumpCondition JumpCondition;
         public WanderDistraction Distraction;
 
+        public AttackAIWork Attack;
+
         protected new Rigidbody2D rigidbody;
         protected TargetDependency target;
         protected Jump.Jump jump;
@@ -19,59 +23,97 @@ namespace ArtificialIntelligence {
             return TryGetComponent(out target) && TryGetComponent(out jump) && TryGetComponent(out rigidbody);
         }
 
-        private State currentState = State.Idle;
-        private enum State {
-            Idle, Walking, Chase
+        public State CurrentState { get; private set; } = State.Idle;
+        public enum State {
+            Idle, Walking, Chase, Attack
         }
 
         private Vector2 latestTarget;
         private float moveTimer, idleTimer;
         protected override void Execute() {
-            if (target.Get(out latestTarget)) {
-                currentState = State.Chase;
-            }
-            switch (currentState) {
+            switch (CurrentState) {
                 case State.Walking:
-                    moveTimer -= Time.fixedDeltaTime;
-                    if (moveTimer <= 0f || character.HorizontalDirection == Character.HorizontalMovementDirection.None || ShouldHalt(CurrentSideCheck)) {
-                        character.HorizontalDirection = Character.HorizontalMovementDirection.None;
-                        SetToIdle();
-                    } else if (ShouldJump(CurrentSideCheck)) {
-                        jump.Execute();
+                    if (!CheckForAttack() && !CheckForChase()) {
+                        moveTimer -= Time.fixedDeltaTime;
+                        if (moveTimer <= 0f || character.HorizontalDirection == Character.HorizontalMovementDirection.None || ShouldHalt(CurrentSideCheck)) {
+                            SetToIdle();
+                        } else if (ShouldJump(CurrentSideCheck)) {
+                            jump.Execute();
+                        }
                     }
                     break;
                 case State.Chase:
-
+                    if (!CheckForAttack()) {
+                        if (character.HorizontalDirection == Character.HorizontalMovementDirection.None || ShouldHalt(CurrentSideCheck))
+                            SetToIdle();
+                        else if (ShouldJump(CurrentSideCheck))
+                            jump.Execute();
+                    }
+                    break;
+                case State.Attack:
+                    if (Attack.IsFinished)
+                        CurrentState = State.Idle;
                     break;
                 default: // Idle
-                    idleTimer -= Time.fixedDeltaTime;
-                    if (idleTimer <= 0f) {
-                        if (Right.WallCheck.Evaluate() && !ShouldJump(Right))
-                            character.HorizontalDirection = Character.HorizontalMovementDirection.Left;
-                        else if (Left.WallCheck.Evaluate() && !ShouldJump(Left))
-                            character.HorizontalDirection = Character.HorizontalMovementDirection.Right;
-                        else
-                            character.HorizontalDirection = Random.Range(0, 2) == 0 ? Character.HorizontalMovementDirection.Right : Character.HorizontalMovementDirection.Left;
-                        SetToMove();
+                    if (!CheckForAttack() && !CheckForChase()) {
+                        idleTimer -= Time.fixedDeltaTime;
+                        if (idleTimer <= 0f) {
+                            if (Right.WallCheck.Evaluate() && !ShouldJump(Right))
+                                character.HorizontalDirection = Character.HorizontalMovementDirection.Left;
+                            else if (Left.WallCheck.Evaluate() && !ShouldJump(Left))
+                                character.HorizontalDirection = Character.HorizontalMovementDirection.Right;
+                            else
+                                character.HorizontalDirection = Random.Range(0, 2) == 0 ? Character.HorizontalMovementDirection.Right : Character.HorizontalMovementDirection.Left;
+                            SetToMove();
+                        }
                     }
                     break;
             }
         }
 
+        private bool CheckForAttack() {
+            if (Attack.Detection()) {
+                CurrentState = State.Attack;
+                character.HorizontalDirection = Character.HorizontalMovementDirection.None;
+                Attack.Attack();
+                return true;
+            }
+            return false;
+        }
+
+        private bool CheckForChase() {
+            if (target.Get(out latestTarget)) {
+                float diff = latestTarget.x - rigidbody.position.x;
+                if (diff > 0f) {
+                    if (!ShouldHalt(Right)) {
+                        CurrentState = State.Chase;
+                        character.HorizontalDirection = Character.HorizontalMovementDirection.Right;
+                        return true;
+                    }
+                } else if (!ShouldHalt(Left)) {
+                    CurrentState = State.Chase;
+                    character.HorizontalDirection = Character.HorizontalMovementDirection.Left;
+                    return true;
+                }
+            }
+            return false;
+        }
+
         private void SetToIdle() {
+            character.HorizontalDirection = Character.HorizontalMovementDirection.None;
             idleTimer = Random.Range(MinIdleTime, MaxIdleTime);
-            currentState = State.Idle;
+            CurrentState = State.Idle;
         }
 
         private void SetToMove() {
             moveTimer = Random.Range(MinMoveTime, MaxMoveTime);
-            currentState = State.Walking;
+            CurrentState = State.Walking;
         }
 
         private SideCheck CurrentSideCheck => character.HorizontalDirection == Character.HorizontalMovementDirection.Right ? Right : Left;
 
         private bool ShouldHalt(SideCheck checks) {
-            return HaltCondition.ShouldHalt(GroundCheck, checks);
+            return Mathf.Abs(latestTarget.x - rigidbody.position.x) < 1f || HaltCondition.ShouldHalt(GroundCheck, checks);
         }
 
         private bool ShouldJump(SideCheck checks) {
@@ -83,7 +125,7 @@ namespace ArtificialIntelligence {
             float diff = latestTarget.x - rigidbody.position.x;
             character.HorizontalDirection = diff > 0f ? Character.HorizontalMovementDirection.Right : Character.HorizontalMovementDirection.Left;
             moveTimer = Mathf.Abs((diff / Mathf.Max(1f, character.MovementSpeed)) - 0.25f);
-            currentState = State.Walking;
+            CurrentState = State.Walking;
         }
 
     }

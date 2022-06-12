@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using ArtificialIntelligence;
 
 public class GemTracker : MonoBehaviour
 {
@@ -16,7 +17,10 @@ public class GemTracker : MonoBehaviour
     public TMP_Text greenGemText;
     public TMP_Text blueGemText;
 
+    public DashAIWork RedPower;
+
     public GameManager GameManager;
+
     private void DestroyGem (Gem gem) {
         Renderer gemRenderer = gem.gameObject.GetComponent<Renderer>();
         gemRenderer.enabled = false;
@@ -84,11 +88,13 @@ public class GemTracker : MonoBehaviour
             return;
         }
 
+        DisableAllPowers();
         GemColour gemColour = gem.Colour;
         switch (gemColour)
         {
             case GemColour.Red:
                 this.IsRedPowerGemCollected = true;
+                RedPower.enabled = true;
                 break;
             case GemColour.Blue:
                 this.IsBluePowerGemCollected = true;
@@ -104,4 +110,9 @@ public class GemTracker : MonoBehaviour
 
         this.DestroyGem(gem);
     }
+
+    private void DisableAllPowers() {
+        RedPower.enabled = false;
+    }
+
 }
