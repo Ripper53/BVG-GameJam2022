@@ -8,6 +8,7 @@ TagManager:
   - Green
   - Blue
   - Pirate
+  - Rat
   layers:
   - Default
   - TransparentFX

@@ -120,8 +120,17 @@ namespace ArtificialIntelligence {
             return JumpCondition.ShouldJump(GroundCheck, checks);
         }
 
-        public void Distract(Vector2 position) {
-            latestTarget = Distraction.GetDistraction(position);
+        public void Noise(Vector2 position) {
+            latestTarget = Distraction.GetNoiseDistraction(position);
+            Distract();
+        }
+
+        public void Food(Vector2 position) {
+            latestTarget = Distraction.GetFoodDistraction(position);
+            Distract();
+        }
+
+        private void Distract() {
             float diff = latestTarget.x - rigidbody.position.x;
             character.HorizontalDirection = diff > 0f ? Character.HorizontalMovementDirection.Right : Character.HorizontalMovementDirection.Left;
             moveTimer = Mathf.Abs((diff / Mathf.Max(1f, character.MovementSpeed)) - 0.25f);

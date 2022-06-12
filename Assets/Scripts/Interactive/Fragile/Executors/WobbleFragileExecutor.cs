@@ -19,7 +19,7 @@ public class WobbleFragileExecutor : FragileExecution {
         enabled = true;
         foreach (Collider2D col in SoundGetCollider.Get()) {
             if (col.TryGetComponent(out IDistract distract)) {
-                distract.Distract(DistractionPoint.position);
+                distract.Noise(DistractionPoint.position);
             }
         }
     }
