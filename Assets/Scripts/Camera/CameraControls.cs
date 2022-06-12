@@ -27,7 +27,7 @@ public class CameraControls : PlayerControls {
         MousePosition = obj.ReadValue<Vector2>();
     }
 
-    private void Update () {
+    private void LateUpdate () {
         ScreenRect = new Rect (0f, 0f, Screen.width, Screen.height);
 
         CameraOffset.x = Mathf.MoveTowards (CameraOffset.x, 0f, OffsetMoveSpeed * Time.fixedDeltaTime);

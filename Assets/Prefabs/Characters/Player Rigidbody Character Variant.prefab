@@ -81,7 +81,7 @@ PrefabInstance:
       objectReference: {fileID: 5574551612179558627}
     - target: {fileID: 8317896348939649700, guid: 7cd96bf0296aab44b8a848ad5f99ff97, type: 3}
       propertyPath: MovementSpeed
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8317896348939649700, guid: 7cd96bf0296aab44b8a848ad5f99ff97, type: 3}
       propertyPath: RightSideCheck
@@ -176,10 +176,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 033ef77119625eb4aa42b69952665186, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Character: {fileID: 3488155970271397397}
+  Flying: {fileID: 5595041956088687485}
   redGemText: {fileID: 0}
   greenGemText: {fileID: 0}
   blueGemText: {fileID: 0}
-  RedPower: {fileID: 7170472368968832752}
+  RedPower:
+    Power: {fileID: 7170472368968832752}
+    MovementSpeed: 8
+  BluePower:
+    MovementSpeed: 4
+  GreenPower:
+    MovementSpeed: 6
+  GameManager: {fileID: 0}
 --- !u!114 &5595041956088687485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,8 +217,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharacterAnimator: {fileID: 3656581079897274044}
-  Speed: 20
-  Duration: 0.25
+  Speed: 40
+  Duration: 0.125
   EffectPooler: {fileID: 0}
 --- !u!114 &8122388094407800598
 MonoBehaviour:

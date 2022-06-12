@@ -4,6 +4,8 @@ using ArtificialIntelligence;
 
 public class GemTracker : MonoBehaviour
 {
+    public Character Character;
+    public FlyingAIWork Flying;
 
     private int RedGemsQuantity = 0;
     private int GreenGemsQuantity = 0;
@@ -17,7 +19,22 @@ public class GemTracker : MonoBehaviour
     public TMP_Text greenGemText;
     public TMP_Text blueGemText;
 
-    public DashAIWork RedPower;
+    public RedPowerData RedPower;
+    [System.Serializable]
+    public struct RedPowerData {
+        public DashAIWork Power;
+        public float MovementSpeed;
+    }
+    public BluePowerData BluePower;
+    [System.Serializable]
+    public struct BluePowerData {
+        public float MovementSpeed;
+    }
+    public GreenPowerData GreenPower;
+    [System.Serializable]
+    public struct GreenPowerData {
+        public float MovementSpeed;
+    }
 
     public GameManager GameManager;
 
@@ -52,7 +69,9 @@ public class GemTracker : MonoBehaviour
                     redGemText.text = $"x{this.RedGemsQuantity}/10";
                     gem.IsCollected = true;
                     this.DestroyGem(gem);
+#if UNITY_EDITOR
                     Debug.Log($"Red gems amount: {RedGemsQuantity}");
+#endif
                 }
                 break;
             case GemColour.Blue:
@@ -61,7 +80,9 @@ public class GemTracker : MonoBehaviour
                     blueGemText.text = $"x{this.BlueGemsQuantity}/10";
                     gem.IsCollected = true;
                     this.DestroyGem(gem);
+#if UNITY_EDITOR
                     Debug.Log($"Blue gems amount: {BlueGemsQuantity}");
+#endif
                 }
                 break;
             case GemColour.Green:
@@ -70,7 +91,9 @@ public class GemTracker : MonoBehaviour
                     greenGemText.text = $"x{this.GreenGemsQuantity}/10";
                     gem.IsCollected = true;
                     this.DestroyGem(gem);
+#if UNITY_EDITOR
                     Debug.Log($"Green gems amount: {GreenGemsQuantity}");
+#endif
                 }
                 break;
             default:
@@ -94,25 +117,31 @@ public class GemTracker : MonoBehaviour
         {
             case GemColour.Red:
                 this.IsRedPowerGemCollected = true;
-                RedPower.enabled = true;
+                RedPower.Power.enabled = true;
+                SetSpeed(RedPower.MovementSpeed);
                 break;
             case GemColour.Blue:
                 this.IsBluePowerGemCollected = true;
+                SetSpeed(BluePower.MovementSpeed);
                 break;
             case GemColour.Green:
                 this.IsGreenPowerGemCollected = true;
+                SetSpeed(GreenPower.MovementSpeed);
                 break;
             default:
                 break;
         }
 
-        // TODO Gave power to player
-
         this.DestroyGem(gem);
     }
 
     private void DisableAllPowers() {
-        RedPower.enabled = false;
+        RedPower.Power.enabled = false;
+    }
+
+    private void SetSpeed(float speed) {
+        Character.MovementSpeed = speed;
+        Flying.Speed = speed;
     }
 
 }
