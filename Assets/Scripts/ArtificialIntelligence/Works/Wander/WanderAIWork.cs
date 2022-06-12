@@ -27,6 +27,11 @@ namespace ArtificialIntelligence {
             Idle, Walking, Chase, Attack
         }
 
+        private bool setTarget;
+        protected void OnEnable() {
+            setTarget = false;
+        }
+
         private Vector2 latestTarget;
         private float moveTimer, idleTimer;
         protected override void Execute() {
@@ -81,7 +86,8 @@ namespace ArtificialIntelligence {
         }
 
         private bool CheckForChase() {
-            if (target.Get(out latestTarget)) {
+            if (target.Get(out Vector2 t)) {
+                SetTarget(t);
                 float diff = latestTarget.x - rigidbody.position.x;
                 if (diff > 0f) {
                     SpriteRenderer.flipX = false;
@@ -116,7 +122,7 @@ namespace ArtificialIntelligence {
         private SideCheck CurrentSideCheck => character.HorizontalDirection == Character.HorizontalMovementDirection.Right ? Right : Left;
 
         private bool ShouldHalt(SideCheck checks) {
-            return Mathf.Abs(latestTarget.x - rigidbody.position.x) < 1f || HaltCondition.ShouldHalt(GroundCheck, checks);
+            return (setTarget && Mathf.Abs(latestTarget.x - rigidbody.position.x) < 1f) || HaltCondition.ShouldHalt(GroundCheck, checks);
         }
 
         private bool ShouldJump(SideCheck checks) {
@@ -124,12 +130,12 @@ namespace ArtificialIntelligence {
         }
 
         public void Noise(Vector2 position) {
-            latestTarget = Distraction.GetNoiseDistraction(position);
+            SetTarget(Distraction.GetNoiseDistraction(position));
             Distract();
         }
 
         public void Food(Vector2 position) {
-            latestTarget = Distraction.GetFoodDistraction(position);
+            SetTarget(Distraction.GetFoodDistraction(position));
             Distract();
         }
 
@@ -148,6 +154,11 @@ namespace ArtificialIntelligence {
             }
             moveTimer = Mathf.Abs((diff / Mathf.Max(1f, character.MovementSpeed)) - 0.25f);
             CurrentState = State.Walking;
+        }
+
+        private void SetTarget(Vector2 target) {
+            latestTarget = target;
+            setTarget = true;
         }
 
     }

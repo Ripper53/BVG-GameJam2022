@@ -16,6 +16,9 @@ public class WobbleFragileExecutor : FragileExecution {
         direction = velocity.x;
         maxTilt = Mathf.Clamp(Mathf.Abs(direction), MinTilt, MaxTilt);
         enabled = true;
+        EmitNoise();
+    }
+    public override void EmitNoise() {
         foreach (Collider2D col in SoundGetCollider.Get()) {
             if (col.TryGetComponent(out IDistract distract))
                 distract.Noise(DistractionPoint.position);

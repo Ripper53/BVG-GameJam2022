@@ -26,7 +26,7 @@ namespace ArtificialIntelligence {
                     case State.Attacking:
                         if (Attack.Detection.Attack()) {
                             // Game Over
-                            GameManager.Singleton.LoseGame();
+                            //GameManager.Singleton.LoseGame();
                         }
                         Animator.SetAnimation(RecoveryAnimation);
                         currentState = State.Recovery;
