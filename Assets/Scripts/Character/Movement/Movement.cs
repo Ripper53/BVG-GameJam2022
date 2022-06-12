@@ -14,9 +14,8 @@ namespace Movement {
 
         internal void ExecuteMovement() {
             if (!toMoveThisFrame) return;
-            toMoveThisFrame = false;
             ExecuteMovement(toMoveAmount);
-            toMoveAmount = 0f;
+            Reinitialize();
         }
         protected abstract void ExecuteMovement(float amount);
 
