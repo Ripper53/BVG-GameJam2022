@@ -72,7 +72,7 @@ namespace ArtificialIntelligence {
         }
 
         private bool CheckForAttack() {
-            if (Attack.Detection()) {
+            if (Attack.Detection.Detect()) {
                 CurrentState = State.Attack;
                 character.HorizontalDirection = Character.HorizontalMovementDirection.None;
                 Attack.Attack();

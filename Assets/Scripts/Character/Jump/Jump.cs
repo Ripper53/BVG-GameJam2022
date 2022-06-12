@@ -6,13 +6,18 @@ namespace Jump {
         public Vector2 Force;
 
         public bool Execute() {
+            return Execute(Force, Direction);
+        }
+
+        public bool Execute(Vector2 force, float direction) {
             if (Character.GroundCheck.Evaluate()) {
                 Character.GroundCheck.DisableFor(0.1f);
-                Character.Movement.Velocity = new Vector2(Direction * Force.x, Force.y);
+                Character.Movement.Velocity = new Vector2(direction * force.x, force.y);
                 return true;
             }
             return false;
         }
+
         private float Direction {
             get {
                 return Character.HorizontalDirection switch {

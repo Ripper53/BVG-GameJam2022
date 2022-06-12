@@ -34,6 +34,7 @@ public class GemTracker : MonoBehaviour
     public GreenPowerData GreenPower;
     [System.Serializable]
     public struct GreenPowerData {
+        public TalkAIWork Power;
         public float MovementSpeed;
     }
 
@@ -117,17 +118,21 @@ public class GemTracker : MonoBehaviour
         switch (gemColour)
         {
             case GemColour.Red:
+                Character.gameObject.tag = "Red";
                 this.IsRedPowerGemCollected = true;
                 RedPower.Power.enabled = true;
                 SetSpeed(RedPower.MovementSpeed);
                 break;
             case GemColour.Blue:
+                Character.gameObject.tag = "Blue";
                 this.IsBluePowerGemCollected = true;
                 BluePower.Power.enabled = true;
                 SetSpeed(BluePower.MovementSpeed);
                 break;
             case GemColour.Green:
+                Character.gameObject.tag = "Green";
                 this.IsGreenPowerGemCollected = true;
+                GreenPower.Power.enabled = true;
                 SetSpeed(GreenPower.MovementSpeed);
                 break;
             default:
@@ -140,6 +145,7 @@ public class GemTracker : MonoBehaviour
     private void DisableAllPowers() {
         RedPower.Power.enabled = false;
         BluePower.Power.enabled = false;
+        GreenPower.Power.enabled = false;
     }
 
     private void SetSpeed(float speed) {
