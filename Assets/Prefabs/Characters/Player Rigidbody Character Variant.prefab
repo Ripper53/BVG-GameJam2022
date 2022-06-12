@@ -274,7 +274,7 @@ PrefabInstance:
       objectReference: {fileID: 5574551612179558627}
     - target: {fileID: 8317896348939649700, guid: 7cd96bf0296aab44b8a848ad5f99ff97, type: 3}
       propertyPath: MovementSpeed
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8317896348939649700, guid: 7cd96bf0296aab44b8a848ad5f99ff97, type: 3}
       propertyPath: RightSideCheck
@@ -357,6 +357,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GetCollider: {fileID: 2265014347461673291}
   TalkTag: Pirate
+--- !u!114 &4370984447834237378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2861536825891731254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35000a7c23d5bdc4dac3456241393005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CameraControls: {fileID: 0}
+  WinScreen: {fileID: 0}
+  LoseScreen: {fileID: 0}
+  Player: {fileID: 0}
 --- !u!114 &4971680413419969621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -399,19 +415,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Character: {fileID: 3488155970271397397}
+  EndGameMenu: {fileID: 4370984447834237378}
   Flying: {fileID: 5595041956088687485}
   redGemText: {fileID: 0}
   greenGemText: {fileID: 0}
   blueGemText: {fileID: 0}
   RedPower:
     Power: {fileID: 7170472368968832752}
-    MovementSpeed: 8
+    MovementSpeed: 10
   BluePower:
     Power: {fileID: 736873277097832663}
-    MovementSpeed: 4
+    MovementSpeed: 6
   GreenPower:
     Power: {fileID: 2628545369961222785}
-    MovementSpeed: 6
+    MovementSpeed: 8
   GameManager: {fileID: 0}
 --- !u!114 &5595041956088687485
 MonoBehaviour:
@@ -442,7 +459,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CharacterAnimator: {fileID: 3656581079897274044}
   Speed: 40
-  Duration: 0.125
+  Duration: 0.0625
   EffectPooler: {fileID: 0}
 --- !u!114 &8122388094407800598
 MonoBehaviour:

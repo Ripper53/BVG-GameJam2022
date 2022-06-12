@@ -421,9 +421,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1643892672}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: ExitGame
+      - m_Target: {fileID: 410469625}
+        m_TargetAssemblyTypeName: LoadSceneUtility, Assembly-CSharp
+        m_MethodName: QuitApplication
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -688,6 +688,7 @@ GameObject:
   - component: {fileID: 410469621}
   - component: {fileID: 410469620}
   - component: {fileID: 410469624}
+  - component: {fileID: 410469625}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -787,6 +788,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 410469618}
   m_CullTransparentMesh: 1
+--- !u!114 &410469625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410469618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cd6035912081b04ca0641818b50b2ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &501968747
 GameObject:
   m_ObjectHideFlags: 0
@@ -1324,9 +1337,73 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 579191881, guid: fc67f9a5a21a63f4689083d5314af4e2, type: 3}
+      propertyPath: m_AnimatedTiles.Array.data[0].second.m_AnimationSpeed
+      value: 6.5754843
+      objectReference: {fileID: 0}
+    - target: {fileID: 579191881, guid: fc67f9a5a21a63f4689083d5314af4e2, type: 3}
+      propertyPath: m_AnimatedTiles.Array.data[1].second.m_AnimationSpeed
+      value: 5.609733
+      objectReference: {fileID: 0}
+    - target: {fileID: 579191881, guid: fc67f9a5a21a63f4689083d5314af4e2, type: 3}
+      propertyPath: m_AnimatedTiles.Array.data[2].second.m_AnimationSpeed
+      value: 9.282408
+      objectReference: {fileID: 0}
     - target: {fileID: 3095880124156486981, guid: fc67f9a5a21a63f4689083d5314af4e2, type: 3}
       propertyPath: m_Name
       value: PirateShipGround
+      objectReference: {fileID: 0}
+    - target: {fileID: 7619953461956405057, guid: fc67f9a5a21a63f4689083d5314af4e2, type: 3}
+      propertyPath: m_AnimatedTiles.Array.data[0].second.m_AnimationSpeed
+      value: 5.9957666
+      objectReference: {fileID: 0}
+    - target: {fileID: 7619953461956405057, guid: fc67f9a5a21a63f4689083d5314af4e2, type: 3}
+      propertyPath: m_AnimatedTiles.Array.data[1].second.m_AnimationSpeed
+      value: 8.721386
+      objectReference: {fileID: 0}
+    - target: {fileID: 7619953461956405057, guid: fc67f9a5a21a63f4689083d5314af4e2, type: 3}
+      propertyPath: m_AnimatedTiles.Array.data[2].second.m_AnimationSpeed
+      value: 3.0000002
+      objectReference: {fileID: 0}
+    - target: {fileID: 7619953461956405057, guid: fc67f9a5a21a63f4689083d5314af4e2, type: 3}
+      propertyPath: m_AnimatedTiles.Array.data[3].second.m_AnimationSpeed
+      value: 8.770785
+      objectReference: {fileID: 0}
+    - target: {fileID: 7619953461956405057, guid: fc67f9a5a21a63f4689083d5314af4e2, type: 3}
+      propertyPath: m_AnimatedTiles.Array.data[4].second.m_AnimationSpeed
+      value: 7.612135
+      objectReference: {fileID: 0}
+    - target: {fileID: 7619953461956405057, guid: fc67f9a5a21a63f4689083d5314af4e2, type: 3}
+      propertyPath: m_AnimatedTiles.Array.data[5].second.m_AnimationSpeed
+      value: 9.362808
+      objectReference: {fileID: 0}
+    - target: {fileID: 7619953461956405057, guid: fc67f9a5a21a63f4689083d5314af4e2, type: 3}
+      propertyPath: m_AnimatedTiles.Array.data[6].second.m_AnimationSpeed
+      value: 9.29811
+      objectReference: {fileID: 0}
+    - target: {fileID: 7619953461956405057, guid: fc67f9a5a21a63f4689083d5314af4e2, type: 3}
+      propertyPath: m_AnimatedTiles.Array.data[7].second.m_AnimationSpeed
+      value: 6.7979636
+      objectReference: {fileID: 0}
+    - target: {fileID: 7619953461956405057, guid: fc67f9a5a21a63f4689083d5314af4e2, type: 3}
+      propertyPath: m_AnimatedTiles.Array.data[8].second.m_AnimationSpeed
+      value: 7.402042
+      objectReference: {fileID: 0}
+    - target: {fileID: 7619953461956405057, guid: fc67f9a5a21a63f4689083d5314af4e2, type: 3}
+      propertyPath: m_AnimatedTiles.Array.data[9].second.m_AnimationSpeed
+      value: 8.082231
+      objectReference: {fileID: 0}
+    - target: {fileID: 7619953461956405057, guid: fc67f9a5a21a63f4689083d5314af4e2, type: 3}
+      propertyPath: m_AnimatedTiles.Array.data[10].second.m_AnimationSpeed
+      value: 8.825114
+      objectReference: {fileID: 0}
+    - target: {fileID: 7619953461956405057, guid: fc67f9a5a21a63f4689083d5314af4e2, type: 3}
+      propertyPath: m_AnimatedTiles.Array.data[11].second.m_AnimationSpeed
+      value: 5.8961644
+      objectReference: {fileID: 0}
+    - target: {fileID: 7619953461956405057, guid: fc67f9a5a21a63f4689083d5314af4e2, type: 3}
+      propertyPath: m_AnimatedTiles.Array.data[12].second.m_AnimationSpeed
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8134464266663757765, guid: fc67f9a5a21a63f4689083d5314af4e2, type: 3}
       propertyPath: m_RootOrder
@@ -1669,9 +1746,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1643892672}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: ExitGame
+      - m_Target: {fileID: 410469625}
+        m_TargetAssemblyTypeName: LoadSceneUtility, Assembly-CSharp
+        m_MethodName: QuitApplication
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2280,15 +2357,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1207665630909053305, guid: e2e5c5745a8532741bb1ddbd3c077946, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 513.81976
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1207665630909053305, guid: e2e5c5745a8532741bb1ddbd3c077946, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 290.22748
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1207665630909053305, guid: e2e5c5745a8532741bb1ddbd3c077946, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.05788283
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1207665630909053305, guid: e2e5c5745a8532741bb1ddbd3c077946, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2768,16 +2845,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1643892672}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: LoadLevel1
-        m_Mode: 1
+      - m_Target: {fileID: 410469625}
+        m_TargetAssemblyTypeName: LoadSceneUtility, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Level1
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1905972434
@@ -3055,16 +3132,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1643892672}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: LoadLevel1
-        m_Mode: 1
+      - m_Target: {fileID: 410469625}
+        m_TargetAssemblyTypeName: LoadSceneUtility, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Level1
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2057212241
@@ -3192,6 +3269,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4370984447834237378, guid: de9ffce26f8637045997c37b32a1307a, type: 3}
+      propertyPath: Camera
+      value: 
+      objectReference: {fileID: 519420031}
+    - target: {fileID: 4370984447834237378, guid: de9ffce26f8637045997c37b32a1307a, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 286989693}
+    - target: {fileID: 4370984447834237378, guid: de9ffce26f8637045997c37b32a1307a, type: 3}
+      propertyPath: WinScreen
+      value: 
+      objectReference: {fileID: 796570281}
+    - target: {fileID: 4370984447834237378, guid: de9ffce26f8637045997c37b32a1307a, type: 3}
+      propertyPath: LoseScreen
+      value: 
+      objectReference: {fileID: 1646680502}
+    - target: {fileID: 4370984447834237378, guid: de9ffce26f8637045997c37b32a1307a, type: 3}
+      propertyPath: CameraControls
+      value: 
+      objectReference: {fileID: 519420033}
     - target: {fileID: 4971680413419969621, guid: de9ffce26f8637045997c37b32a1307a, type: 3}
       propertyPath: Camera
       value: 
