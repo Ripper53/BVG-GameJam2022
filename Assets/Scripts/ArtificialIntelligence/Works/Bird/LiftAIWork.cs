@@ -6,7 +6,6 @@ namespace ArtificialIntelligence {
     public class LiftAIWork : AIWork {
         public GetCollider LiftGetCollider;
         public float GripStrength;
-        public float GripOffset;
         public GetCollider OpenGetCollider;
 
         public GroundFriction Friction;
@@ -43,7 +42,7 @@ namespace ArtificialIntelligence {
 
                 equipped = collider.gameObject.AddComponent<TargetJoint2D>();
                 Vector2 diff = rigidbody.position - collider.attachedRigidbody.position;
-                equipped.anchor = GripOffset * diff.normalized;
+                equipped.anchor = diff + (diff.normalized * 0.1f);
                 equipped.frequency = GripStrength;
                 equipped.dampingRatio = 1f;
                 return true;

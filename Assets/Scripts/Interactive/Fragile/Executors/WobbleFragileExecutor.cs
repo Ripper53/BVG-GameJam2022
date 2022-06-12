@@ -1,9 +1,8 @@
 using Physics.GetColliders;
 using UnityEngine;
 
-public class WobbleFragileExecutor : FragileExecution {
-    public Transform Transform, DistractionPoint;
-    public GetCollider SoundGetCollider;
+public class WobbleFragileExecutor : SoundFragileExecutor {
+    public Transform Transform;
     public float WobbleDuration;
     public float MinTilt = 10f, MaxTilt = 80f;
 
@@ -16,13 +15,7 @@ public class WobbleFragileExecutor : FragileExecution {
         direction = velocity.x;
         maxTilt = Mathf.Clamp(Mathf.Abs(direction), MinTilt, MaxTilt);
         enabled = true;
-        EmitNoise();
-    }
-    public override void EmitNoise() {
-        foreach (Collider2D col in SoundGetCollider.Get()) {
-            if (col.TryGetComponent(out IDistract distract))
-                distract.Noise(DistractionPoint.position);
-        }
+        base.Frail(velocity);
     }
 
     protected void OnDisable() {
