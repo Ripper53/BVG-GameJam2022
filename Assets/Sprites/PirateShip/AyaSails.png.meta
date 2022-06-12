@@ -142,8 +142,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 75fde0180bc23a041a7dff4683336089
-      internalID: -1814984546
+      spriteID: c361af6095112ac4cb47d45a80119300
+      internalID: -2067949823
       vertices: []
       indices: 
       edges: []
@@ -163,8 +163,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 22eb22a6a9d5fd34d92daac5f66950e4
-      internalID: 938324726
+      spriteID: 8fdbed18e66bc1547b209bc9ebdbebd7
+      internalID: -851538933
       vertices: []
       indices: 
       edges: []
@@ -184,8 +184,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6affd1a65607f8d48aeb3f77b5af181a
-      internalID: 1388624800
+      spriteID: 35499d0fbc2570240894e236b87cb65f
+      internalID: 900718807
       vertices: []
       indices: 
       edges: []
@@ -205,8 +205,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a6f154dbea567c84c96140232a73e95a
-      internalID: 1454075490
+      spriteID: 96237b960b4945145aabc77d6e594ce8
+      internalID: 971925970
       vertices: []
       indices: 
       edges: []
@@ -215,8 +215,8 @@ TextureImporter:
       name: AyaSails_4
       rect:
         serializedVersion: 2
-        x: 0
-        y: 64
+        x: 128
+        y: 96
         width: 32
         height: 32
       alignment: 0
@@ -226,8 +226,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82f2361594bca7f4f9baf99136668774
-      internalID: -375230903
+      spriteID: dd942bf303fbb884d97b5887f2eea5f6
+      internalID: 748520679
       vertices: []
       indices: 
       edges: []
@@ -236,7 +236,7 @@ TextureImporter:
       name: AyaSails_5
       rect:
         serializedVersion: 2
-        x: 32
+        x: 0
         y: 64
         width: 32
         height: 32
@@ -247,8 +247,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 14a6913c2a24d99438d937c8d97f9630
-      internalID: 982165181
+      spriteID: bb340d8b07475834db1a26d0df2ee79e
+      internalID: 310921627
       vertices: []
       indices: 
       edges: []
@@ -257,7 +257,7 @@ TextureImporter:
       name: AyaSails_6
       rect:
         serializedVersion: 2
-        x: 64
+        x: 32
         y: 64
         width: 32
         height: 32
@@ -268,8 +268,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f689ac598ac0d7d42b9df34a63d9d16f
-      internalID: 2021454255
+      spriteID: 79c2087279cc8724e86c7c1f930503bd
+      internalID: -1464321501
       vertices: []
       indices: 
       edges: []
@@ -278,6 +278,27 @@ TextureImporter:
       name: AyaSails_7
       rect:
         serializedVersion: 2
+        x: 64
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 294c1953a4f5dd945a5aa414db05428e
+      internalID: 595525244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AyaSails_8
+      rect:
+        serializedVersion: 2
         x: 96
         y: 64
         width: 32
@@ -289,29 +310,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa7d988ee0b356c43b5dc4d555d52ce0
-      internalID: -35347434
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AyaSails_8
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bb2c06ae25061d34ba3cfb0bd8c5fb1f
-      internalID: 1820375799
+      spriteID: fab4cce4065f0f9428ae0bba44e0421b
+      internalID: -130371547
       vertices: []
       indices: 
       edges: []
@@ -320,8 +320,8 @@ TextureImporter:
       name: AyaSails_9
       rect:
         serializedVersion: 2
-        x: 32
-        y: 32
+        x: 128
+        y: 64
         width: 32
         height: 32
       alignment: 0
@@ -331,8 +331,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9eb640fef0f623d45abdad8101a85314
-      internalID: -1879968677
+      spriteID: d31ba3966ccb8514eb24d07fc9ea4b4d
+      internalID: 928359701
       vertices: []
       indices: 
       edges: []
@@ -341,6 +341,27 @@ TextureImporter:
       name: AyaSails_10
       rect:
         serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cf7d42489bc3e640bf10dd586113b95
+      internalID: 1295067075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AyaSails_11
+      rect:
+        serializedVersion: 2
         x: 64
         y: 32
         width: 32
@@ -352,14 +373,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 03a8c7ce0487d2b48bc7605f42005221
-      internalID: -707682292
+      spriteID: d5dfa86fccfe5f94ab3ef5fb723d5733
+      internalID: -1928444568
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AyaSails_11
+      name: AyaSails_12
       rect:
         serializedVersion: 2
         x: 96
@@ -373,18 +394,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 497c1f3caffb9de488c344a9528eb462
-      internalID: -2112955597
+      spriteID: 1bcd56a0811770648a3f5de3db3f2b0a
+      internalID: 2137455176
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AyaSails_12
+      name: AyaSails_13
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 128
+        y: 32
         width: 32
         height: 32
       alignment: 0
@@ -394,14 +415,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 13605ece09e8c8649a7d743de815196a
-      internalID: 2056015534
+      spriteID: 2d7df8449db30dc48b006430e5551aaf
+      internalID: 1598843645
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AyaSails_13
+      name: AyaSails_14
       rect:
         serializedVersion: 2
         x: 32
@@ -415,14 +436,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 310ada01bc90c36429edf19e94143646
-      internalID: 506770127
+      spriteID: 835b5b506997a464a94793b11468de16
+      internalID: 668454717
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AyaSails_14
+      name: AyaSails_15
       rect:
         serializedVersion: 2
         x: 64
@@ -436,14 +457,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e8969aae900fc4843af7d7b7b324998a
-      internalID: -1405552661
+      spriteID: 2e93a7be7086ff741a0aa63aa280b161
+      internalID: -942882254
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AyaSails_15
+      name: AyaSails_16
       rect:
         serializedVersion: 2
         x: 96
@@ -457,8 +478,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f0a7c39e9453f9446b3b40a2293d8880
-      internalID: 1999817526
+      spriteID: 3613c50511b41cb419753dca1a03f11a
+      internalID: 1522509282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AyaSails_17
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fcc721afba02ec4698dd395dd6aefeb
+      internalID: -1507184282
       vertices: []
       indices: 
       edges: []
@@ -474,22 +516,24 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      AyaSails_7: -35347434
-      AyaSails_10: -707682292
-      AyaSails_2: 1388624800
-      AyaSails_9: -1879968677
-      AyaSails_8: 1820375799
-      AyaSails_5: 982165181
-      AyaSails_12: 2056015534
-      AyaSails_3: 1454075490
-      AyaSails_13: 506770127
-      AyaSails_15: 1999817526
-      AyaSails_0: -1814984546
-      AyaSails_11: -2112955597
-      AyaSails_1: 938324726
-      AyaSails_4: -375230903
-      AyaSails_6: 2021454255
-      AyaSails_14: -1405552661
+      AyaSails_7: 595525244
+      AyaSails_10: 1295067075
+      AyaSails_2: 900718807
+      AyaSails_9: 928359701
+      AyaSails_16: 1522509282
+      AyaSails_8: -130371547
+      AyaSails_5: 310921627
+      AyaSails_12: 2137455176
+      AyaSails_3: 971925970
+      AyaSails_13: 1598843645
+      AyaSails_15: -942882254
+      AyaSails_0: -2067949823
+      AyaSails_17: -1507184282
+      AyaSails_11: -1928444568
+      AyaSails_1: -851538933
+      AyaSails_4: 748520679
+      AyaSails_6: -1464321501
+      AyaSails_14: 668454717
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
