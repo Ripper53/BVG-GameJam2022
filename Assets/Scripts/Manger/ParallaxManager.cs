@@ -22,8 +22,6 @@ public class ParallaxManager : MonoBehaviour
     {
         transform.position = new Vector3(transform.position.x - ParallaxEffect, transform.position.y, transform.position.z);
 
-        Debug.Log(transform.position.x);
-
         if (transform.position.x > startpos + length)
         {
             transform.position = new Vector3(startpos, transform.position.y, transform.position.z);

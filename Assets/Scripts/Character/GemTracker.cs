@@ -16,12 +16,21 @@ public class GemTracker : MonoBehaviour
     public TMP_Text greenGemText;
     public TMP_Text blueGemText;
 
+    public GameManager GameManager;
     private void DestroyGem (Gem gem) {
         Renderer gemRenderer = gem.gameObject.GetComponent<Renderer>();
         gemRenderer.enabled = false;
         AudioSource gemAudio = gem.GetComponent<AudioSource>();
         gemAudio.Play();
         Destroy(gem.gameObject, gemAudio.clip.length);
+    }
+
+    private void CheckGameWin () {
+        if (this.RedGemsQuantity == 1 && 
+            this.BlueGemsQuantity == 1 && 
+            this.GreenGemsQuantity == 1) {
+            GameManager.WinGame();
+        }
     }
 
     public void CollectCollectableGem (Gem gem) {
@@ -63,6 +72,8 @@ public class GemTracker : MonoBehaviour
             default:
                 break;
         }
+
+        CheckGameWin();
 
         //TODO
         // Spawn another gem?

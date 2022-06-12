@@ -47,11 +47,11 @@ TagManager:
   - name: BackgroundTwo
     uniqueID: 3727905919
     locked: 0
-  - name: Character
-    uniqueID: 2718405693
-    locked: 0
   - name: Scenario
     uniqueID: 2410417693
+    locked: 0
+  - name: Character
+    uniqueID: 2718405693
     locked: 0
   - name: UI
     uniqueID: 2277090727
