@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8512713628856403924}
   - component: {fileID: 5337573558662152714}
   - component: {fileID: 6449167423751247129}
+  - component: {fileID: 2471327333529309896}
   m_Layer: 9
   m_Name: Attack
   m_TagString: Untagged
@@ -47,8 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Animator: {fileID: 8971129525067298159}
-  GetCollider: {fileID: 5337573558662152714}
-  BoxShape: {fileID: 6449167423751247129}
+  Detection: {fileID: 2471327333529309896}
   Animation: {fileID: 0}
   RecoveryAnimation: {fileID: 0}
   IdleAnimation: {fileID: 0}
@@ -84,6 +84,25 @@ MonoBehaviour:
   offset: {x: 0.25, y: 0}
   size: {x: 1, y: 0.5}
   angle: 0
+--- !u!114 &2471327333529309896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 319572539568429368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5908608e69b7db4683f6af7b922dead, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Animator: {fileID: 8971129525067298159}
+  DetectData:
+    GetCollider: {fileID: 5337573558662152714}
+    BoxShape: {fileID: 6449167423751247129}
+  AttackData:
+    GetCollider: {fileID: 5337573558662152714}
+    BoxShape: {fileID: 6449167423751247129}
 --- !u!1001 &1174466833425255430
 PrefabInstance:
   m_ObjectHideFlags: 0

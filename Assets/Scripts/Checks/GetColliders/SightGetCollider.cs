@@ -20,8 +20,8 @@ namespace Physics.GetColliders {
         }
 
         private bool InView(Collider2D col) {
-            float diff = col.transform.position.x - Origin.position.x;
-            return SpriteRenderer.flipX ? diff < 0f : diff > 0f;
+            float target = col.transform.position.x, origin = Origin.position.x;
+            return SpriteRenderer.flipX ? target < origin : target > origin;
         }
 
         private bool Cast(Collider2D col) {

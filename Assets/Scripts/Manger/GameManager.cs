@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public Camera Camera;
-    public GameObject WinScreen;
+    public GameObject WinScreen, LoseScreen;
 
     public GameObject Player;
 
@@ -57,9 +57,16 @@ public class GameManager : MonoBehaviour
         Player.SetActive(false);
     }
 
-    public void WinGame () {
-        this.DisableFollowCamera();
-        this.DisablePlayer();
+    public void WinGame() {
+        DisableFollowCamera();
+        DisablePlayer();
         WinScreen.SetActive(true);
     }
+
+    public void LoseGame() {
+        DisableFollowCamera();
+        DisablePlayer();
+        LoseScreen.SetActive(true);
+    }
+
 }
