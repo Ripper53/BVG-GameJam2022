@@ -14,6 +14,7 @@ public class PlayerTargetControls : PlayerControls {
         input.Flying.LiftOff.canceled += LiftOff_canceled;
 
         input.Ability.Primary.performed += Primary_performed;
+        input.Ability.Primary.canceled += Primary_canceled;
 
         input.Flying.Direction.performed += Direction_performed;
     }
@@ -23,12 +24,18 @@ public class PlayerTargetControls : PlayerControls {
         input.Flying.LiftOff.canceled -= LiftOff_canceled;
 
         input.Ability.Primary.performed -= Primary_performed;
+        input.Ability.Primary.canceled -= Primary_canceled;
 
         input.Flying.Direction.performed -= Direction_performed;
     }
 
     private void Primary_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj) {
         AbilityDependency.Triggered = true;
+        AbilityDependency.Hold = true;
+    }
+
+    private void Primary_canceled(UnityEngine.InputSystem.InputAction.CallbackContext obj) {
+        AbilityDependency.Hold = false;
     }
 
     private void LiftOff_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj) {

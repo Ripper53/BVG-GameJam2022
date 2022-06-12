@@ -508,6 +508,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 736873277097832663, guid: de9ffce26f8637045997c37b32a1307a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2861536825891731254, guid: de9ffce26f8637045997c37b32a1307a, type: 3}
       propertyPath: m_Name
       value: Player Rigidbody Character Variant
@@ -562,7 +566,7 @@ PrefabInstance:
       objectReference: {fileID: 519420031}
     - target: {fileID: 7170472368968832752, guid: de9ffce26f8637045997c37b32a1307a, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7170472368968832752, guid: de9ffce26f8637045997c37b32a1307a, type: 3}
       propertyPath: EffectPooler
