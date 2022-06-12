@@ -20,7 +20,7 @@ public class ParallaxManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(transform.position.x - ParallaxEffect, transform.position.y, transform.position.z);
+        transform.position = new Vector3(transform.position.x - (ParallaxEffect * Time.unscaledDeltaTime), transform.position.y, transform.position.z);
 
         Debug.Log(transform.position.x);
 

@@ -1,4 +1,6 @@
 using ArtificialIntelligence.Dependency;
+using Physics.GetColliders;
+using Physics.Shapes;
 using UnityEngine;
 
 namespace ArtificialIntelligence {
@@ -11,6 +13,14 @@ namespace ArtificialIntelligence {
         public WanderJumpCondition JumpCondition;
         public WanderDistraction Distraction;
 
+        public AttackData Attack;
+        public SpriteRenderer SpriteRenderer;
+        [System.Serializable]
+        public struct AttackData {
+            public BoxGetCollider GetCollider;
+            public SpriteAnimation.SpriteAnimation PrepAnimation, RecoveryAnimation;
+        }
+
         protected new Rigidbody2D rigidbody;
         protected TargetDependency target;
         protected Jump.Jump jump;
@@ -21,27 +31,33 @@ namespace ArtificialIntelligence {
 
         private State currentState = State.Idle;
         private enum State {
-            Idle, Walking, Chase
+            Idle, Walking, Chase, Attack
         }
 
         private Vector2 latestTarget;
         private float moveTimer, idleTimer;
         protected override void Execute() {
-            if (target.Get(out latestTarget)) {
-                currentState = State.Chase;
-            }
+            GetTarget();
             switch (currentState) {
                 case State.Walking:
                     moveTimer -= Time.fixedDeltaTime;
                     if (moveTimer <= 0f || character.HorizontalDirection == Character.HorizontalMovementDirection.None || ShouldHalt(CurrentSideCheck)) {
-                        character.HorizontalDirection = Character.HorizontalMovementDirection.None;
                         SetToIdle();
                     } else if (ShouldJump(CurrentSideCheck)) {
                         jump.Execute();
                     }
                     break;
                 case State.Chase:
-
+                    if (Mathf.Abs(latestTarget.x - rigidbody.position.x) < 1f) {
+                        currentState = State.Attack;
+                    } else if (character.HorizontalDirection == Character.HorizontalMovementDirection.None || ShouldHalt(CurrentSideCheck)) {
+                        SetToIdle();
+                    } else if (ShouldJump(CurrentSideCheck)) {
+                        jump.Execute();
+                    }
+                    break;
+                case State.Attack:
+                    AttackState();
                     break;
                 default: // Idle
                     idleTimer -= Time.fixedDeltaTime;
@@ -58,7 +74,23 @@ namespace ArtificialIntelligence {
             }
         }
 
+        private void GetTarget() {
+            if (target.Get(out latestTarget)) {
+                currentState = State.Chase;
+                float diff = latestTarget.x - rigidbody.position.x;
+                character.HorizontalDirection = diff > 0f ? Character.HorizontalMovementDirection.Right : Character.HorizontalMovementDirection.Left;
+            }
+        }
+
+        private void AttackState() {
+            Vector2 offset = Attack.GetCollider.BoxShape.Offset;
+            offset.x = SpriteRenderer.flipX ? -Mathf.Abs(offset.x) : Mathf.Abs(offset.x);
+            Attack.GetCollider.BoxShape.Offset = offset;
+
+        }
+
         private void SetToIdle() {
+            character.HorizontalDirection = Character.HorizontalMovementDirection.None;
             idleTimer = Random.Range(MinIdleTime, MaxIdleTime);
             currentState = State.Idle;
         }
