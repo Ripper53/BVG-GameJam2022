@@ -498,7 +498,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4321407911230711516, guid: 9d67cfb4a56f21e41a5be6f3cae7771e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4321407911230711517, guid: 9d67cfb4a56f21e41a5be6f3cae7771e, type: 3}
       propertyPath: m_RootOrder
@@ -571,7 +571,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 736873277097832663, guid: de9ffce26f8637045997c37b32a1307a, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2628545369961222785, guid: de9ffce26f8637045997c37b32a1307a, type: 3}
       propertyPath: m_Enabled
@@ -631,7 +631,7 @@ PrefabInstance:
       objectReference: {fileID: 519420031}
     - target: {fileID: 7170472368968832752, guid: de9ffce26f8637045997c37b32a1307a, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7170472368968832752, guid: de9ffce26f8637045997c37b32a1307a, type: 3}
       propertyPath: EffectPooler
@@ -1253,7 +1253,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4192390956607027986, guid: d8db4288dcdbb4742bcdf79027c9c37e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4192390956607027987, guid: d8db4288dcdbb4742bcdf79027c9c37e, type: 3}
       propertyPath: m_RootOrder

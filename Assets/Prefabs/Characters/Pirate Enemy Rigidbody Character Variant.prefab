@@ -83,8 +83,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Animator: {fileID: 7211046390794349260}
-  GetCollider: {fileID: 5944694772669881769}
-  BoxShape: {fileID: 4750480821204912826}
+  DetectData:
+    GetCollider: {fileID: 5944694772669881769}
+    BoxShape: {fileID: 4750480821204912826}
+  AttackData:
+    GetCollider: {fileID: 5944694772669881769}
+    BoxShape: {fileID: 4750480821204912826}
   FriendlyTag: Green
 --- !u!114 &4750480821204912826 stripped
 MonoBehaviour:

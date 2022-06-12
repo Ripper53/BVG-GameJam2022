@@ -48,7 +48,7 @@ MonoBehaviour:
   BoxShape: {fileID: 8667171888711085950}
   Filter:
     serializedVersion: 2
-    m_Bits: 1049463
+    m_Bits: 3145728
 --- !u!114 &8667171888711085950
 MonoBehaviour:
   m_ObjectHideFlags: 0
