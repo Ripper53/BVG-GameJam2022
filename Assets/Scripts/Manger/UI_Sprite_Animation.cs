@@ -38,8 +38,9 @@ public class UI_Sprite_Animation : MonoBehaviour
             image.color = spriteColor;
         }
 
-
+#if UNITY_EDITOR
         Debug.Log("Delayed Start time: " + delayedStart);
+#endif
     }
     private void Update()
     {

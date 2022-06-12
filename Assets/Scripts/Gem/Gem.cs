@@ -9,7 +9,9 @@ public class Gem : MonoBehaviour
 
     protected virtual void CollectGem (Collider2D other) {
         other.GetComponent<GemTracker>().CollectCollectableGem(this);
+#if UNITY_EDITOR
         Debug.Log($"Touched a {Colour} gem");
+#endif
     }
 
     protected void OnTriggerEnter2D(Collider2D other) {

@@ -41,7 +41,10 @@ namespace ArtificialIntelligence {
         protected override void EnableGroundMovement(bool value) {
             base.EnableGroundMovement(value);
             flying.enabled = value;
-            if (!value) {
+            if (value) {
+                character.Movement.Velocity *= 0.25f;
+            } else {
+                CharacterAnimator.SpriteRenderer.flipX = latestTarget.x < 0f;
                 dashTimer = Duration;
                 if (EffectPooler.Get(out OneShotAudioEffect effect))
                     effect.Set(rigidbody.position);
