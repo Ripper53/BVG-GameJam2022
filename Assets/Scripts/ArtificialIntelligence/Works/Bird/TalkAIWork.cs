@@ -17,8 +17,12 @@ namespace ArtificialIntelligence {
         protected override void Execute() {
             if (abilityDependency.GetTrigger()) {
                 foreach (Collider2D col in GetCollider.Get()) {
-                    if (col.CompareTag(TalkTag) && col.TryGetComponent(out IDistract distract))
-                        distract.Noise(rigidbody.position);
+                    if (col.CompareTag(TalkTag)) {
+                        if (col.TryGetComponent(out IDistract distract))
+                            distract.Noise(rigidbody.position);
+                        else if (col.TryGetComponent(out IPersuade persuade))
+                            persuade.Persuade(rigidbody.position);
+                    }
                 }
             }
         }
