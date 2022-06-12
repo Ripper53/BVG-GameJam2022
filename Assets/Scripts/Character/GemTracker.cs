@@ -40,6 +40,10 @@ public class GemTracker : MonoBehaviour
 
     public GameManager GameManager;
 
+    public GameObject RedPowerUpDialog;
+    public GameObject GreenPowerUpDialog;
+    public GameObject BluePowerUpDialog;
+
     private void DestroyGem (Gem gem) {
         Renderer gemRenderer = gem.gameObject.GetComponent<Renderer>();
         gemRenderer.enabled = false;
@@ -122,18 +126,24 @@ public class GemTracker : MonoBehaviour
                 this.IsRedPowerGemCollected = true;
                 RedPower.Power.enabled = true;
                 SetSpeed(RedPower.MovementSpeed);
+                RedPowerUpDialog.gameObject.SetActive(true);
+                Destroy(RedPowerUpDialog.gameObject, 5f);
                 break;
             case GemColour.Blue:
                 Character.gameObject.tag = "Blue";
                 this.IsBluePowerGemCollected = true;
                 BluePower.Power.enabled = true;
                 SetSpeed(BluePower.MovementSpeed);
+                BluePowerUpDialog.gameObject.SetActive(true);
+                Destroy(BluePowerUpDialog.gameObject, 5f);
                 break;
             case GemColour.Green:
                 Character.gameObject.tag = "Green";
                 this.IsGreenPowerGemCollected = true;
                 GreenPower.Power.enabled = true;
                 SetSpeed(GreenPower.MovementSpeed);
+                GreenPowerUpDialog.gameObject.SetActive(true);
+                Destroy(GreenPowerUpDialog.gameObject, 5f);
                 break;
             default:
                 break;
