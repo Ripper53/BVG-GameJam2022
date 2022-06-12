@@ -18,9 +18,9 @@ namespace ArtificialIntelligence {
             return DetectData.GetCollider.Get(out _);
         }
 
-        public bool Attack() {
+        public bool Attack(out Collider2D collider) {
             SetOffset(AttackData.BoxShape);
-            return AttackData.GetCollider.Get(out _);
+            return AttackData.GetCollider.Get(out collider);
         }
 
         protected void SetOffset(BoxShape boxShape) {

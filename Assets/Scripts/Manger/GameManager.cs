@@ -1,28 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public Camera Camera;
-    public GameObject WinScreen, LoseScreen;
-
-    public GameObject Player;
-
-
-    public static GameManager Singleton = null;
+    public static GameManager Singleton { get; private set; } = null;
 
     void Awake()
     {
-        DontDestroyOnLoad(this.gameObject);
         if (Singleton == null)
         {
             Singleton = this;
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
 
@@ -47,26 +39,6 @@ public class GameManager : MonoBehaviour
     public void ExitGame()
     {
         Application.Quit();
-    }
-
-    private void DisableFollowCamera () {
-        Camera.GetComponent<CameraControls>().enabled = false;
-    }
-
-    private void DisablePlayer () {
-        Player.SetActive(false);
-    }
-
-    public void WinGame() {
-        DisableFollowCamera();
-        DisablePlayer();
-        WinScreen.SetActive(true);
-    }
-
-    public void LoseGame() {
-        DisableFollowCamera();
-        DisablePlayer();
-        LoseScreen.SetActive(true);
     }
 
 }

@@ -5,6 +5,7 @@ using ArtificialIntelligence;
 public class GemTracker : MonoBehaviour
 {
     public Character Character;
+    public EndGameMenu EndGameMenu;
     public FlyingAIWork Flying;
 
     private int RedGemsQuantity = 0;
@@ -56,7 +57,7 @@ public class GemTracker : MonoBehaviour
         if (this.RedGemsQuantity == 1 && 
             this.BlueGemsQuantity == 1 && 
             this.GreenGemsQuantity == 1) {
-            GameManager.WinGame();
+            EndGameMenu.WinGame();
         }
     }
 

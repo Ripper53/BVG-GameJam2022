@@ -30510,7 +30510,7 @@ TilemapCollider2D:
   m_GameObject: {fileID: 203546092}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: a4e4a6f383c901344a9c5ba93b1925a2, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -96530,7 +96530,7 @@ Tilemap:
       - {fileID: 21300000, guid: 73be7dfd366c7ba45b08d9387464e60d, type: 3}
       - {fileID: 21300000, guid: 8e24ef42e640212418f6e8e3efd071ce, type: 3}
       - {fileID: 21300000, guid: 875b65f893eb215419da40b54bc2b972, type: 3}
-      m_AnimationSpeed: 8.574178
+      m_AnimationSpeed: 9.004517
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 35, y: 16, z: 0}
@@ -96546,7 +96546,7 @@ Tilemap:
       - {fileID: 21300000, guid: 73be7dfd366c7ba45b08d9387464e60d, type: 3}
       - {fileID: 21300000, guid: 8e24ef42e640212418f6e8e3efd071ce, type: 3}
       - {fileID: 21300000, guid: 875b65f893eb215419da40b54bc2b972, type: 3}
-      m_AnimationSpeed: 8.413654
+      m_AnimationSpeed: 6.8434362
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 55, y: 17, z: 0}
@@ -96562,7 +96562,7 @@ Tilemap:
       - {fileID: 21300000, guid: 73be7dfd366c7ba45b08d9387464e60d, type: 3}
       - {fileID: 21300000, guid: 8e24ef42e640212418f6e8e3efd071ce, type: 3}
       - {fileID: 21300000, guid: 875b65f893eb215419da40b54bc2b972, type: 3}
-      m_AnimationSpeed: 7.386481
+      m_AnimationSpeed: 9.930552
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   m_TileAssetArray:
@@ -96789,7 +96789,8 @@ GameObject:
   - component: {fileID: 5860137416010522001}
   - component: {fileID: 499874483656169958}
   - component: {fileID: 4348197600809220555}
-  m_Layer: 0
+  - component: {fileID: 1954818802155143091}
+  m_Layer: 6
   m_Name: atlas_props-frostcrestcrates_byimogiagames_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96889,6 +96890,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!50 &1954818802155143091
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508689927896216782}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 100
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 6200000, guid: a4e4a6f383c901344a9c5ba93b1925a2, type: 2}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1269839634005695228
 GameObject:
   m_ObjectHideFlags: 0
@@ -96900,7 +96922,8 @@ GameObject:
   - component: {fileID: 3618345879657397659}
   - component: {fileID: 8470314495220000400}
   - component: {fileID: 7928171705839382277}
-  m_Layer: 0
+  - component: {fileID: 1173741565290571738}
+  m_Layer: 6
   m_Name: atlas_props-frostcrestcrates_byimogiagames_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97000,6 +97023,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!50 &1173741565290571738
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1269839634005695228}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 100
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 6200000, guid: a4e4a6f383c901344a9c5ba93b1925a2, type: 2}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1457412540251972997
 GameObject:
   m_ObjectHideFlags: 0
@@ -97009,7 +97053,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7755104339788236776}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ColliderObjects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97140,7 +97184,8 @@ GameObject:
   - component: {fileID: 4780469674149106828}
   - component: {fileID: 4544153317649085726}
   - component: {fileID: 1126890916868676191}
-  m_Layer: 0
+  - component: {fileID: 492883738896817041}
+  m_Layer: 6
   m_Name: atlas_props-frostcrestcrates_byimogiagames_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97240,6 +97285,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!50 &492883738896817041
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2748676566071145410}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 100
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 6200000, guid: a4e4a6f383c901344a9c5ba93b1925a2, type: 2}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &3095880124156486981
 GameObject:
   m_ObjectHideFlags: 0
@@ -97288,7 +97354,8 @@ GameObject:
   - component: {fileID: 7090079683725787290}
   - component: {fileID: 2304272159923627075}
   - component: {fileID: 139041567755487591}
-  m_Layer: 0
+  - component: {fileID: 4460565059449187250}
+  m_Layer: 6
   m_Name: atlas_props-frostcrestcrates_byimogiagames_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97388,6 +97455,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!50 &4460565059449187250
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3453202200579792560}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 100
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 6200000, guid: a4e4a6f383c901344a9c5ba93b1925a2, type: 2}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &3519459047610773960
 GameObject:
   m_ObjectHideFlags: 0
@@ -97399,7 +97487,8 @@ GameObject:
   - component: {fileID: 4684998595160373488}
   - component: {fileID: 6948017822599232785}
   - component: {fileID: 7133263143117379746}
-  m_Layer: 0
+  - component: {fileID: 3572961983768649688}
+  m_Layer: 6
   m_Name: atlas_props-frostcrestcrates_byimogiagames_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97499,6 +97588,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!50 &3572961983768649688
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3519459047610773960}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 100
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 6200000, guid: a4e4a6f383c901344a9c5ba93b1925a2, type: 2}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &4540346849386533668
 GameObject:
   m_ObjectHideFlags: 0
@@ -97510,7 +97620,8 @@ GameObject:
   - component: {fileID: 2766175049798948382}
   - component: {fileID: 7391044115776068147}
   - component: {fileID: 2732738501578309800}
-  m_Layer: 0
+  - component: {fileID: 247604691429727060}
+  m_Layer: 6
   m_Name: atlas_props-frostcrestcrates_byimogiagames_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97610,6 +97721,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!50 &247604691429727060
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4540346849386533668}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 100
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 6200000, guid: a4e4a6f383c901344a9c5ba93b1925a2, type: 2}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &5454502614202874917
 GameObject:
   m_ObjectHideFlags: 0
@@ -98748,7 +98880,7 @@ Tilemap:
       - {fileID: 21300000, guid: 73be7dfd366c7ba45b08d9387464e60d, type: 3}
       - {fileID: 21300000, guid: 8e24ef42e640212418f6e8e3efd071ce, type: 3}
       - {fileID: 21300000, guid: 875b65f893eb215419da40b54bc2b972, type: 3}
-      m_AnimationSpeed: 7.8814282
+      m_AnimationSpeed: 8.473374
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -18, y: -28, z: 0}
@@ -98764,7 +98896,7 @@ Tilemap:
       - {fileID: 21300000, guid: 73be7dfd366c7ba45b08d9387464e60d, type: 3}
       - {fileID: 21300000, guid: 8e24ef42e640212418f6e8e3efd071ce, type: 3}
       - {fileID: 21300000, guid: 875b65f893eb215419da40b54bc2b972, type: 3}
-      m_AnimationSpeed: 9.261447
+      m_AnimationSpeed: 7.1850843
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 33, y: -17, z: 0}
@@ -98794,7 +98926,7 @@ Tilemap:
       - {fileID: 21300000, guid: 73be7dfd366c7ba45b08d9387464e60d, type: 3}
       - {fileID: 21300000, guid: 8e24ef42e640212418f6e8e3efd071ce, type: 3}
       - {fileID: 21300000, guid: 875b65f893eb215419da40b54bc2b972, type: 3}
-      m_AnimationSpeed: 5.8520784
+      m_AnimationSpeed: 7.467021
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -66, y: -16, z: 0}
@@ -98810,7 +98942,7 @@ Tilemap:
       - {fileID: 21300000, guid: 73be7dfd366c7ba45b08d9387464e60d, type: 3}
       - {fileID: 21300000, guid: 8e24ef42e640212418f6e8e3efd071ce, type: 3}
       - {fileID: 21300000, guid: 875b65f893eb215419da40b54bc2b972, type: 3}
-      m_AnimationSpeed: 6.719076
+      m_AnimationSpeed: 7.094326
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -50, y: -14, z: 0}
@@ -98826,7 +98958,7 @@ Tilemap:
       - {fileID: 21300000, guid: 73be7dfd366c7ba45b08d9387464e60d, type: 3}
       - {fileID: 21300000, guid: 8e24ef42e640212418f6e8e3efd071ce, type: 3}
       - {fileID: 21300000, guid: 875b65f893eb215419da40b54bc2b972, type: 3}
-      m_AnimationSpeed: 8.48731
+      m_AnimationSpeed: 9.045905
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 20, y: -10, z: 0}
@@ -98842,7 +98974,7 @@ Tilemap:
       - {fileID: 21300000, guid: 73be7dfd366c7ba45b08d9387464e60d, type: 3}
       - {fileID: 21300000, guid: 8e24ef42e640212418f6e8e3efd071ce, type: 3}
       - {fileID: 21300000, guid: 875b65f893eb215419da40b54bc2b972, type: 3}
-      m_AnimationSpeed: 7.807206
+      m_AnimationSpeed: 6.8956027
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 48, y: -10, z: 0}
@@ -98858,7 +98990,7 @@ Tilemap:
       - {fileID: 21300000, guid: 73be7dfd366c7ba45b08d9387464e60d, type: 3}
       - {fileID: 21300000, guid: 8e24ef42e640212418f6e8e3efd071ce, type: 3}
       - {fileID: 21300000, guid: 875b65f893eb215419da40b54bc2b972, type: 3}
-      m_AnimationSpeed: 5.663799
+      m_AnimationSpeed: 5.205248
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 30, y: -3, z: 0}
@@ -98874,7 +99006,7 @@ Tilemap:
       - {fileID: 21300000, guid: 73be7dfd366c7ba45b08d9387464e60d, type: 3}
       - {fileID: 21300000, guid: 8e24ef42e640212418f6e8e3efd071ce, type: 3}
       - {fileID: 21300000, guid: 875b65f893eb215419da40b54bc2b972, type: 3}
-      m_AnimationSpeed: 8.041779
+      m_AnimationSpeed: 6.9503307
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 38, y: -3, z: 0}
@@ -98890,7 +99022,7 @@ Tilemap:
       - {fileID: 21300000, guid: 73be7dfd366c7ba45b08d9387464e60d, type: 3}
       - {fileID: 21300000, guid: 8e24ef42e640212418f6e8e3efd071ce, type: 3}
       - {fileID: 21300000, guid: 875b65f893eb215419da40b54bc2b972, type: 3}
-      m_AnimationSpeed: 7.9518447
+      m_AnimationSpeed: 8.159642
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -66, y: 4, z: 0}
@@ -98906,7 +99038,7 @@ Tilemap:
       - {fileID: 21300000, guid: 73be7dfd366c7ba45b08d9387464e60d, type: 3}
       - {fileID: 21300000, guid: 8e24ef42e640212418f6e8e3efd071ce, type: 3}
       - {fileID: 21300000, guid: 875b65f893eb215419da40b54bc2b972, type: 3}
-      m_AnimationSpeed: 8.929401
+      m_AnimationSpeed: 6.124983
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -58, y: 4, z: 0}
@@ -98922,7 +99054,7 @@ Tilemap:
       - {fileID: 21300000, guid: 73be7dfd366c7ba45b08d9387464e60d, type: 3}
       - {fileID: 21300000, guid: 8e24ef42e640212418f6e8e3efd071ce, type: 3}
       - {fileID: 21300000, guid: 875b65f893eb215419da40b54bc2b972, type: 3}
-      m_AnimationSpeed: 9.950722
+      m_AnimationSpeed: 8.123865
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 84, y: 11, z: 0}
