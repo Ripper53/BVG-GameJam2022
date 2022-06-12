@@ -142,14 +142,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7ef15992a30660f45ab7f2fa604cc6cf
-      internalID: 12227342
+      spriteID: 6ef2fdb2659a359408ca12bcfc5113fb
+      internalID: 297665271
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
       name: mast_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93986bd6836a5e249afbaf15ce5f8c3b
+      internalID: -223253828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mast_2
       rect:
         serializedVersion: 2
         x: 0
@@ -163,17 +184,38 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bfec8e5695d7bed4382733f8a7a903a1
-      internalID: -537720781
+      spriteID: 7747a21eeea209c45bbb512070f74462
+      internalID: -521407741
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: mast_2
+      name: mast_3
       rect:
         serializedVersion: 2
-        x: 0
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd01b212fbb49f24494034aa3a09be27
+      internalID: 1130291377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mast_4
+      rect:
+        serializedVersion: 2
+        x: 32
         y: 0
         width: 32
         height: 32
@@ -184,8 +226,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 527ae83de6aa2144a9179681c9d35f1e
-      internalID: 1818554649
+      spriteID: 11c71e714faa2ea409fabbc1bd17355f
+      internalID: -2119252326
       vertices: []
       indices: 
       edges: []
@@ -201,9 +243,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      mast_1: -537720781
-      mast_0: 12227342
-      mast_2: 1818554649
+      mast_1: -223253828
+      mast_0: 297665271
+      mast_2: -521407741
+      mast_3: 1130291377
+      mast_4: -2119252326
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
