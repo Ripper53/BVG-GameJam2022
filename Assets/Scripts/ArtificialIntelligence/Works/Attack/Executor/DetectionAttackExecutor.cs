@@ -1,4 +1,5 @@
 using SpriteAnimation;
+using UnityEngine;
 
 namespace ArtificialIntelligence {
     public class DetectionAttackExecutor : AttackExecutor {
@@ -21,10 +22,10 @@ namespace ArtificialIntelligence {
         }
 
         protected void FixedUpdate() {
-            if (Attack.Detection.Attack()) {
+            if (Attack.Detection.Attack(out Collider2D collider) && collider.TryGetComponent(out EndGameMenu menu)) {
                 Animator.SetAnimation(RecoveryAnimation);
                 // Game Over
-                GameManager.Singleton.LoseGame();
+                menu.LoseGame();
                 enabled = false;
             } else if (Animator.IsFinished) {
                 switch (currentState) {

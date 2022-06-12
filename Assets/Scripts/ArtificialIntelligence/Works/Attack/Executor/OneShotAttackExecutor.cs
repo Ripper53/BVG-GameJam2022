@@ -1,4 +1,5 @@
 using SpriteAnimation;
+using UnityEngine;
 
 namespace ArtificialIntelligence {
     public class OneShotAttackExecutor : AttackExecutor {
@@ -24,9 +25,9 @@ namespace ArtificialIntelligence {
             if (Animator.IsFinished) {
                 switch (currentState) {
                     case State.Attacking:
-                        if (Attack.Detection.Attack()) {
+                        if (Attack.Detection.Attack(out Collider2D collider) && collider.TryGetComponent(out EndGameMenu menu)) {
                             // Game Over
-                            //GameManager.Singleton.LoseGame();
+                            menu.LoseGame();
                         }
                         Animator.SetAnimation(RecoveryAnimation);
                         currentState = State.Recovery;
