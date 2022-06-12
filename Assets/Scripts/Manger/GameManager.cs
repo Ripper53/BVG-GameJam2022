@@ -53,13 +53,13 @@ public class GameManager : MonoBehaviour
         Camera.GetComponent<CameraControls>().enabled = false;
     }
 
-    private void DisablePlayerControls () {
-        Player.GetComponent<PlayerTargetControls>().enabled = false;
+    private void DisablePlayer () {
+        Player.SetActive(false);
     }
 
     public void WinGame () {
         this.DisableFollowCamera();
-        this.DisablePlayerControls();
+        this.DisablePlayer();
         WinScreen.SetActive(true);
     }
 }
