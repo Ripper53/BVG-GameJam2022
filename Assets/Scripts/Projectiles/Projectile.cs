@@ -1,6 +1,7 @@
 using UnityEngine;
+using Utility.Pooling;
 
-public class Projectile : MonoBehaviour {
+public class Projectile : ObjectPoolable<Projectile> {
     public Transform Transform;
     public Rigidbody2D Rigidbody;
 
