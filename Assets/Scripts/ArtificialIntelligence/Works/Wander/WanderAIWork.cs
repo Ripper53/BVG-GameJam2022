@@ -1,10 +1,9 @@
 using ArtificialIntelligence.Dependency;
-using Physics.GetColliders;
-using Physics.Shapes;
 using UnityEngine;
 
 namespace ArtificialIntelligence {
     public class WanderAIWork : AIWork, IDistract {
+        public SpriteRenderer SpriteRenderer;
         public float MinMoveTime, MaxMoveTime;
         public float MinIdleTime, MaxIdleTime;
         public GroundCheck GroundCheck;
@@ -44,7 +43,7 @@ namespace ArtificialIntelligence {
                     break;
                 case State.Chase:
                     if (!CheckForAttack()) {
-                        if (character.HorizontalDirection == Character.HorizontalMovementDirection.None || ShouldHalt(CurrentSideCheck))
+                        if (!CheckForChase())
                             SetToIdle();
                         else if (ShouldJump(CurrentSideCheck))
                             jump.Execute();
@@ -85,15 +84,19 @@ namespace ArtificialIntelligence {
             if (target.Get(out latestTarget)) {
                 float diff = latestTarget.x - rigidbody.position.x;
                 if (diff > 0f) {
+                    SpriteRenderer.flipX = false;
                     if (!ShouldHalt(Right)) {
                         CurrentState = State.Chase;
                         character.HorizontalDirection = Character.HorizontalMovementDirection.Right;
                         return true;
                     }
-                } else if (!ShouldHalt(Left)) {
-                    CurrentState = State.Chase;
-                    character.HorizontalDirection = Character.HorizontalMovementDirection.Left;
-                    return true;
+                } else {
+                    SpriteRenderer.flipX = true;
+                    if (!ShouldHalt(Left)) {
+                        CurrentState = State.Chase;
+                        character.HorizontalDirection = Character.HorizontalMovementDirection.Left;
+                        return true;
+                    }
                 }
             }
             return false;

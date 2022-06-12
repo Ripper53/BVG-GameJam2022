@@ -63,7 +63,8 @@ PrefabInstance:
       propertyPath: Detection
       value: 
       objectReference: {fileID: 3801347519147573319}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2471327333529309896, guid: b41f954de8a63e44593e69d784e6901b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b41f954de8a63e44593e69d784e6901b, type: 3}
 --- !u!1 &2018258257335633563 stripped
 GameObject:
@@ -83,8 +84,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Animator: {fileID: 7211046390794349260}
-  GetCollider: {fileID: 5944694772669881769}
-  BoxShape: {fileID: 4750480821204912826}
+  DetectData:
+    GetCollider: {fileID: 5944694772669881769}
+    BoxShape: {fileID: 4750480821204912826}
+  AttackData:
+    GetCollider: {fileID: 5944694772669881769}
+    BoxShape: {fileID: 4750480821204912826}
   FriendlyTag: Green
 --- !u!114 &4750480821204912826 stripped
 MonoBehaviour:
