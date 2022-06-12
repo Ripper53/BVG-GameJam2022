@@ -16,6 +16,10 @@ public class SoundController : MonoBehaviour
     //I want the sound controller to be a singleton
     public static SoundController Singleton = null;
 
+    public void SetMusicVolumne(float newVolume)
+    {
+        musicSource.volume = newVolume;
+    }
 
     private void Awake()
     {
