@@ -5,6 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public Camera Camera;
+    public GameObject WinScreen;
+
+    public GameObject Player;
+
+
     public static GameManager Singleton = null;
 
     void Awake()
@@ -41,5 +47,19 @@ public class GameManager : MonoBehaviour
     public void ExitGame()
     {
         Application.Quit();
-    }    
+    }
+
+    private void DisableFollowCamera () {
+        Camera.GetComponent<CameraControls>().enabled = false;
+    }
+
+    private void DisablePlayer () {
+        Player.SetActive(false);
+    }
+
+    public void WinGame () {
+        this.DisableFollowCamera();
+        this.DisablePlayer();
+        WinScreen.SetActive(true);
+    }
 }
