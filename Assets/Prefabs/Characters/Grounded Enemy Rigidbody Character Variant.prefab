@@ -49,9 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Animator: {fileID: 8971129525067298159}
   Detection: {fileID: 2471327333529309896}
-  Animation: {fileID: 0}
-  RecoveryAnimation: {fileID: 0}
-  IdleAnimation: {fileID: 0}
+  Executor: {fileID: 0}
 --- !u!114 &5337573558662152714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,6 +194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bdf203afbdb81b4c8072a0672089676, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SpriteRenderer: {fileID: 5514433554868348024}
   MinMoveTime: 1
   MaxMoveTime: 4
   MinIdleTime: 1
@@ -260,6 +259,11 @@ MonoBehaviour:
 --- !u!4 &5514433554250582573 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6686648375176300075, guid: 483abbc1b2694e743a5e2eafc7f08abc, type: 3}
+  m_PrefabInstance: {fileID: 1174466833425255430}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &5514433554868348024 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6686648375668271230, guid: 483abbc1b2694e743a5e2eafc7f08abc, type: 3}
   m_PrefabInstance: {fileID: 1174466833425255430}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &6582406488081251087 stripped
