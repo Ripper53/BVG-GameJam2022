@@ -1,6 +1,9 @@
 using UnityEngine;
 using TMPro;
 using ArtificialIntelligence;
+using Audio.Pooler;
+using Utility.Pooling;
+using Audio;
 
 public class GemTracker : MonoBehaviour
 {
@@ -45,12 +48,43 @@ public class GemTracker : MonoBehaviour
     public GameObject GreenPowerUpDialog;
     public GameObject BluePowerUpDialog;
 
+    public EffectData Effect;
+    [System.Serializable]
+    public struct EffectData {
+        public OneShotAudioEffectPooler
+            GemCollectEffectPooler,
+            PowerGemCollectEffectPooler;
+    }
+
     private void DestroyGem (Gem gem) {
-        Renderer gemRenderer = gem.gameObject.GetComponent<Renderer>();
-        gemRenderer.enabled = false;
-        AudioSource gemAudio = gem.GetComponent<AudioSource>();
-        gemAudio.Play();
-        Destroy(gem.gameObject, gemAudio.clip.length);
+        DestroyGem(gem, Effect.GemCollectEffectPooler);
+    }
+
+    private void DestroyGem (PowerGem powerGem) {
+        DestroyGem(powerGem, Effect.PowerGemCollectEffectPooler);
+    }
+
+    private void DestroyGem(Gem gem, OneShotAudioEffectPooler pooler) {
+        gem.gameObject.SetActive(false);
+        if (pooler.Get(out OneShotAudioEffect effect)) {
+            SetEffectColor(((OneShotAudioParticleEffect)effect).ParticleSystem, gem);
+            effect.Set(gem.transform.position);
+        }
+    }
+
+    private void SetEffectColor(ParticleSystem particleSystem, Gem gem) {
+        ParticleSystem.MainModule main = particleSystem.main;
+        switch (gem.Colour) {
+            case GemColour.Red:
+                main.startColor = new Color(255, 0, 0);
+                break;
+            case GemColour.Blue:
+                main.startColor = new Color(0, 0, 255);
+                break;
+            case GemColour.Green:
+                main.startColor = new Color(0, 255, 0);
+                break;
+        }
     }
 
     private void CheckGameWin () {

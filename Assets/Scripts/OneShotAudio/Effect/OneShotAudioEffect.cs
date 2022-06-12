@@ -1,12 +1,9 @@
 using Audio.Pooler;
-using SpriteAnimation;
 using UnityEngine;
 using Utility.Pooling;
 
 namespace Audio {
     public class OneShotAudioEffect : ObjectPoolable<OneShotAudioEffect> {
-        public FrameAnimator Animator;
-        public SpriteAnimation.SpriteAnimation Animation;
         public AudioClip Clip;
         public OneShotAudioPooler AudioPooler;
 
@@ -17,13 +14,8 @@ namespace Audio {
                 audio.Set(position, Clip);
         }
 
-        protected void OnEnable() {
-            Animator.SetAnimation(Animation);
-        }
-
-        protected void Update() {
-            if (Animator.IsFinished)
-                this.AddToPool();
+        protected void Deactivate() {
+            this.AddToPool();
         }
 
     }
