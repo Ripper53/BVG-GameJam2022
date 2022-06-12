@@ -7,6 +7,9 @@ namespace ArtificialIntelligence {
         public float MinIdleTime, MaxIdleTime;
         public GroundCheck GroundCheck;
         public SideCheck Right, Left;
+        public WanderHaltCondition HaltCondition;
+        public WanderJumpCondition JumpCondition;
+        public WanderDistraction Distraction;
 
         protected new Rigidbody2D rigidbody;
         protected TargetDependency target;
@@ -18,7 +21,7 @@ namespace ArtificialIntelligence {
 
         private State currentState = State.Idle;
         private enum State {
-            Idle, Walking, Distracted, Chase
+            Idle, Walking, Chase
         }
 
         private Vector2 latestTarget;
@@ -37,21 +40,15 @@ namespace ArtificialIntelligence {
                         jump.Execute();
                     }
                     break;
-                case State.Distracted:
-                    float diff = latestTarget.x - rigidbody.position.x;
-                    character.HorizontalDirection = diff > 0f ? Character.HorizontalMovementDirection.Right : Character.HorizontalMovementDirection.Left;
-                    moveTimer = Mathf.Abs((diff / Mathf.Max(1f, character.MovementSpeed)) - 0.25f);
-                    currentState = State.Walking;
-                    break;
                 case State.Chase:
 
                     break;
                 default: // Idle
                     idleTimer -= Time.fixedDeltaTime;
                     if (idleTimer <= 0f) {
-                        if (Right.WallCheck.Evaluate() && Right.AboveGroundCheck.Evaluate())
+                        if (Right.WallCheck.Evaluate() && !ShouldJump(Right))
                             character.HorizontalDirection = Character.HorizontalMovementDirection.Left;
-                        else if (Left.WallCheck.Evaluate() && Left.AboveGroundCheck.Evaluate())
+                        else if (Left.WallCheck.Evaluate() && !ShouldJump(Left))
                             character.HorizontalDirection = Character.HorizontalMovementDirection.Right;
                         else
                             character.HorizontalDirection = Random.Range(0, 2) == 0 ? Character.HorizontalMovementDirection.Right : Character.HorizontalMovementDirection.Left;
@@ -74,16 +71,19 @@ namespace ArtificialIntelligence {
         private SideCheck CurrentSideCheck => character.HorizontalDirection == Character.HorizontalMovementDirection.Right ? Right : Left;
 
         private bool ShouldHalt(SideCheck checks) {
-            return (checks.WallCheck.Evaluate() && checks.AboveGroundCheck.Evaluate()) || (GroundCheck.Evaluate() && !checks.BelowGroundCheck.Evaluate());
+            return HaltCondition.ShouldHalt(GroundCheck, checks);
         }
 
         private bool ShouldJump(SideCheck checks) {
-            return checks.AheadGroundCheck.Evaluate() && !checks.AboveGroundCheck.Evaluate();
+            return JumpCondition.ShouldJump(GroundCheck, checks);
         }
 
         public void Distract(Vector2 position) {
-            latestTarget = position;
-            currentState = State.Distracted;
+            latestTarget = Distraction.GetDistraction(position);
+            float diff = latestTarget.x - rigidbody.position.x;
+            character.HorizontalDirection = diff > 0f ? Character.HorizontalMovementDirection.Right : Character.HorizontalMovementDirection.Left;
+            moveTimer = Mathf.Abs((diff / Mathf.Max(1f, character.MovementSpeed)) - 0.25f);
+            currentState = State.Walking;
         }
 
     }
