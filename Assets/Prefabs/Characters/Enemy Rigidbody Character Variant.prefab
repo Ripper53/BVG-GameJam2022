@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Origin: {fileID: 1265915656191970157}
+  SpriteRenderer: {fileID: 6686648375668271230}
   GetCollider: {fileID: 7930978406078142820}
   BlockFilter:
     serializedVersion: 2
@@ -210,5 +211,10 @@ MonoBehaviour:
 --- !u!4 &6686648375176300075 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7255661162053235590, guid: 7cd96bf0296aab44b8a848ad5f99ff97, type: 3}
+  m_PrefabInstance: {fileID: 4069835862434936237}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &6686648375668271230 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7255661161456213459, guid: 7cd96bf0296aab44b8a848ad5f99ff97, type: 3}
   m_PrefabInstance: {fileID: 4069835862434936237}
   m_PrefabAsset: {fileID: 0}

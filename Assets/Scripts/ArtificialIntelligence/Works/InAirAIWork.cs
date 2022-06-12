@@ -2,6 +2,7 @@ using UnityEngine;
 
 namespace ArtificialIntelligence {
     public abstract class InAirAIWork : AIWork {
+        public CharacterAnimator CharacterAnimator;
 
         protected GroundFriction friction;
         protected new Rigidbody2D rigidbody;
@@ -37,6 +38,8 @@ namespace ArtificialIntelligence {
         protected virtual void EnableGroundMovement(bool value) {
             InAir = !value;
             friction.enabled = value;
+            character.enabled = value;
+            CharacterAnimator.enabled = value;
             if (value) {
                 rigidbody.gravityScale = 1f;
             } else {
