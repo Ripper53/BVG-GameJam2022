@@ -100,6 +100,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rat Enemy Rigidbody Character Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 5514433554250582572, guid: b41f954de8a63e44593e69d784e6901b, type: 3}
+      propertyPath: m_TagString
+      value: Rat
+      objectReference: {fileID: 0}
     - target: {fileID: 5514433554250582573, guid: b41f954de8a63e44593e69d784e6901b, type: 3}
       propertyPath: m_RootOrder
       value: 0

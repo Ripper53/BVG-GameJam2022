@@ -18,7 +18,7 @@ namespace ArtificialIntelligence {
             if (abilityDependency.GetTrigger()) {
                 foreach (Collider2D col in GetCollider.Get()) {
                     if (col.CompareTag(TalkTag) && col.TryGetComponent(out IDistract distract))
-                        distract.Distract(rigidbody.position);
+                        distract.Noise(rigidbody.position);
                 }
             }
         }
