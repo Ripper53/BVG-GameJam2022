@@ -6,6 +6,9 @@ public class EndGameMenu : MonoBehaviour {
 
     public GameObject Player;
 
+    //GameObject for the sound controller that plays music
+    private GameObject soundControllerObject;
+
     private void DisableControls() {
         CameraControls.enabled = false;
         Time.timeScale = 0f;
@@ -13,6 +16,12 @@ public class EndGameMenu : MonoBehaviour {
 
     public void WinGame() {
         DisableControls();
+
+        //When the game is won, find the sound controller and then play song at index 3 (BVG Shanty)
+        soundControllerObject = GameObject.Find("SoundController");
+        soundControllerObject.SendMessage("PlayMusic", 3);
+
+
         WinScreen.SetActive(true);
     }
 
