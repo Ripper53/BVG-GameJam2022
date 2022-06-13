@@ -55,6 +55,13 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 1619d84dc3df8324c9373c243af1c705, type: 3}
   - {fileID: 8300000, guid: f93b47f98fed269408cf7d1df9231233, type: 3}
   - {fileID: 8300000, guid: a529c82cf67e4a44d86b6b72dcd0931d, type: 3}
+  - {fileID: 8300000, guid: 6994bd269f13cb643af45c72b6924906, type: 3}
+  - {fileID: 8300000, guid: 806ec66b7bf0c534ba91cac16156c202, type: 3}
+  - {fileID: 8300000, guid: 6d980d8630305f045b25f5d1e7a89c42, type: 3}
+  - {fileID: 8300000, guid: a0631263e6728014f87fafb4a72dc503, type: 3}
+  - {fileID: 8300000, guid: 6d33fbffc5766954c8a1f93c152436b6, type: 3}
+  - {fileID: 8300000, guid: 89833035ef0703a4ca0bd4ea04da6b28, type: 3}
+  - {fileID: 8300000, guid: bc5207993a899a349a97416d8eb33924, type: 3}
   musicSource: {fileID: 9011948421967246591}
   effectsSource: {fileID: 4095918553117279132}
 --- !u!1 &8330432508743595925
