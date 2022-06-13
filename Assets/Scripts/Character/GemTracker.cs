@@ -8,6 +8,13 @@ using Audio;
 public class GemTracker : MonoBehaviour
 {
     public Character Character;
+    public SpriteRenderer SpriteRenderer;
+    public Colors Color;
+    [System.Serializable]
+    public struct Colors {
+        public Color Red, Green, Blue;
+    }
+
     public EndGameMenu EndGameMenu;
     public FlyingAIWork Flying;
 
@@ -163,6 +170,7 @@ public class GemTracker : MonoBehaviour
                 SetSpeed(RedPower.MovementSpeed);
                 RedPowerUpDialog.gameObject.SetActive(true);
                 Destroy(RedPowerUpDialog.gameObject, 5f);
+                SpriteRenderer.color = Color.Red;
                 break;
             case GemColour.Blue:
                 Character.gameObject.tag = "Blue";
@@ -171,6 +179,7 @@ public class GemTracker : MonoBehaviour
                 SetSpeed(BluePower.MovementSpeed);
                 BluePowerUpDialog.gameObject.SetActive(true);
                 Destroy(BluePowerUpDialog.gameObject, 5f);
+                SpriteRenderer.color = Color.Blue;
                 break;
             case GemColour.Green:
                 Character.gameObject.tag = "Green";
@@ -179,6 +188,7 @@ public class GemTracker : MonoBehaviour
                 SetSpeed(GreenPower.MovementSpeed);
                 GreenPowerUpDialog.gameObject.SetActive(true);
                 Destroy(GreenPowerUpDialog.gameObject, 5f);
+                SpriteRenderer.color = Color.Green;
                 break;
             default:
                 break;

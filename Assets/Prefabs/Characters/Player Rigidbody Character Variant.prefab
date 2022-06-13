@@ -445,6 +445,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Character: {fileID: 3488155970271397397}
+  SpriteRenderer: {fileID: 2861536826496932194}
+  Color:
+    Red: {r: 1, g: 0, b: 0, a: 1}
+    Green: {r: 0, g: 1, b: 0, a: 1}
+    Blue: {r: 0, g: 0, b: 1, a: 1}
   EndGameMenu: {fileID: 4370984447834237378}
   Flying: {fileID: 5595041956088687485}
   redGemText: {fileID: 0}
