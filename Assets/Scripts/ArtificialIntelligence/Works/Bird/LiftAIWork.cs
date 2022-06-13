@@ -7,6 +7,7 @@ namespace ArtificialIntelligence {
         public GetCollider LiftGetCollider;
         public float GripStrength;
         public GetCollider OpenGetCollider;
+        public FlyingAIWork Flying;
 
         public GroundFriction Friction;
 
@@ -56,7 +57,8 @@ namespace ArtificialIntelligence {
         }
 
         private void Unequip() {
-            Friction.enabled = true;
+            if (!Flying.InAir)
+                Friction.enabled = true;
             Destroy(equipped);
             equipped = null;
             equippedRigidbody.mass = equippedMass;

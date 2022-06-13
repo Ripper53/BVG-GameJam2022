@@ -370,8 +370,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LiftGetCollider: {fileID: 5422118193937077697}
   GripStrength: 10
-  GripOffset: 0.9375
   OpenGetCollider: {fileID: 4932844627333468628}
+  Flying: {fileID: 5595041956088687485}
   Friction: {fileID: 73273929390592995}
 --- !u!114 &2628545369961222785
 MonoBehaviour:
@@ -460,6 +460,12 @@ MonoBehaviour:
     Power: {fileID: 2628545369961222785}
     MovementSpeed: 8
   GameManager: {fileID: 0}
+  RedPowerUpDialog: {fileID: 0}
+  GreenPowerUpDialog: {fileID: 0}
+  BluePowerUpDialog: {fileID: 0}
+  Effect:
+    GemCollectEffectPooler: {fileID: 0}
+    PowerGemCollectEffectPooler: {fileID: 0}
 --- !u!114 &5595041956088687485
 MonoBehaviour:
   m_ObjectHideFlags: 0
