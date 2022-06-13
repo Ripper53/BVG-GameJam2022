@@ -181,6 +181,33 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Ability1"",
+                    ""type"": ""Button"",
+                    ""id"": ""d4a7bbea-a64c-4837-88fc-19206b9f70a7"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Ability2"",
+                    ""type"": ""Button"",
+                    ""id"": ""90510e74-76e2-4953-9aee-9cb083e66d6b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Ability3"",
+                    ""type"": ""Button"",
+                    ""id"": ""8c21572d-0a3b-4407-a5d6-59803343ed9c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -192,6 +219,39 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
                     ""action"": ""Primary"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""45ea010e-f3a5-4c59-a1df-ba3620b0184b"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Ability1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6958b28e-ff31-4b63-8524-b4199c0269d8"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Ability2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a1c062b5-bc85-4e25-ad13-800eb275bf41"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Ability3"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -231,6 +291,9 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         // Ability
         m_Ability = asset.FindActionMap("Ability", throwIfNotFound: true);
         m_Ability_Primary = m_Ability.FindAction("Primary", throwIfNotFound: true);
+        m_Ability_Ability1 = m_Ability.FindAction("Ability1", throwIfNotFound: true);
+        m_Ability_Ability2 = m_Ability.FindAction("Ability2", throwIfNotFound: true);
+        m_Ability_Ability3 = m_Ability.FindAction("Ability3", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -406,11 +469,17 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Ability;
     private IAbilityActions m_AbilityActionsCallbackInterface;
     private readonly InputAction m_Ability_Primary;
+    private readonly InputAction m_Ability_Ability1;
+    private readonly InputAction m_Ability_Ability2;
+    private readonly InputAction m_Ability_Ability3;
     public struct AbilityActions
     {
         private @PlayerInput m_Wrapper;
         public AbilityActions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
         public InputAction @Primary => m_Wrapper.m_Ability_Primary;
+        public InputAction @Ability1 => m_Wrapper.m_Ability_Ability1;
+        public InputAction @Ability2 => m_Wrapper.m_Ability_Ability2;
+        public InputAction @Ability3 => m_Wrapper.m_Ability_Ability3;
         public InputActionMap Get() { return m_Wrapper.m_Ability; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -423,6 +492,15 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 @Primary.started -= m_Wrapper.m_AbilityActionsCallbackInterface.OnPrimary;
                 @Primary.performed -= m_Wrapper.m_AbilityActionsCallbackInterface.OnPrimary;
                 @Primary.canceled -= m_Wrapper.m_AbilityActionsCallbackInterface.OnPrimary;
+                @Ability1.started -= m_Wrapper.m_AbilityActionsCallbackInterface.OnAbility1;
+                @Ability1.performed -= m_Wrapper.m_AbilityActionsCallbackInterface.OnAbility1;
+                @Ability1.canceled -= m_Wrapper.m_AbilityActionsCallbackInterface.OnAbility1;
+                @Ability2.started -= m_Wrapper.m_AbilityActionsCallbackInterface.OnAbility2;
+                @Ability2.performed -= m_Wrapper.m_AbilityActionsCallbackInterface.OnAbility2;
+                @Ability2.canceled -= m_Wrapper.m_AbilityActionsCallbackInterface.OnAbility2;
+                @Ability3.started -= m_Wrapper.m_AbilityActionsCallbackInterface.OnAbility3;
+                @Ability3.performed -= m_Wrapper.m_AbilityActionsCallbackInterface.OnAbility3;
+                @Ability3.canceled -= m_Wrapper.m_AbilityActionsCallbackInterface.OnAbility3;
             }
             m_Wrapper.m_AbilityActionsCallbackInterface = instance;
             if (instance != null)
@@ -430,6 +508,15 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 @Primary.started += instance.OnPrimary;
                 @Primary.performed += instance.OnPrimary;
                 @Primary.canceled += instance.OnPrimary;
+                @Ability1.started += instance.OnAbility1;
+                @Ability1.performed += instance.OnAbility1;
+                @Ability1.canceled += instance.OnAbility1;
+                @Ability2.started += instance.OnAbility2;
+                @Ability2.performed += instance.OnAbility2;
+                @Ability2.canceled += instance.OnAbility2;
+                @Ability3.started += instance.OnAbility3;
+                @Ability3.performed += instance.OnAbility3;
+                @Ability3.canceled += instance.OnAbility3;
             }
         }
     }
@@ -460,5 +547,8 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
     public interface IAbilityActions
     {
         void OnPrimary(InputAction.CallbackContext context);
+        void OnAbility1(InputAction.CallbackContext context);
+        void OnAbility2(InputAction.CallbackContext context);
+        void OnAbility3(InputAction.CallbackContext context);
     }
 }

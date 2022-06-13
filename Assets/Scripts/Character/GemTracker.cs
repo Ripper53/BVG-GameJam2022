@@ -8,12 +8,7 @@ using Audio;
 public class GemTracker : MonoBehaviour
 {
     public Character Character;
-    public SpriteRenderer SpriteRenderer;
-    public Colors Color;
-    [System.Serializable]
-    public struct Colors {
-        public Color Red, Green, Blue;
-    }
+    public SwitchAbility SwitchAbility;
 
     public EndGameMenu EndGameMenu;
     public FlyingAIWork Flying;
@@ -29,25 +24,6 @@ public class GemTracker : MonoBehaviour
     public TMP_Text redGemText;
     public TMP_Text greenGemText;
     public TMP_Text blueGemText;
-
-    public RedPowerData RedPower;
-    [System.Serializable]
-    public struct RedPowerData {
-        public DashAIWork Power;
-        public float MovementSpeed;
-    }
-    public BluePowerData BluePower;
-    [System.Serializable]
-    public struct BluePowerData {
-        public LiftAIWork Power;
-        public float MovementSpeed;
-    }
-    public GreenPowerData GreenPower;
-    [System.Serializable]
-    public struct GreenPowerData {
-        public TalkAIWork Power;
-        public float MovementSpeed;
-    }
 
     public GameManager GameManager;
 
@@ -159,53 +135,38 @@ public class GemTracker : MonoBehaviour
             return;
         }
 
-        DisableAllPowers();
         GemColour gemColour = gem.Colour;
         switch (gemColour)
         {
             case GemColour.Red:
                 Character.gameObject.tag = "Red";
                 this.IsRedPowerGemCollected = true;
-                RedPower.Power.enabled = true;
-                SetSpeed(RedPower.MovementSpeed);
+                SwitchAbility.RedPower.Learned = true;
+                SwitchAbility.ActivateRed();
                 RedPowerUpDialog.gameObject.SetActive(true);
                 Destroy(RedPowerUpDialog.gameObject, 5f);
-                SpriteRenderer.color = Color.Red;
                 break;
             case GemColour.Blue:
                 Character.gameObject.tag = "Blue";
                 this.IsBluePowerGemCollected = true;
-                BluePower.Power.enabled = true;
-                SetSpeed(BluePower.MovementSpeed);
+                SwitchAbility.BluePower.Learned = true;
+                SwitchAbility.ActivateBlue();
                 BluePowerUpDialog.gameObject.SetActive(true);
                 Destroy(BluePowerUpDialog.gameObject, 5f);
-                SpriteRenderer.color = Color.Blue;
                 break;
             case GemColour.Green:
                 Character.gameObject.tag = "Green";
                 this.IsGreenPowerGemCollected = true;
-                GreenPower.Power.enabled = true;
-                SetSpeed(GreenPower.MovementSpeed);
+                SwitchAbility.GreenPower.Learned = true;
+                SwitchAbility.ActivateGreen();
                 GreenPowerUpDialog.gameObject.SetActive(true);
                 Destroy(GreenPowerUpDialog.gameObject, 5f);
-                SpriteRenderer.color = Color.Green;
                 break;
             default:
                 break;
         }
 
         this.DestroyGem(gem);
-    }
-
-    private void DisableAllPowers() {
-        RedPower.Power.enabled = false;
-        BluePower.Power.enabled = false;
-        GreenPower.Power.enabled = false;
-    }
-
-    private void SetSpeed(float speed) {
-        Character.MovementSpeed = speed;
-        Flying.Speed = speed;
     }
 
 }

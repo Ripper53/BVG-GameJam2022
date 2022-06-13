@@ -356,6 +356,36 @@ MonoBehaviour:
   GroundCheck: {fileID: 8819218169184638161}
   GroundDrag: 100
   AirDrag: 0.75
+--- !u!114 &112602476242876685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2861536825891731254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f72b4014478a374f9126422e8a96357, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Character: {fileID: 3488155970271397397}
+  SpriteRenderer: {fileID: 2861536826496932194}
+  Flying: {fileID: 5595041956088687485}
+  RedPower:
+    Power: {fileID: 7170472368968832752}
+    GroundSpeed: 12
+    FlySpeed: 10
+    Color: {r: 1, g: 0, b: 0, a: 1}
+  BluePower:
+    Power: {fileID: 736873277097832663}
+    GroundSpeed: 8
+    FlySpeed: 6
+    Color: {r: 0, g: 0, b: 1, a: 1}
+  GreenPower:
+    Power: {fileID: 2628545369961222785}
+    GroundSpeed: 10
+    FlySpeed: 8
+    Color: {r: 0, g: 1, b: 0, a: 1}
 --- !u!114 &736873277097832663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -373,6 +403,19 @@ MonoBehaviour:
   OpenGetCollider: {fileID: 4932844627333468628}
   Flying: {fileID: 5595041956088687485}
   Friction: {fileID: 73273929390592995}
+--- !u!114 &1357228182876912957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2861536825891731254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 071caa3b5ae681243b57f407e2a383f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SwitchAbility: {fileID: 112602476242876685}
 --- !u!114 &2628545369961222785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -445,25 +488,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Character: {fileID: 3488155970271397397}
-  SpriteRenderer: {fileID: 2861536826496932194}
-  Color:
-    Red: {r: 1, g: 0, b: 0, a: 1}
-    Green: {r: 0, g: 1, b: 0, a: 1}
-    Blue: {r: 0, g: 0, b: 1, a: 1}
+  SwitchAbility: {fileID: 112602476242876685}
   EndGameMenu: {fileID: 4370984447834237378}
   Flying: {fileID: 5595041956088687485}
   redGemText: {fileID: 0}
   greenGemText: {fileID: 0}
   blueGemText: {fileID: 0}
-  RedPower:
-    Power: {fileID: 7170472368968832752}
-    MovementSpeed: 10
-  BluePower:
-    Power: {fileID: 736873277097832663}
-    MovementSpeed: 6
-  GreenPower:
-    Power: {fileID: 2628545369961222785}
-    MovementSpeed: 8
   GameManager: {fileID: 0}
   RedPowerUpDialog: {fileID: 0}
   GreenPowerUpDialog: {fileID: 0}
