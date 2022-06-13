@@ -71,9 +71,9 @@ public class GemTracker : MonoBehaviour
     }
 
     private void CheckGameWin () {
-        if (this.RedGemsQuantity == 1 && 
-            this.BlueGemsQuantity == 1 && 
-            this.GreenGemsQuantity == 1) {
+        if (this.RedGemsQuantity == 10 && 
+            this.BlueGemsQuantity == 10 && 
+            this.GreenGemsQuantity == 10) {
             EndGameMenu.WinGame();
         }
     }
