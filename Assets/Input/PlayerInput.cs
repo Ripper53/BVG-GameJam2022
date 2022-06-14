@@ -256,6 +256,34 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Option"",
+            ""id"": ""f0f0c05e-f156-4af1-868b-a895ec1f8f1f"",
+            ""actions"": [
+                {
+                    ""name"": ""MuteMusic"",
+                    ""type"": ""Button"",
+                    ""id"": ""dac1308c-7fa7-4148-8a69-967c65fdcade"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""1bc7a9f1-2582-4bdd-8335-ef4006b2553a"",
+                    ""path"": ""<Keyboard>/m"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""MuteMusic"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -294,6 +322,9 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         m_Ability_Ability1 = m_Ability.FindAction("Ability1", throwIfNotFound: true);
         m_Ability_Ability2 = m_Ability.FindAction("Ability2", throwIfNotFound: true);
         m_Ability_Ability3 = m_Ability.FindAction("Ability3", throwIfNotFound: true);
+        // Option
+        m_Option = asset.FindActionMap("Option", throwIfNotFound: true);
+        m_Option_MuteMusic = m_Option.FindAction("MuteMusic", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -521,6 +552,39 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         }
     }
     public AbilityActions @Ability => new AbilityActions(this);
+
+    // Option
+    private readonly InputActionMap m_Option;
+    private IOptionActions m_OptionActionsCallbackInterface;
+    private readonly InputAction m_Option_MuteMusic;
+    public struct OptionActions
+    {
+        private @PlayerInput m_Wrapper;
+        public OptionActions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
+        public InputAction @MuteMusic => m_Wrapper.m_Option_MuteMusic;
+        public InputActionMap Get() { return m_Wrapper.m_Option; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(OptionActions set) { return set.Get(); }
+        public void SetCallbacks(IOptionActions instance)
+        {
+            if (m_Wrapper.m_OptionActionsCallbackInterface != null)
+            {
+                @MuteMusic.started -= m_Wrapper.m_OptionActionsCallbackInterface.OnMuteMusic;
+                @MuteMusic.performed -= m_Wrapper.m_OptionActionsCallbackInterface.OnMuteMusic;
+                @MuteMusic.canceled -= m_Wrapper.m_OptionActionsCallbackInterface.OnMuteMusic;
+            }
+            m_Wrapper.m_OptionActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @MuteMusic.started += instance.OnMuteMusic;
+                @MuteMusic.performed += instance.OnMuteMusic;
+                @MuteMusic.canceled += instance.OnMuteMusic;
+            }
+        }
+    }
+    public OptionActions @Option => new OptionActions(this);
     private int m_KeyboardSchemeIndex = -1;
     public InputControlScheme KeyboardScheme
     {
@@ -550,5 +614,9 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         void OnAbility1(InputAction.CallbackContext context);
         void OnAbility2(InputAction.CallbackContext context);
         void OnAbility3(InputAction.CallbackContext context);
+    }
+    public interface IOptionActions
+    {
+        void OnMuteMusic(InputAction.CallbackContext context);
     }
 }

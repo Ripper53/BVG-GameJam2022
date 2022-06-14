@@ -11,6 +11,10 @@ namespace ArtificialIntelligence {
             Attack.Attacking += Attack_Attacking;
         }
 
+        protected void OnDestroy() {
+            Attack.Attacking -= Attack_Attacking;
+        }
+
         private void Attack_Attacking(AttackAIWork source) {
             float dir = SpriteRenderer.flipX ? -1f : 1f;
             Jump.Execute(Force, dir);
