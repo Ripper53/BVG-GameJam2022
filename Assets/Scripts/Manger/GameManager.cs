@@ -30,6 +30,12 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("MainMenu_Scene");
     }
 
+    //Load main menu
+    public void CutScene()
+    {
+        SceneManager.LoadScene("Cutscene_Scene");
+    }
+
     //Load level 1
     public void LoadLevel1()
     {
