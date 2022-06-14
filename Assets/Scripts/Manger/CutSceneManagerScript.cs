@@ -24,7 +24,8 @@ public class CutSceneManagerScript : PlayerControls
 
     //Fade rate
     public float FadeRate;
-    public float RainbowSpeed = 15f;
+    public float RainbowSaturationSpeed = 5f;
+    public float RainbowColourSpeed = 15f;
 
     //Timer
     private float timer;
@@ -116,8 +117,8 @@ public class CutSceneManagerScript : PlayerControls
 
     private void ChangeParrot1Colour()
     {
-        colourParrotHue += RainbowSpeed / 8000;
-        colourParrotSat += RainbowSpeed / 1000;
+        colourParrotHue += (RainbowColourSpeed * Time.deltaTime);
+        colourParrotSat += (RainbowSaturationSpeed * Time.deltaTime);
         colourParrotSat = Mathf.Clamp(colourParrotSat, 0.0f, 1.0f);
         if (colourParrotHue > 1.0f)
         {
@@ -128,8 +129,8 @@ public class CutSceneManagerScript : PlayerControls
     }
     private void ChangeParrot2Colour()
     {
-        colourParrotHue += RainbowSpeed / 8000;
-        colourParrotSat += RainbowSpeed / 1000;
+        colourParrotHue += (RainbowColourSpeed * Time.deltaTime );
+        colourParrotSat += (RainbowSaturationSpeed * Time.deltaTime );
         colourParrotSat = Mathf.Clamp(colourParrotSat, 0.0f, 1.0f);
         if (colourParrotHue > 1.0f)
         {
@@ -139,7 +140,7 @@ public class CutSceneManagerScript : PlayerControls
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         timer += Time.deltaTime;
 
@@ -308,11 +309,11 @@ public class CutSceneManagerScript : PlayerControls
     {
         if(ToBlack)
         {
-            colourFadeToBlack.a += FadeRate;
+            colourFadeToBlack.a += (FadeRate * Time.deltaTime);
         }
         else
         {
-            colourFadeToBlack.a -= FadeRate;
+            colourFadeToBlack.a -= (FadeRate * Time.deltaTime);
         }
         colourFadeToBlack.a = Mathf.Clamp(colourFadeToBlack.a, 0.0f, 1.0f);
         BlackScreen.color = colourFadeToBlack;

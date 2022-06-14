@@ -48,5 +48,7 @@ MonoBehaviour:
   BVGLogoImage: {fileID: 0}
   BackgroundNameImage: {fileID: 0}
   GameNameImage: {fileID: 0}
-  FadeRate: 0.003
+  FadeRate: 0.3
   MainMenu: MainMenu_Scene
+  MusicVolumne: 0.5
+  SFXVolumne: 0.5
