@@ -495,6 +495,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1359761583}
     - target: {fileID: 1400312048223804487, guid: ffce2a7501ff3da498b0dc7abd00d8c5, type: 3}
+      propertyPath: m_text
+      value: "The Crew: \nCaptain Albar\r\nFirst Mate David\r\nDeckhand Mike\r\nParrot
+        Mayra\r\nWalks the Plank Walsh"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1400312048223804487, guid: ffce2a7501ff3da498b0dc7abd00d8c5, type: 3}
       propertyPath: m_fontAsset
       value: 
       objectReference: {fileID: 11400000, guid: 262fd29dd1a8fbb46ba040545859f94e, type: 2}
@@ -616,7 +621,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5233922679283413336, guid: ffce2a7501ff3da498b0dc7abd00d8c5, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 606.97986
+      value: 639
       objectReference: {fileID: 0}
     - target: {fileID: 5233922679283413336, guid: ffce2a7501ff3da498b0dc7abd00d8c5, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -625,7 +630,7 @@ PrefabInstance:
     - target: {fileID: 7978717647084692307, guid: ffce2a7501ff3da498b0dc7abd00d8c5, type: 3}
       propertyPath: m_text
       value: "Controls: \n- A / D = Walk\r\n- Mouse Hold =  Fly\r\n- Spacebar = Powers\n-
-        1 - 3 = Switch Powers\n- M = Mute Music"
+        1, 2, 3 = Switch Powers\n- M = Mute Music"
       objectReference: {fileID: 0}
     - target: {fileID: 7978717647084692307, guid: ffce2a7501ff3da498b0dc7abd00d8c5, type: 3}
       propertyPath: m_fontSize
@@ -635,6 +640,10 @@ PrefabInstance:
       propertyPath: m_fontAsset
       value: 
       objectReference: {fileID: 11400000, guid: 262fd29dd1a8fbb46ba040545859f94e, type: 2}
+    - target: {fileID: 7978717647084692307, guid: ffce2a7501ff3da498b0dc7abd00d8c5, type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7978717647084692307, guid: ffce2a7501ff3da498b0dc7abd00d8c5, type: 3}
       propertyPath: m_fontSizeBase
       value: 40

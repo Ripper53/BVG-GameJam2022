@@ -51,8 +51,9 @@ MonoBehaviour:
   ColourChangingParrotImage: {fileID: 0}
   ColourChangingParrotImage2: {fileID: 0}
   BlackScreen: {fileID: 0}
-  FadeRate: 0.05
-  RainbowSpeed: 10
+  FadeRate: 1.5
+  RainbowSaturationSpeed: 0.5
+  RainbowColourSpeed: 1.5
   MusicVolumneLevel: 0.15
   SFXVolumneLevel: 1
   Scene0Duration: 0

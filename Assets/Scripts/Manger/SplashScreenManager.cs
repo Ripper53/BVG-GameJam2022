@@ -34,7 +34,11 @@ public class SplashScreenManager : MonoBehaviour
 
     private bool playSFXOnce = true;
 
-    private float volume = 1f;
+    [Range(0.0f, 1.0f)]
+    public float MusicVolumne = 0.5f;
+
+    [Range(0.0f, 1.0f)]
+    public float SFXVolumne = 0.5f;
 
 
     // Start is called before the first frame update
@@ -55,8 +59,8 @@ public class SplashScreenManager : MonoBehaviour
         soundControllerObject = GameObject.Find("SoundController");
         soundControllerObject.SendMessage("PlayMusic", songIndex);
 
-        soundControllerObject.SendMessage("SetMusicVolumne", volume);
-        soundControllerObject.SendMessage("SetSFXVolumne", volume);
+        soundControllerObject.SendMessage("SetMusicVolumne", MusicVolumne);
+        soundControllerObject.SendMessage("SetSFXVolumne", SFXVolumne);
 
     }
 
@@ -72,7 +76,7 @@ public class SplashScreenManager : MonoBehaviour
         }
         else if(timer > 12f)
         {
-            colour.a += FadeRate * 2.0f;
+            colour.a += (FadeRate * 2.0f * Time.deltaTime);
             BlackScreen.color = colour;
         }
 
@@ -87,7 +91,7 @@ public class SplashScreenManager : MonoBehaviour
         }
         else if(timer > 6f)
         {
-            colour.a -= FadeRate * 2.0f;
+            colour.a -= (FadeRate * 2.0f * Time.deltaTime);
             BlackScreen.color = colour;
 
             if(BackgroundNameImage.activeSelf == false)
@@ -98,12 +102,12 @@ public class SplashScreenManager : MonoBehaviour
         }
         else if(timer > 3f)
         {
-            colour.a += FadeRate;
+            colour.a += (FadeRate * Time.deltaTime);
             BlackScreen.color = colour;
         }   
         else if (timer > 0f)
         {
-            colour.a -= FadeRate;
+            colour.a -= (FadeRate * Time.deltaTime);
             BlackScreen.color = colour;
         }
     }
