@@ -21,7 +21,7 @@ namespace ArtificialIntelligence {
 
         private Rigidbody2D equippedRigidbody = null;
         private TargetJoint2D equipped = null;
-        private float equippedMass;
+        //private float equippedMass;
         protected override void Execute() {
             if (abilityDependency.GetHold()) {
                 // Picked/Picking Up
@@ -35,8 +35,11 @@ namespace ArtificialIntelligence {
             }
 
             // Open
-            if (abilityDependency.GetTrigger() && OpenGetCollider.Get(out Collider2D collider) && collider.TryGetComponent(out IOpenable openable)) {
-                openable.Open();
+            if (abilityDependency.GetTrigger()) {
+                foreach (Collider2D col in OpenGetCollider.Get()) {
+                    if (col.TryGetComponent(out IOpenable openable))
+                        openable.Open();
+                }
             }
         }
 
@@ -46,7 +49,7 @@ namespace ArtificialIntelligence {
                 rigidbody.drag = 0f;
 
                 equippedRigidbody = collider.attachedRigidbody;
-                equippedMass = collider.attachedRigidbody.mass;
+                //equippedMass = collider.attachedRigidbody.mass;
                 equippedRigidbody.mass = 1f;
 
                 coroutine = StartCoroutine(PickUp(collider));
