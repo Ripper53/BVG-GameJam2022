@@ -14,5 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Loop: 0
   Frames:
-  - Duration: 0
-    Sprite: {fileID: 21300000, guid: 962080c6e8c13b84b9e22640234b8d90, type: 3}
+  - Duration: 0.1
+    Sprite: {fileID: -236734765, guid: 028b31da75db33444a7e26899252e3c4, type: 3}
+  - Duration: 0.1
+    Sprite: {fileID: -437086325, guid: 028b31da75db33444a7e26899252e3c4, type: 3}
