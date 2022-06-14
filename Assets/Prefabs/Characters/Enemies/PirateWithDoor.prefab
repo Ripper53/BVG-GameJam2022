@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6891817835053019362}
   - component: {fileID: 4871842328211033849}
+  - component: {fileID: 9070199325173444764}
+  - component: {fileID: 9070199325173444765}
   m_Layer: 0
   m_Name: PirateWithDoor
   m_TagString: Untagged
@@ -84,3 +86,43 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &9070199325173444764
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7109847744052282989}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.64, y: 0.96}
+    newSize: {x: 0.64, y: 0.96}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.64, y: 0.96}
+  m_EdgeRadius: 0
+--- !u!114 &9070199325173444765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7109847744052282989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdc4d6eb4ec74594f9a0a415af789d16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PirateDoorClosedMesh: {fileID: 21300000, guid: 9b32d036107317643b04f2d13eb1be0a, type: 3}
+  PirateDoorOpenedMesh: {fileID: 21300000, guid: 3d4d4ce38d7edeb4795bf96b28d2c829, type: 3}

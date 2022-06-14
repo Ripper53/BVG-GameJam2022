@@ -30,7 +30,7 @@ public class ParrotPicMovesScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         if(isCaptain)
         {
@@ -38,24 +38,24 @@ public class ParrotPicMovesScript : MonoBehaviour
 
             if(timer > ZoomOnParrotTime)
             {
-                newScale = new Vector3(startScale.x + ScaleAmount, startScale.y + ScaleAmount, startScale.z);
+                newScale = new Vector3(startScale.x + (ScaleAmount * Time.deltaTime), startScale.y + (ScaleAmount * Time.deltaTime), startScale.z);
                 this.gameObject.transform.localScale = newScale;
                 startScale = newScale;
 
-                newPos = new Vector3(startPos.x + MoveAmountX2, startPos.y + MoveAmountY2, startPos.z);
+                newPos = new Vector3(startPos.x + (MoveAmountX2 * Time.deltaTime), startPos.y + (MoveAmountY2 * Time.deltaTime), startPos.z);
                 this.gameObject.transform.position = newPos;
                 startPos = newPos;
             }
             else
             {
-                newPos = new Vector3(startPos.x + MoveAmount, startPos.y, startPos.z);
+                newPos = new Vector3(startPos.x + (MoveAmount * Time.deltaTime), startPos.y, startPos.z);
                 this.gameObject.transform.position = newPos;
                 startPos = newPos;
             }
         }
         else
         {
-            newPos = new Vector3(startPos.x + MoveAmount, startPos.y, startPos.z);
+            newPos = new Vector3(startPos.x + (MoveAmount * Time.deltaTime), startPos.y, startPos.z);
             this.gameObject.transform.position = newPos;
             startPos = newPos;
         }
