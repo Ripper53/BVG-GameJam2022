@@ -66,6 +66,25 @@ public class CutSceneManagerScript : PlayerControls
     public float Scene7Duration = 60;
     public float Scene8Duration = 64;
 
+    public GameObject SubtitlesObj;
+    private TMPro.TextMeshProUGUI subtitlesText;
+
+
+    private string subtitle0 = "Ahoy!";
+    private string subtitle1A = "Did ye know that parrots can see more colours than humans?";
+    private string subtitle1B = "Our hero might be gray but they can definitely see more colours than ye!";
+    private string subtitle1C = "Will ye help them become the best parrot ever?";
+
+    private string subtitle2A = "Our hero traveled across the briney deep and landed on the enemy's clipper";
+    private string subtitle2B = "This is the home of cranky pirates and a lousy captain, and blimey, that fabulous green parrot!";
+    private string subtitle2C = "He’s so beautiful and smart and his calls can be heard from miles away";
+    
+    private string subtitle3A = "But do not be distracted by this green shimmering ball of feathers!";
+    private string subtitle3B = "Our captain gave us a mission: examine the glistering Gem stones on this ship";
+    private string subtitle3C = "and find the booty of the captain and his green parrot, savvy?";
+
+    private string subtitle4 = "HEAVE HO WE’VE GOT A BOOTY TO STEAL!!";
+
     // Start is called before the first frame update
     void Start()
     { 
@@ -90,6 +109,9 @@ public class CutSceneManagerScript : PlayerControls
         colourParrotHue = 0.0f;
         colourParrotSat = 0.0f;
         colourParrotBri = 1.0f;
+
+        subtitlesText = SubtitlesObj.GetComponent<TMPro.TextMeshProUGUI>();
+        subtitlesText.text = "";
     }
 
     private void ChangeParrot1Colour()
@@ -117,7 +139,7 @@ public class CutSceneManagerScript : PlayerControls
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         timer += Time.deltaTime;
 
@@ -130,7 +152,7 @@ public class CutSceneManagerScript : PlayerControls
         }
 
         //Fade to Black
-        else if(timer > Scene8Duration - 2.0f)
+        else if(timer > Scene8Duration - 0.5f)
         {
             FadeToBlack(true);
         }
@@ -141,6 +163,8 @@ public class CutSceneManagerScript : PlayerControls
             FadeToBlack(false);
             if (playSFXOnce7)
             {
+                subtitlesText.fontSize = 100;
+                subtitlesText.text = subtitle4;
                 Scene4Image.gameObject.SetActive(true);
                 Scene3Image.gameObject.SetActive(false);
                 soundControllerObject.SendMessage("PlayEffects", sfxIndex7);
@@ -159,12 +183,24 @@ public class CutSceneManagerScript : PlayerControls
         //But do not be distracted by this green shimmering ball of feathers!
         //Our captain gave us a mission: examine the glistering
         //Gem stones on this ship and find the booty of the captain and his green parrot, savvy?
+        else if (timer > Scene6Duration + 10f)
+        {
+            ChangeParrot2Colour();
+            subtitlesText.text = subtitle3C;
+        }
+        else if(timer > Scene6Duration + 5.0f)
+        {
+            ChangeParrot2Colour();
+            subtitlesText.text = subtitle3B;
+        }    
+        
         else if (timer > Scene6Duration)
         {
             ChangeParrot2Colour();
             FadeToBlack(false);
             if (playSFXOnce6)
             {
+                subtitlesText.text = subtitle3A;
                 Scene3Image.gameObject.SetActive(true);
                 Scene2Image.gameObject.SetActive(false);
                 soundControllerObject.SendMessage("PlayEffects", sfxIndex6);
@@ -184,12 +220,23 @@ public class CutSceneManagerScript : PlayerControls
         //This is the home of cranky pirates and a lousy captain, and blimey, that fabulous green parrot!
         //He’s so beautiful and smart and his calls can be heard from miles away.
         //[image of the ship, captain and green parrot]
+        else if (timer > Scene5Duration + 14.5f)
+        {
+            subtitlesText.text = subtitle2C;
+        }
+
+        else if(timer > Scene5Duration + 5.5f)
+        {
+            subtitlesText.text = subtitle2B;
+        }    
+        
         else if (timer > Scene5Duration)
         {
            
             FadeToBlack(false);
             if (playSFXOnce5)
             {
+                subtitlesText.text = subtitle2A;
                 Scene2Image.gameObject.SetActive(true);
                 Scene1Image.gameObject.SetActive(false);
                 soundControllerObject.SendMessage("PlayEffects", sfxIndex5);
@@ -211,6 +258,7 @@ public class CutSceneManagerScript : PlayerControls
             ChangeParrot1Colour();
             if (playSFXOnce4)
             {
+                subtitlesText.text = subtitle1C;
                 soundControllerObject.SendMessage("PlayEffects", sfxIndex4);
                 playSFXOnce4 = false;
             }
@@ -221,6 +269,7 @@ public class CutSceneManagerScript : PlayerControls
         {
             if (playSFXOnce3)
             {
+                subtitlesText.text = subtitle1B;
                 soundControllerObject.SendMessage("PlayEffects", sfxIndex3);
                 playSFXOnce3 = false;
             }
@@ -229,8 +278,11 @@ public class CutSceneManagerScript : PlayerControls
         //Didn't you know parrots see more colours than humans 
         else if (timer > Scene2Duration)
         {
+            FadeToBlack(false);
             if (playSFXOnce2)
             {
+                subtitlesText.fontSize = 70;
+                subtitlesText.text = subtitle1A;
                 soundControllerObject.SendMessage("PlayEffects", sfxIndex2);
                 playSFXOnce2 = false;
             }
@@ -243,6 +295,8 @@ public class CutSceneManagerScript : PlayerControls
             FadeToBlack(false);
             if (playSFXOnce1)
             {
+                subtitlesText.fontSize = 150;
+                subtitlesText.text = subtitle0;
                 Scene1Image.gameObject.SetActive(true);
                 soundControllerObject.SendMessage("PlayEffects", sfxIndex1);
                 playSFXOnce1 = false;

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class MainGameMusicController : MonoBehaviour
 {
-    public SoundController SoundController;
+    private GameObject SoundControllerObj;
 
     [Range(0.0f, 1.0f)]
     public float MusicVolume = 0.2f;
@@ -13,8 +13,9 @@ public class MainGameMusicController : MonoBehaviour
 
     void Start()
     {
-        SoundController.MusicVolume = MusicVolume;
-        SoundController.PlayMusic(MusicIndex);
+        SoundControllerObj = GameObject.Find("SoundController");
+        SoundControllerObj.SendMessage("SetMusicVolumne", MusicVolume);
+        SoundControllerObj.SendMessage("PlayMusic", MusicIndex);
     }
 
 }

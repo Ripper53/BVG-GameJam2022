@@ -49,17 +49,19 @@ MonoBehaviour:
   Scene3Image: {fileID: 0}
   Scene4Image: {fileID: 0}
   ColourChangingParrotImage: {fileID: 0}
+  ColourChangingParrotImage2: {fileID: 0}
   BlackScreen: {fileID: 0}
-  FadeRate: 0.002
-  RainbowSpeed: 15
+  FadeRate: 0.05
+  RainbowSpeed: 10
   MusicVolumneLevel: 0.15
-  SFXVolumneLevel: 3
+  SFXVolumneLevel: 1
   Scene0Duration: 0
   Scene1Duration: 2
-  Scene2Duration: 4
-  Scene3Duration: 9
-  Scene4Duration: 15
-  Scene5Duration: 21
-  Scene6Duration: 43
-  Scene7Duration: 60
-  Scene8Duration: 64
+  Scene2Duration: 3.5
+  Scene3Duration: 8.5
+  Scene4Duration: 14.5
+  Scene5Duration: 20.5
+  Scene6Duration: 43.25
+  Scene7Duration: 60.25
+  Scene8Duration: 64.75
+  SubtitlesObj: {fileID: 0}
