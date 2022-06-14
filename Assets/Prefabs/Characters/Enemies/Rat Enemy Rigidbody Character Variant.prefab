@@ -62,8 +62,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Origin: {fileID: 6424894868954772627}
-  offset: {x: 0.75, y: 1}
-  size: {x: 2, y: 2.5}
+  offset: {x: 1.25, y: 1}
+  size: {x: 3, y: 2.5}
   angle: 0
 --- !u!1001 &8550481113460961598
 PrefabInstance:
@@ -80,6 +80,30 @@ PrefabInstance:
       propertyPath: JumpCondition
       value: 
       objectReference: {fileID: 4293184629178623972}
+    - target: {fileID: 350710873307440032, guid: b41f954de8a63e44593e69d784e6901b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 930091247600883421, guid: b41f954de8a63e44593e69d784e6901b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1111428216308545504, guid: b41f954de8a63e44593e69d784e6901b, type: 3}
+      propertyPath: size.y
+      value: 0.46875
+      objectReference: {fileID: 0}
+    - target: {fileID: 1111428216308545504, guid: b41f954de8a63e44593e69d784e6901b, type: 3}
+      propertyPath: offset.y
+      value: -0.015625
+      objectReference: {fileID: 0}
+    - target: {fileID: 1663483356174101724, guid: b41f954de8a63e44593e69d784e6901b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.125
+      objectReference: {fileID: 0}
+    - target: {fileID: 1963072326874709303, guid: b41f954de8a63e44593e69d784e6901b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 2471327333529309896, guid: b41f954de8a63e44593e69d784e6901b, type: 3}
       propertyPath: DetectData.BoxShape
       value: 
@@ -110,11 +134,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5514433554250582573, guid: b41f954de8a63e44593e69d784e6901b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.36
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5514433554250582573, guid: b41f954de8a63e44593e69d784e6901b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.21
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5514433554250582573, guid: b41f954de8a63e44593e69d784e6901b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -148,6 +172,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5514433554868348024, guid: b41f954de8a63e44593e69d784e6901b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -97392903, guid: ad643d6e6e85969479b3704541c4827f, type: 3}
+    - target: {fileID: 5565277887792368877, guid: b41f954de8a63e44593e69d784e6901b, type: 3}
+      propertyPath: size.x
+      value: 1.375
+      objectReference: {fileID: 0}
+    - target: {fileID: 6346254068998034336, guid: b41f954de8a63e44593e69d784e6901b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6449167423751247129, guid: b41f954de8a63e44593e69d784e6901b, type: 3}
+      propertyPath: size.x
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6449167423751247129, guid: b41f954de8a63e44593e69d784e6901b, type: 3}
+      propertyPath: size.y
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 6449167423751247129, guid: b41f954de8a63e44593e69d784e6901b, type: 3}
+      propertyPath: offset.x
+      value: 0.375
+      objectReference: {fileID: 0}
+    - target: {fileID: 6449167423751247129, guid: b41f954de8a63e44593e69d784e6901b, type: 3}
+      propertyPath: offset.y
+      value: 0.125
+      objectReference: {fileID: 0}
+    - target: {fileID: 6453594024985004966, guid: b41f954de8a63e44593e69d784e6901b, type: 3}
+      propertyPath: IdleAnimation
+      value: 
+      objectReference: {fileID: 11400000, guid: 0c87f3190546db74cbc838b02113c526, type: 2}
+    - target: {fileID: 6453594024985004966, guid: b41f954de8a63e44593e69d784e6901b, type: 3}
+      propertyPath: WalkAnimation
+      value: 
+      objectReference: {fileID: 11400000, guid: 6d354e9420399ef44a34d0ed084ee2ba, type: 2}
+    - target: {fileID: 6582406488081251087, guid: b41f954de8a63e44593e69d784e6901b, type: 3}
+      propertyPath: MovementSpeed
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6601101133040593874, guid: b41f954de8a63e44593e69d784e6901b, type: 3}
       propertyPath: size.y
       value: 0.125
@@ -156,10 +220,30 @@ PrefabInstance:
       propertyPath: offset.y
       value: -0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8234028203652059319, guid: b41f954de8a63e44593e69d784e6901b, type: 3}
+      propertyPath: m_Size.x
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8234028203652059319, guid: b41f954de8a63e44593e69d784e6901b, type: 3}
+      propertyPath: m_Size.y
+      value: 0.375
+      objectReference: {fileID: 0}
+    - target: {fileID: 8234028203652059319, guid: b41f954de8a63e44593e69d784e6901b, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.0625
+      objectReference: {fileID: 0}
     - target: {fileID: 8512713628856403924, guid: b41f954de8a63e44593e69d784e6901b, type: 3}
       propertyPath: Executor
       value: 
       objectReference: {fileID: 189293406741873207}
+    - target: {fileID: 8958542670574797132, guid: b41f954de8a63e44593e69d784e6901b, type: 3}
+      propertyPath: size.y
+      value: 0.46875
+      objectReference: {fileID: 0}
+    - target: {fileID: 8958542670574797132, guid: b41f954de8a63e44593e69d784e6901b, type: 3}
+      propertyPath: offset.y
+      value: -0.015625
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8841042345392327746, guid: b41f954de8a63e44593e69d784e6901b, type: 3}
     - {fileID: 2462864503852991634, guid: b41f954de8a63e44593e69d784e6901b, type: 3}
@@ -287,9 +371,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Attack: {fileID: 38934480909121258}
   Animator: {fileID: 781008950637184081}
-  Animation: {fileID: 11400000, guid: 927cb15ee8d3d094d8276854ed1338d8, type: 2}
-  RecoveryAnimation: {fileID: 11400000, guid: 927cb15ee8d3d094d8276854ed1338d8, type: 2}
-  IdleAnimation: {fileID: 11400000, guid: 052888240a493ea4f8ea30e5d8ea0813, type: 2}
+  Animation: {fileID: 11400000, guid: 920528f8246b7184aa7ae680c62dcf0d, type: 2}
+  RecoveryAnimation: {fileID: 11400000, guid: a157b3a29a3ca4140b60b2e4321d1f2e, type: 2}
+  IdleAnimation: {fileID: 11400000, guid: 0c87f3190546db74cbc838b02113c526, type: 2}
 --- !u!114 &8577917786740335349 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 118091407007110091, guid: b41f954de8a63e44593e69d784e6901b, type: 3}

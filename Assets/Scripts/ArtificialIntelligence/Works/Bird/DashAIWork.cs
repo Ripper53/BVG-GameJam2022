@@ -39,8 +39,8 @@ namespace ArtificialIntelligence {
         }
 
         protected override void EnableGroundMovement(bool value) {
-            base.EnableGroundMovement(value);
             flying.enabled = value;
+            base.EnableGroundMovement(value);
             if (value) {
                 character.Movement.Velocity *= 0.25f;
             } else {
