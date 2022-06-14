@@ -15,6 +15,10 @@ PrefabInstance:
       propertyPath: Clip
       value: 
       objectReference: {fileID: 8300000, guid: 9e1e6646a938070429ba9540e4576d9b, type: 3}
+    - target: {fileID: 7240932690016417383, guid: f6d593b4d50dc484dad0524031c94682, type: 3}
+      propertyPath: Animation
+      value: 
+      objectReference: {fileID: 11400000, guid: 60a0dd95d0de951439fad5c9490f628a, type: 2}
     - target: {fileID: 7704971608965163726, guid: f6d593b4d50dc484dad0524031c94682, type: 3}
       propertyPath: m_RootOrder
       value: 0

@@ -9,6 +9,7 @@ public class GemTracker : MonoBehaviour
 {
     public Character Character;
     public SwitchAbility SwitchAbility;
+    public GreyscaleShaderScript GreyscaleShader;
 
     public EndGameMenu EndGameMenu;
     public FlyingAIWork Flying;
@@ -134,6 +135,8 @@ public class GemTracker : MonoBehaviour
         if (gem.IsCollected) {
             return;
         }
+
+        GreyscaleShader.SetToFullColor();
 
         GemColour gemColour = gem.Colour;
         switch (gemColour)

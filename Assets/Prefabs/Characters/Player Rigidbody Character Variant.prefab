@@ -201,10 +201,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2354856000679274974, guid: 7cd96bf0296aab44b8a848ad5f99ff97, type: 3}
-      propertyPath: m_GravityScale
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2354856000679274974, guid: 7cd96bf0296aab44b8a848ad5f99ff97, type: 3}
       propertyPath: m_CollisionDetection
       value: 1
       objectReference: {fileID: 0}
@@ -382,7 +378,7 @@ MonoBehaviour:
   Rigidbody: {fileID: 7181360111826316655}
   GroundCheck: {fileID: 8819218169184638161}
   GroundDrag: 100
-  AirDrag: 0.75
+  AirDrag: 4
 --- !u!114 &112602476242876685
 MonoBehaviour:
   m_ObjectHideFlags: 0
