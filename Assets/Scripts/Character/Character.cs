@@ -9,8 +9,18 @@ public class Character : ObjectPoolable<Character> {
     public SideCheck RightSideCheck, LeftSideCheck;
     public float MovementSpeed;
 
-    [System.NonSerialized]
-    public HorizontalMovementDirection HorizontalDirection = HorizontalMovementDirection.None;
+    public delegate void StateChangedAction(HorizontalMovementDirection direction);
+    public event StateChangedAction HorizontalDirectionChanged;
+    private HorizontalMovementDirection horizontalDirection = HorizontalMovementDirection.None;
+    public HorizontalMovementDirection HorizontalDirection {
+        get => horizontalDirection;
+        set {
+            if (horizontalDirection != value) {
+                horizontalDirection = value;
+                HorizontalDirectionChanged?.Invoke(value);
+            }
+        }
+    }
     public enum HorizontalMovementDirection {
         None, Right, Left
     }

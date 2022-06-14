@@ -1,11 +1,12 @@
 using ArtificialIntelligence.Dependency;
 using Physics.GetColliders;
+using System.Collections;
 using UnityEngine;
 
 namespace ArtificialIntelligence {
     public class LiftAIWork : AIWork {
         public GetCollider LiftGetCollider;
-        public float GripStrength;
+        public float GripStrength, GripOffset;
         public GetCollider OpenGetCollider;
         public FlyingAIWork Flying;
 
@@ -22,18 +23,25 @@ namespace ArtificialIntelligence {
         private TargetJoint2D equipped = null;
         private float equippedMass;
         protected override void Execute() {
-            if (abilityDependency.GetHold() && (equipped || PickUp())) {
+            if (abilityDependency.GetHold()) {
                 // Picked/Picking Up
-                equipped.target = rigidbody.position;
-            } else if (equipped) {
+                if (equipped) {
+                    equipped.target = rigidbody.position;
+                } else {
+                    PickUp();
+                }
+            } else if (equippedRigidbody) {
                 Unequip();
-            } else if (abilityDependency.GetTrigger() && OpenGetCollider.Get(out Collider2D collider) && collider.TryGetComponent(out IOpenable openable)) {
+            }
+
+            // Open
+            if (abilityDependency.GetTrigger() && OpenGetCollider.Get(out Collider2D collider) && collider.TryGetComponent(out IOpenable openable)) {
                 openable.Open();
             }
         }
 
-        private bool PickUp() {
-            if (LiftGetCollider.Get(out Collider2D collider) && collider.attachedRigidbody && collider.attachedRigidbody.bodyType == RigidbodyType2D.Dynamic) {
+        private void PickUp() {
+            if (coroutine == null && LiftGetCollider.Get(out Collider2D collider) && collider.attachedRigidbody && collider.attachedRigidbody.bodyType == RigidbodyType2D.Dynamic) {
                 Friction.enabled = false;
                 rigidbody.drag = 0f;
 
@@ -41,27 +49,36 @@ namespace ArtificialIntelligence {
                 equippedMass = collider.attachedRigidbody.mass;
                 equippedRigidbody.mass = 1f;
 
-                equipped = collider.gameObject.AddComponent<TargetJoint2D>();
-                Vector2 diff = rigidbody.position - collider.attachedRigidbody.position;
-                equipped.anchor = diff + (diff.normalized * 0.1f);
-                equipped.frequency = GripStrength;
-                equipped.dampingRatio = 1f;
-                return true;
+                coroutine = StartCoroutine(PickUp(collider));
             }
-            return false;
+        }
+
+        private Coroutine coroutine = null;
+        private IEnumerator PickUp(Collider2D collider) {
+            yield return new WaitForFixedUpdate();
+            equipped = collider.gameObject.AddComponent<TargetJoint2D>();
+            Vector2 diff = rigidbody.position - collider.ClosestPoint(rigidbody.position);
+            equipped.anchor = equipped.transform.InverseTransformPoint(rigidbody.position);
+            equipped.frequency = GripStrength;
+            equipped.dampingRatio = 1f;
+            coroutine = null;
         }
 
         protected void OnDisable() {
-            if (equipped)
+            if (coroutine != null)
+                StopCoroutine(coroutine);
+            if (equippedRigidbody)
                 Unequip();
         }
 
         private void Unequip() {
             if (!Flying.InAir)
                 Friction.enabled = true;
-            Destroy(equipped);
-            equipped = null;
-            equippedRigidbody.mass = equippedMass;
+            if (equipped) {
+                Destroy(equipped);
+                equipped = null;
+            }
+            //equippedRigidbody.mass = equippedMass;
             equippedRigidbody = null;
         }
 

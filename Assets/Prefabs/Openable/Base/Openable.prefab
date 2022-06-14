@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2922c3f5477462148afbf0a8a0a82896, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Collider: {fileID: 5532529822399932428}
+  OpenableAction: {fileID: 0}
 --- !u!114 &5532529822399932417
 MonoBehaviour:
   m_ObjectHideFlags: 0
