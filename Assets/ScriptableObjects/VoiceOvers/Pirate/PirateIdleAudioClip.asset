@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5690bdb2854e2c4d8a68ec46be6ea44, type: 3}
+  m_Name: PirateIdleAudioClip
+  m_EditorClassIdentifier: 
+  Clips:
+  - {fileID: 8300000, guid: 07f118de5e0ba844f80bde895db6cdef, type: 3}
+  - {fileID: 8300000, guid: cfc7f09124c127e46a379adc8f6ba634, type: 3}
+  - {fileID: 8300000, guid: 9b5358615b694c54db18622d9691dd1c, type: 3}
+  - {fileID: 8300000, guid: e657e85f6a02957409809f5084606310, type: 3}

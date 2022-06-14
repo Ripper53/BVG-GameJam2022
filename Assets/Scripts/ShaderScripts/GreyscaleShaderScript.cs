@@ -1,23 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class GreyscaleShaderScript : MonoBehaviour
-{
-    private Material material;
+public class GreyscaleShaderScript : MonoBehaviour {
     public Shader GreyscaleShader;
+    public Shader FullColorShader;
 
-    // Start is called before the first frame update
-    void Start()
-    {
+    private Material material;
+
+    protected void Awake() {
         material = new Material(GreyscaleShader);
     }
 
-
-    private void OnRenderImage(RenderTexture source, RenderTexture destination)
-    {
+    protected void OnRenderImage(RenderTexture source, RenderTexture destination) {
         Graphics.Blit(source, destination, material);
     }
 
+    public void SetToFullColor() {
+        material = new Material(FullColorShader);
+    }
 
 }
