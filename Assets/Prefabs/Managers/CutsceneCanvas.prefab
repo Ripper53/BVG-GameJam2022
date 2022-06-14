@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 810504997}
   - component: {fileID: 810504999}
   m_Layer: 5
-  m_Name: ParrotImage
+  m_Name: ParrotScene1Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -90,6 +90,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveAmount: 0.5
+  MoveAmountX2: 0
+  MoveAmountY2: 0
+  ScaleAmount: 0
+  isCaptain: 0
+  ZoomOnParrotTime: 0
 --- !u!1 &1903121753
 GameObject:
   m_ObjectHideFlags: 0
@@ -180,6 +185,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveAmount: -0.3
+  MoveAmountX2: -0.6
+  MoveAmountY2: -0.5
+  ScaleAmount: 0.005
+  isCaptain: 1
+  ZoomOnParrotTime: 13
 --- !u!1 &2046840260905800997
 GameObject:
   m_ObjectHideFlags: 0
@@ -197,7 +207,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6499108691180048676
 RectTransform:
   m_ObjectHideFlags: 0
@@ -378,7 +388,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5037802014300193187
 RectTransform:
   m_ObjectHideFlags: 0
@@ -547,7 +557,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5037802014932816429
 RectTransform:
   m_ObjectHideFlags: 0
@@ -624,7 +634,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5037802015261707598
 RectTransform:
   m_ObjectHideFlags: 0
@@ -709,7 +719,7 @@ GameObject:
   - component: {fileID: 1117731825336835123}
   - component: {fileID: 8619814298686690383}
   m_Layer: 5
-  m_Name: SpinningParrot
+  m_Name: ParrotScene3Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -786,6 +796,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveAmount: 0.2
+  MoveAmountX2: 0
+  MoveAmountY2: 0
+  ScaleAmount: 0
+  isCaptain: 0
+  ZoomOnParrotTime: 0
 --- !u!1001 &503276810140326047
 PrefabInstance:
   m_ObjectHideFlags: 0

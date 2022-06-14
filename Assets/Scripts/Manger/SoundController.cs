@@ -70,5 +70,12 @@ public class SoundController : MonoBehaviour
         effectsSource.Stop();
     }
 
-
+    public void SetMusicVolumne(float newLevel)
+    {
+        MusicVolume = newLevel;
+    }
+    public void SetSFXVolumne(float newLevel)
+    {
+        SFXVolume = newLevel;
+    }
 }
