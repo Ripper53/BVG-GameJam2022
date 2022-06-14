@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: Clip
       value: 
       objectReference: {fileID: 8300000, guid: e1b1dbf0c0414f647abc636a42d2a6d5, type: 3}
+    - target: {fileID: 1474290206466726588, guid: 61b75c9571d58304d96a99d8665be10d, type: 3}
+      propertyPath: Volume
+      value: 0.125
+      objectReference: {fileID: 0}
     - target: {fileID: 2187928627679909256, guid: 61b75c9571d58304d96a99d8665be10d, type: 3}
       propertyPath: m_Name
       value: Gem Collect OneShotAudioParticleEffect Variant

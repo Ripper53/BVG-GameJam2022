@@ -16,14 +16,14 @@ public class SoundController : MonoBehaviour
     //I want the sound controller to be a singleton
     public static SoundController Singleton = null;
 
-    public void SetMusicVolumne(float newVolume)
-    {
-        musicSource.volume = newVolume;
+    public float MusicVolume {
+        get => musicSource.volume;
+        set => musicSource.volume = value;
     }
 
-    public void SetSFXVolumne(float newVolume)
-    {
-        effectsSource.volume = newVolume;
+    public float SFXVolume {
+        get => effectsSource.volume;
+        set => effectsSource.volume = value;
     }
 
     private void Awake()

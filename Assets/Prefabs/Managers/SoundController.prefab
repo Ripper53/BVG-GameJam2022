@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2414781138296521617}
   - component: {fileID: 3726609688702829532}
+  - component: {fileID: 2511335496235043650}
   m_Layer: 0
   m_Name: SoundController
   m_TagString: Untagged
@@ -65,6 +66,19 @@ MonoBehaviour:
   - {fileID: 8300000, guid: bc5207993a899a349a97416d8eb33924, type: 3}
   musicSource: {fileID: 9011948421967246591}
   effectsSource: {fileID: 4095918553117279132}
+--- !u!114 &2511335496235043650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4915729659540118754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 846f311358dd78946bda5f7fce8cdfe1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoundController: {fileID: 3726609688702829532}
 --- !u!1 &8330432508743595925
 GameObject:
   m_ObjectHideFlags: 0
