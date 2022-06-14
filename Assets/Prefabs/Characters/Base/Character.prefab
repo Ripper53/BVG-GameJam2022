@@ -388,8 +388,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 9170698437065779847}
   SpriteRenderer: {fileID: 7537493509149439472}
-  Animator: {fileID: 6368759154322023655}
-  WalkAnimation: {fileID: 0}
 --- !u!1 &7537493509597551524
 GameObject:
   m_ObjectHideFlags: 0

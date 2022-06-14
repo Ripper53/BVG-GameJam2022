@@ -7,22 +7,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1114909143766365055, guid: e52cc70a3faf23c41a8a964178f5712d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4747593540079440901, guid: e52cc70a3faf23c41a8a964178f5712d, type: 3}
-      propertyPath: IdleAnimation
-      value: 
-      objectReference: {fileID: 11400000, guid: ed0712ec01e1245449aeab67d118ce4a, type: 2}
-    - target: {fileID: 4747593540079440901, guid: e52cc70a3faf23c41a8a964178f5712d, type: 3}
-      propertyPath: WalkAnimation
-      value: 
-      objectReference: {fileID: 11400000, guid: 66c8dbc1551b78f4a8d6e69155dbb3dc, type: 2}
-    - target: {fileID: 4842624599080330412, guid: e52cc70a3faf23c41a8a964178f5712d, type: 3}
-      propertyPath: MovementSpeed
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 6118745516048553358, guid: e52cc70a3faf23c41a8a964178f5712d, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -71,14 +55,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Melee Pirate Enemy Rigidbody Character Variant
       objectReference: {fileID: 0}
-    - target: {fileID: 6118745516649184219, guid: e52cc70a3faf23c41a8a964178f5712d, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 5eea453ffc9ad42469e6c1d4ee1138f1, type: 3}
-    - target: {fileID: 7649425262927793940, guid: e52cc70a3faf23c41a8a964178f5712d, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.125
-      objectReference: {fileID: 0}
     - target: {fileID: 7948335783634770039, guid: e52cc70a3faf23c41a8a964178f5712d, type: 3}
       propertyPath: Executor
       value: 
@@ -95,10 +71,6 @@ PrefabInstance:
       propertyPath: RecoveryAnimation
       value: 
       objectReference: {fileID: 11400000, guid: 927cb15ee8d3d094d8276854ed1338d8, type: 2}
-    - target: {fileID: 8656250680830431712, guid: e52cc70a3faf23c41a8a964178f5712d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.125
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e52cc70a3faf23c41a8a964178f5712d, type: 3}
 --- !u!114 &98153891941395236 stripped
@@ -142,6 +114,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Attack: {fileID: 98153891941395236}
   Animator: {fileID: 792729489276033439}
-  Animation: {fileID: 11400000, guid: 251d76b1844f05f4ca3b62bfc0cd80f4, type: 2}
-  RecoveryAnimation: {fileID: 11400000, guid: 0724d94473eed66479b4f78455118978, type: 2}
-  IdleAnimation: {fileID: 11400000, guid: ed0712ec01e1245449aeab67d118ce4a, type: 2}
+  Animation: {fileID: 11400000, guid: 927cb15ee8d3d094d8276854ed1338d8, type: 2}
+  RecoveryAnimation: {fileID: 11400000, guid: 927cb15ee8d3d094d8276854ed1338d8, type: 2}
+  IdleAnimation: {fileID: 11400000, guid: 052888240a493ea4f8ea30e5d8ea0813, type: 2}
