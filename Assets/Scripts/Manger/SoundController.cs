@@ -21,6 +21,11 @@ public class SoundController : MonoBehaviour
         musicSource.volume = newVolume;
     }
 
+    public void SetSFXVolumne(float newVolume)
+    {
+        effectsSource.volume = newVolume;
+    }
+
     private void Awake()
     {
         //Don't destroy this game object
@@ -58,6 +63,11 @@ public class SoundController : MonoBehaviour
     public void StopMusic()
     {
         musicSource.Stop();
+    }
+
+    public void StopEffects()
+    {
+        effectsSource.Stop();
     }
 
 

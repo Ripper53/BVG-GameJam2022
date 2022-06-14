@@ -34,6 +34,9 @@ public class SplashScreenManager : MonoBehaviour
 
     private bool playSFXOnce = true;
 
+    private float volume = 1f;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -51,6 +54,9 @@ public class SplashScreenManager : MonoBehaviour
         //Setup the music
         soundControllerObject = GameObject.Find("SoundController");
         soundControllerObject.SendMessage("PlayMusic", songIndex);
+
+        soundControllerObject.SendMessage("SetMusicVolumne", volume);
+        soundControllerObject.SendMessage("SetSFXVolumne", volume);
 
     }
 
