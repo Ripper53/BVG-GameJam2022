@@ -48,11 +48,12 @@ MonoBehaviour:
   Scene2Image: {fileID: 0}
   Scene3Image: {fileID: 0}
   Scene4Image: {fileID: 0}
-  Scene5Image: {fileID: 0}
+  ColourChangingParrotImage: {fileID: 0}
   BlackScreen: {fileID: 0}
   FadeRate: 0.002
-  MusicVolumneLevel: 0.4
-  SFXVolumneLevel: 2
+  RainbowSpeed: 15
+  MusicVolumneLevel: 0.15
+  SFXVolumneLevel: 3
   Scene0Duration: 0
   Scene1Duration: 2
   Scene2Duration: 4
@@ -61,3 +62,4 @@ MonoBehaviour:
   Scene5Duration: 21
   Scene6Duration: 43
   Scene7Duration: 60
+  Scene8Duration: 64

@@ -199,6 +199,17 @@ MonoBehaviour:
   m_TrackedDeviceOrientationAction: {fileID: 7970375526676320489, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
+--- !u!114 &564679011 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1117731825336835123, guid: fd9d4f39b81173041ab008bd3ec8aa50, type: 3}
+  m_PrefabInstance: {fileID: 5037802016047838394}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &773234633 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4196285831104511017, guid: fd9d4f39b81173041ab008bd3ec8aa50, type: 3}
@@ -376,6 +387,17 @@ Transform:
 --- !u!114 &1654034282 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5037802014412749776, guid: fd9d4f39b81173041ab008bd3ec8aa50, type: 3}
+  m_PrefabInstance: {fileID: 5037802016047838394}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1690177430 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 810504997, guid: fd9d4f39b81173041ab008bd3ec8aa50, type: 3}
   m_PrefabInstance: {fileID: 5037802016047838394}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
@@ -577,13 +599,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1750824218}
     - target: {fileID: 6314614534448865290, guid: 7a11f3659d5d26c48ad02199a2421f87, type: 3}
-      propertyPath: Scene5Image
-      value: 
+      propertyPath: RainbowSpeed
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6314614534448865290, guid: 7a11f3659d5d26c48ad02199a2421f87, type: 3}
-      propertyPath: Scene8Duration
-      value: 64
+      propertyPath: SFXVolumneLevel
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6314614534448865290, guid: 7a11f3659d5d26c48ad02199a2421f87, type: 3}
+      propertyPath: ColourChangingParrotImage
+      value: 
+      objectReference: {fileID: 1690177430}
+    - target: {fileID: 6314614534448865290, guid: 7a11f3659d5d26c48ad02199a2421f87, type: 3}
+      propertyPath: ColourChangingParrotImage2
+      value: 
+      objectReference: {fileID: 564679011}
     - target: {fileID: 7827259468186118610, guid: 7a11f3659d5d26c48ad02199a2421f87, type: 3}
       propertyPath: m_RootOrder
       value: 5

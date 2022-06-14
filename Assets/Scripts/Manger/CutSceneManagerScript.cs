@@ -9,15 +9,22 @@ public class CutSceneManagerScript : PlayerControls
     public Image Scene2Image;
     public Image Scene3Image;
     public Image Scene4Image;
+    public Image ColourChangingParrotImage;
+    public Image ColourChangingParrotImage2;
 
     //Blackscreen for fade in fade out
     public Image BlackScreen;
 
     //Colour used for the screen fade
-    private Color colour;
+    private Color colourFadeToBlack;
+
+    private float colourParrotHue;
+    private float colourParrotSat;
+    private float colourParrotBri;
 
     //Fade rate
     public float FadeRate;
+    public float RainbowSpeed = 15f;
 
     //Timer
     private float timer;
@@ -27,7 +34,7 @@ public class CutSceneManagerScript : PlayerControls
 
     [Range(0.0f, 1.0f)]
     public float MusicVolumneLevel;
-    [Range(0.0f, 2.0f)]
+    [Range(0.0f, 1.0f)]
     public float SFXVolumneLevel;
 
 
@@ -49,43 +56,72 @@ public class CutSceneManagerScript : PlayerControls
     private bool playSFXOnce6 = true;
     private bool playSFXOnce7 = true;
 
-    public float Scene0Duration;
-    public float Scene1Duration;
-    public float Scene2Duration;
-    public float Scene3Duration;
-    public float Scene4Duration;
-    public float Scene5Duration;
-    public float Scene6Duration;
-    public float Scene7Duration;
-    public float Scene8Duration;
+    public float Scene0Duration = 0;
+    public float Scene1Duration = 2;
+    public float Scene2Duration = 4;
+    public float Scene3Duration = 9;
+    public float Scene4Duration = 15;
+    public float Scene5Duration = 21;
+    public float Scene6Duration = 43;
+    public float Scene7Duration = 60;
+    public float Scene8Duration = 64;
 
     // Start is called before the first frame update
     void Start()
     { 
         //Start with a black screen
-        colour = BlackScreen.color;
-        colour.a = 1;
-        BlackScreen.color = colour;
+        colourFadeToBlack = BlackScreen.color;
+        colourFadeToBlack.a = 1;
+        BlackScreen.color = colourFadeToBlack;
         BlackScreen.gameObject.SetActive(true);
 
         soundControllerObject = GameObject.Find("SoundController");
-        soundControllerObject.SendMessage("PlayMusic", songIndex);
-
+        
         soundControllerObject.SendMessage("SetMusicVolumne", MusicVolumneLevel);
         soundControllerObject.SendMessage("SetSFXVolumne", SFXVolumneLevel);
+
+        soundControllerObject.SendMessage("PlayMusic", songIndex);
 
         Scene1Image.gameObject.SetActive(false);
         Scene2Image.gameObject.SetActive(false);
         Scene3Image.gameObject.SetActive(false);
         Scene4Image.gameObject.SetActive(false);
-}
+
+        colourParrotHue = 0.0f;
+        colourParrotSat = 0.0f;
+        colourParrotBri = 1.0f;
+    }
+
+    private void ChangeParrot1Colour()
+    {
+        colourParrotHue += RainbowSpeed / 8000;
+        colourParrotSat += RainbowSpeed / 1000;
+        colourParrotSat = Mathf.Clamp(colourParrotSat, 0.0f, 1.0f);
+        if (colourParrotHue > 1.0f)
+        {
+            colourParrotHue = 0.0f;
+        }
+        ColourChangingParrotImage.color = Color.HSVToRGB(colourParrotHue, colourParrotSat, colourParrotBri);
+        Debug.Log(colourParrotHue);
+    }
+    private void ChangeParrot2Colour()
+    {
+        colourParrotHue += RainbowSpeed / 8000;
+        colourParrotSat += RainbowSpeed / 1000;
+        colourParrotSat = Mathf.Clamp(colourParrotSat, 0.0f, 1.0f);
+        if (colourParrotHue > 1.0f)
+        {
+            colourParrotHue = 0.0f;
+        }
+        ColourChangingParrotImage2.color = Color.HSVToRGB(colourParrotHue, colourParrotSat, colourParrotBri);
+    }
 
     // Update is called once per frame
     void Update()
     {
         timer += Time.deltaTime;
 
-        Debug.Log(colour.a);
+        //Debug.Log(colourFadeToBlack.a);
 ;
         //Load the main game
         if(timer > Scene8Duration)
@@ -125,6 +161,7 @@ public class CutSceneManagerScript : PlayerControls
         //Gem stones on this ship and find the booty of the captain and his green parrot, savvy?
         else if (timer > Scene6Duration)
         {
+            ChangeParrot2Colour();
             FadeToBlack(false);
             if (playSFXOnce6)
             {
@@ -137,6 +174,8 @@ public class CutSceneManagerScript : PlayerControls
         //Fade to Black
         else if (timer > Scene6Duration - 2.0f)
         {
+            colourParrotHue = 0.0f;
+            colourParrotSat = 0.0f;
             FadeToBlack(true);
         }
 
@@ -162,12 +201,14 @@ public class CutSceneManagerScript : PlayerControls
         //Fade to Black
         else if(timer > Scene5Duration - 2.0f)
         {
+            ChangeParrot1Colour();
             FadeToBlack(true);
         }
 
         //Will ye help them become the best pirrote ever?
         else if (timer > Scene4Duration)
         {
+            ChangeParrot1Colour();
             if (playSFXOnce4)
             {
                 soundControllerObject.SendMessage("PlayEffects", sfxIndex4);
@@ -213,14 +254,14 @@ public class CutSceneManagerScript : PlayerControls
     {
         if(ToBlack)
         {
-            colour.a += FadeRate;
+            colourFadeToBlack.a += FadeRate;
         }
         else
         {
-            colour.a -= FadeRate;
+            colourFadeToBlack.a -= FadeRate;
         }
-        colour.a = Mathf.Clamp(colour.a, 0.0f, 1.0f);
-        BlackScreen.color = colour;
+        colourFadeToBlack.a = Mathf.Clamp(colourFadeToBlack.a, 0.0f, 1.0f);
+        BlackScreen.color = colourFadeToBlack;
     }
 
     protected override void AddListeners(PlayerInput input)
