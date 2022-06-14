@@ -923,7 +923,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1207665630909053304, guid: e2e5c5745a8532741bb1ddbd3c077946, type: 3}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: LoadLevel1
+        m_MethodName: CutScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
