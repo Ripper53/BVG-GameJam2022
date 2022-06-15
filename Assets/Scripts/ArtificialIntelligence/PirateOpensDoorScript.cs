@@ -1,22 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
+using SpriteAnimation;
 using UnityEngine;
 
-public class PirateOpensDoorScript : MonoBehaviour
-{
-    public Sprite PirateDoorClosedMesh;
-    public Sprite PirateDoorOpenedMesh;
+public class PirateOpensDoorScript : MonoBehaviour {
+    public FrameAnimator Animator;
+    public SpriteAnimation.SpriteAnimation DoorOpenAnimation;
 
+    public GemTracker GemTracker;
+    public Collider2D Collider;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    protected void Awake() {
+        GemTracker.CollectedPowerGem += GemTracker_CollectedPowerGem;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    private void GemTracker_CollectedPowerGem(GemTracker source, PowerGem gem) {
+        if (gem.Colour != GemColour.Green) return;
+        Collider.enabled = false;
+        Animator.SetAnimation(DoorOpenAnimation);
     }
+
 }
