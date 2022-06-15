@@ -12,6 +12,8 @@ namespace ArtificialIntelligence {
 
         public GroundFriction Friction;
 
+        public AudioSource PickUpAudioSource;
+
         protected new Rigidbody2D rigidbody;
         protected AbilityDependency abilityDependency;
 
@@ -60,10 +62,12 @@ namespace ArtificialIntelligence {
         private IEnumerator PickUp(Collider2D collider) {
             yield return new WaitForFixedUpdate();
             equipped = collider.gameObject.AddComponent<TargetJoint2D>();
-            Vector2 diff = rigidbody.position - collider.ClosestPoint(rigidbody.position);
             equipped.anchor = equipped.transform.InverseTransformPoint(rigidbody.position);
             equipped.frequency = GripStrength;
             equipped.dampingRatio = 1f;
+
+            PickUpAudioSource.Play();
+
             coroutine = null;
         }
 
