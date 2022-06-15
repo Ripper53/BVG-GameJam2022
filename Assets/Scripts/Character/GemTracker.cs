@@ -131,6 +131,9 @@ public class GemTracker : MonoBehaviour
         // Spawn another gem?
     }
 
+    public delegate void CollectPowerGemAction(GemTracker source, PowerGem gem);
+    public event CollectPowerGemAction CollectedPowerGem;
+    private void TriggerCollectedPowerGemEvent(PowerGem gem) => CollectedPowerGem?.Invoke(this, gem);
     public void CollectPowerGem(PowerGem gem) {
         if (gem.IsCollected) {
             return;
@@ -142,28 +145,28 @@ public class GemTracker : MonoBehaviour
         switch (gemColour)
         {
             case GemColour.Red:
-                Character.gameObject.tag = "Red";
                 this.IsRedPowerGemCollected = true;
                 SwitchAbility.RedPower.Learned = true;
                 SwitchAbility.ActivateRed();
                 RedPowerUpDialog.gameObject.SetActive(true);
                 Destroy(RedPowerUpDialog.gameObject, 5f);
+                TriggerCollectedPowerGemEvent(gem);
                 break;
             case GemColour.Blue:
-                Character.gameObject.tag = "Blue";
                 this.IsBluePowerGemCollected = true;
                 SwitchAbility.BluePower.Learned = true;
                 SwitchAbility.ActivateBlue();
                 BluePowerUpDialog.gameObject.SetActive(true);
                 Destroy(BluePowerUpDialog.gameObject, 5f);
+                TriggerCollectedPowerGemEvent(gem);
                 break;
             case GemColour.Green:
-                Character.gameObject.tag = "Green";
                 this.IsGreenPowerGemCollected = true;
                 SwitchAbility.GreenPower.Learned = true;
                 SwitchAbility.ActivateGreen();
                 GreenPowerUpDialog.gameObject.SetActive(true);
                 Destroy(GreenPowerUpDialog.gameObject, 5f);
+                TriggerCollectedPowerGemEvent(gem);
                 break;
             default:
                 break;

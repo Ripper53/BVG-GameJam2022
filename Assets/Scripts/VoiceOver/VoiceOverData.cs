@@ -2,5 +2,11 @@ using UnityEngine;
 
 [CreateAssetMenu(fileName = "VoiceOverData", menuName = "Voice Over Data")]
 public class VoiceOverData : ScriptableObject {
-    public int Speaking = 0;
+    [System.NonSerialized]
+    public int Speaking;
+
+    protected void Awake() {
+        Speaking = 0;
+    }
+
 }

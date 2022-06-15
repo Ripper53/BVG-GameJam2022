@@ -15,10 +15,12 @@ public class PlayVoiceOver : MonoBehaviour {
     }
 
     protected void Update() {
-        if (!AudioSource.isPlaying) {
-            VoiceOverData.Speaking--;
+        if (!AudioSource.isPlaying)
             enabled = false;
-        }
+    }
+
+    protected void OnDisable() {
+        VoiceOverData.Speaking -= 1;
     }
 
 }

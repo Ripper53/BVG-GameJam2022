@@ -398,17 +398,17 @@ MonoBehaviour:
     Power: {fileID: 7170472368968832752}
     GroundSpeed: 12
     FlySpeed: 10
-    Color: {r: 1, g: 0, b: 0, a: 1}
+    Color: {r: 0.8867924, g: 0.33045566, b: 0.33045566, a: 1}
   BluePower:
     Power: {fileID: 736873277097832663}
     GroundSpeed: 8
     FlySpeed: 6
-    Color: {r: 0, g: 0, b: 1, a: 1}
+    Color: {r: 0.376602, g: 0.376602, b: 0.8584906, a: 1}
   GreenPower:
     Power: {fileID: 2628545369961222785}
     GroundSpeed: 10
     FlySpeed: 8
-    Color: {r: 0, g: 1, b: 0, a: 1}
+    Color: {r: 0.2732734, g: 0.6509434, b: 0.2732734, a: 1}
 --- !u!114 &736873277097832663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -513,6 +513,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 3488155970271397397}
   SwitchAbility: {fileID: 112602476242876685}
+  GreyscaleShader: {fileID: 0}
   EndGameMenu: {fileID: 4370984447834237378}
   Flying: {fileID: 5595041956088687485}
   redGemText: {fileID: 0}

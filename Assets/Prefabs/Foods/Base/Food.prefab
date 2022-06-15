@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2751756231525474269}
   - component: {fileID: 2751756231525474270}
+  - component: {fileID: 7064821516523743024}
+  - component: {fileID: 4659799845255212359}
   - component: {fileID: 2751756231525474271}
   - component: {fileID: 2751756231525474256}
   - component: {fileID: 2751756231525474267}
@@ -50,8 +52,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DistractPoint: {fileID: 2751756231525474269}
-  GetCollider: {fileID: 2751756231525474271}
+  GetCollider: {fileID: 7064821516523743024}
   Tag: Untagged
+--- !u!114 &7064821516523743024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2751756231525474257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aafb1dd4235747c4198039a938e1a243, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ToExclude: {fileID: 2751756231525474257}
+  GetCollider: {fileID: 4659799845255212359}
+--- !u!114 &4659799845255212359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2751756231525474257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b264b3ca38c7f74f887cf30175f9b89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Origin: {fileID: 2751756231525474269}
+  SpriteRenderer: {fileID: 2751756232926065943}
+  GetCollider: {fileID: 2751756231525474271}
+  BlockFilter:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!114 &2751756231525474271
 MonoBehaviour:
   m_ObjectHideFlags: 0

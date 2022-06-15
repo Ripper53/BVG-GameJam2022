@@ -12,6 +12,9 @@ GameObject:
   - component: {fileID: 4871842328211033849}
   - component: {fileID: 9070199325173444764}
   - component: {fileID: 9070199325173444765}
+  - component: {fileID: 7400046312262100564}
+  - component: {fileID: 9135663612092933158}
+  - component: {fileID: 2482494813904899961}
   m_Layer: 0
   m_Name: PirateWithDoor
   m_TagString: Untagged
@@ -72,8 +75,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1576561603
-  m_SortingLayer: 6
+  m_SortingLayerID: -1582178427
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 9b32d036107317643b04f2d13eb1be0a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -124,5 +127,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdc4d6eb4ec74594f9a0a415af789d16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PirateDoorClosedMesh: {fileID: 21300000, guid: 9b32d036107317643b04f2d13eb1be0a, type: 3}
-  PirateDoorOpenedMesh: {fileID: 21300000, guid: 3d4d4ce38d7edeb4795bf96b28d2c829, type: 3}
+  Animator: {fileID: 7400046312262100564}
+  DoorOpenAnimation: {fileID: 11400000, guid: d5350168c9f2a724c8c5bfa9d27ec6a5, type: 2}
+  GemTracker: {fileID: 0}
+  Collider: {fileID: 9070199325173444764}
+--- !u!114 &7400046312262100564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7109847744052282989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ccf2cbbc727965428a6af67dfe2fbd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpriteRenderer: {fileID: 4871842328211033849}
+--- !u!114 &9135663612092933158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7109847744052282989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 633be053fae9cd048b9eb9570f78587f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Animator: {fileID: 7400046312262100564}
+--- !u!114 &2482494813904899961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7109847744052282989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0755ddeed43e3364d891e7ccc33d866c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Animator: {fileID: 7400046312262100564}
+  Animation: {fileID: 11400000, guid: 65a42b6b7baa0084e904ddc54715ae23, type: 2}

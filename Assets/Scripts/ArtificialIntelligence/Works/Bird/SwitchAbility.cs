@@ -53,14 +53,17 @@ public class SwitchAbility : MonoBehaviour {
     #endregion
 
     public void ActivateRed() {
+        Character.gameObject.tag = "Red";
         ActivatePower(RedPower);
     }
 
     public void ActivateBlue() {
+        Character.gameObject.tag = "Blue";
         ActivatePower(BluePower);
     }
 
     public void ActivateGreen() {
+        Character.gameObject.tag = "Green";
         ActivatePower(GreenPower);
     }
 
