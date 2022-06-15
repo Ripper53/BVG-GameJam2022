@@ -15,10 +15,10 @@ MonoBehaviour:
   Loop: 1
   Frames:
   - Duration: 0.1
-    Sprite: {fileID: 21300000, guid: fccbcd910e74517449f5fbcc3f5c5055, type: 3}
+    Sprite: {fileID: 1688940996, guid: 1fa29b0b0498bf648b12d3d61fb47033, type: 3}
   - Duration: 0.1
-    Sprite: {fileID: 21300000, guid: 97a528a98d566fb4c86cf22ab9fd77f9, type: 3}
+    Sprite: {fileID: 165478548, guid: 1fa29b0b0498bf648b12d3d61fb47033, type: 3}
   - Duration: 0.1
-    Sprite: {fileID: 21300000, guid: fccbcd910e74517449f5fbcc3f5c5055, type: 3}
+    Sprite: {fileID: -993063968, guid: 1fa29b0b0498bf648b12d3d61fb47033, type: 3}
   - Duration: 0.1
-    Sprite: {fileID: 21300000, guid: 97a528a98d566fb4c86cf22ab9fd77f9, type: 3}
+    Sprite: {fileID: -112722451, guid: 1fa29b0b0498bf648b12d3d61fb47033, type: 3}

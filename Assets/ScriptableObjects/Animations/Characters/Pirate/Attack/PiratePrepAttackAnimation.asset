@@ -14,5 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Loop: 0
   Frames:
-  - Duration: 0.25
-    Sprite: {fileID: 21300000, guid: 2ddea8c679a53b94186d75e6ef263dbc, type: 3}
+  - Duration: 0.1
+    Sprite: {fileID: -388305521, guid: 6f588362d319e3c46b950eee50dddd8a, type: 3}
+  - Duration: 0.1
+    Sprite: {fileID: -1622091684, guid: 6f588362d319e3c46b950eee50dddd8a, type: 3}
+  - Duration: 0.1
+    Sprite: {fileID: 1296918561, guid: 6f588362d319e3c46b950eee50dddd8a, type: 3}
+  - Duration: 0.2
+    Sprite: {fileID: -1608424136, guid: 6f588362d319e3c46b950eee50dddd8a, type: 3}
