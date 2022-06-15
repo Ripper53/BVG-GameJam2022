@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
+  m_Name: Wind
+  m_EditorClassIdentifier: 
+  m_AnimatedSprites:
+  - {fileID: 1484843639, guid: 9c574069757f9bd489f187e261dbfca8, type: 3}
+  - {fileID: -28226968, guid: 9c574069757f9bd489f187e261dbfca8, type: 3}
+  - {fileID: -176634030, guid: 9c574069757f9bd489f187e261dbfca8, type: 3}
+  - {fileID: -114507012, guid: 9c574069757f9bd489f187e261dbfca8, type: 3}
+  - {fileID: 1039130594, guid: 9c574069757f9bd489f187e261dbfca8, type: 3}
+  - {fileID: -187677232, guid: 9c574069757f9bd489f187e261dbfca8, type: 3}
+  - {fileID: -2142403299, guid: 9c574069757f9bd489f187e261dbfca8, type: 3}
+  - {fileID: 723449068, guid: 9c574069757f9bd489f187e261dbfca8, type: 3}
+  - {fileID: -1940771422, guid: 9c574069757f9bd489f187e261dbfca8, type: 3}
+  - {fileID: -405576149, guid: 9c574069757f9bd489f187e261dbfca8, type: 3}
+  m_MinSpeed: 1
+  m_MaxSpeed: 1
+  m_AnimationStartTime: 0
+  m_AnimationStartFrame: 0
+  m_TileColliderType: 0
