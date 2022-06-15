@@ -46,8 +46,11 @@ namespace ArtificialIntelligence {
             } else {
                 CharacterAnimator.SpriteRenderer.flipX = latestTarget.x < 0f;
                 dashTimer = Duration;
-                if (EffectPooler.Get(out OneShotAudioEffect effect))
+                if (EffectPooler.Get(out OneShotAudioEffect effect)) {
+                    effect.GetComponentInChildren<SpriteRenderer>().flipY = latestTarget.x < 0f;
+                    effect.transform.right = latestTarget.normalized;
                     effect.Set(rigidbody.position);
+                }
             }
         }
 
