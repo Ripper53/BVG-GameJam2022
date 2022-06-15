@@ -6,6 +6,8 @@ namespace ArtificialIntelligence {
     public class TalkAIWork : AIWork {
         public GetCollider GetCollider;
         public string TalkTag;
+        public RandomAudioClip AudioClip;
+        public AudioSource AudioSource;
 
         protected new Rigidbody2D rigidbody;
         protected AbilityDependency abilityDependency;
@@ -15,7 +17,7 @@ namespace ArtificialIntelligence {
         }
 
         protected override void Execute() {
-            if (abilityDependency.GetTrigger()) {
+            if (!AudioSource.isPlaying && abilityDependency.GetTrigger()) {
                 foreach (Collider2D col in GetCollider.Get()) {
                     if (col.CompareTag(TalkTag)) {
                         if (col.TryGetComponent(out IDistract distract))
@@ -24,6 +26,10 @@ namespace ArtificialIntelligence {
                             persuade.Persuade(rigidbody.position);
                     }
                 }
+
+                // Play audio!
+                AudioSource.clip = AudioClip.Get();
+                AudioSource.Play();
             }
         }
 
