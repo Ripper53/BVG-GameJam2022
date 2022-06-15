@@ -4,15 +4,22 @@ using UnityEngine;
 public class CharacterAudio : MonoBehaviour {
     public Character Character;
     public GroundCheck GroundCheck;
-    public AudioSource AudioSource;
+    public AudioSource WalkAudioSource, FlyAudioSource;
     public FlyingAIWork FlyingAIWork;
 
     protected void Update() {
-        if (AudioSource.isPlaying) {
+        if (WalkAudioSource.isPlaying) {
             if (Character.HorizontalDirection == Character.HorizontalMovementDirection.None || FlyingAIWork.InAir || !GroundCheck.Evaluate())
-                AudioSource.Stop();
+                WalkAudioSource.Stop();
         } else if (Character.HorizontalDirection != Character.HorizontalMovementDirection.None && GroundCheck.Evaluate()) {
-            AudioSource.Play();
+            WalkAudioSource.Play();
+        }
+
+        if (FlyingAIWork.InAir) {
+            if (!FlyAudioSource.isPlaying)
+                FlyAudioSource.Play();
+        } else if (FlyAudioSource.isPlaying) {
+            FlyAudioSource.Stop();
         }
     }
 
