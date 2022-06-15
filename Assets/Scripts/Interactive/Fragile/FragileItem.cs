@@ -7,7 +7,7 @@ public class FragileItem : MonoBehaviour {
     public GetCollider GetCollider;
 
     protected void FixedUpdate() {
-        if (!Execution.InDanger && GetCollider.Get(out Collider2D col) && col.TryGetComponent(out DashAIWork dash) && dash.InAir)
+        if (GetCollider.Get(out Collider2D col) && col.TryGetComponent(out DashAIWork dash) && dash.InAir)
             Execution.Frail(col.attachedRigidbody.velocity);
     }
 
