@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11ed7c2eba653b6418c1d9aea2eb9bc5, type: 3}
   m_Name: PirateIdleAnimation
   m_EditorClassIdentifier: 
-  Loop: 0
+  Loop: 1
   Frames:
-  - Duration: 0
-    Sprite: {fileID: 21300000, guid: fccbcd910e74517449f5fbcc3f5c5055, type: 3}
+  - Duration: 0.1
+    Sprite: {fileID: 515605399, guid: 05882efbd9712354ab4e82700bb955fe, type: 3}
+  - Duration: 0.1
+    Sprite: {fileID: -1550428119, guid: 05882efbd9712354ab4e82700bb955fe, type: 3}
