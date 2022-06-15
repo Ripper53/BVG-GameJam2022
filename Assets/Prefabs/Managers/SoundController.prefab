@@ -50,7 +50,7 @@ MonoBehaviour:
   musicSFX:
   - {fileID: 8300000, guid: e672f07f93f8df842a64194d1d4eef8e, type: 3}
   - {fileID: 8300000, guid: e3f4cc3aa36c5e24097d0d0316dc886c, type: 3}
-  - {fileID: 8300000, guid: 0cc3b1ba3bf4f2842b2344162755ab16, type: 3}
+  - {fileID: 8300000, guid: 1863a0a7658bbf94084a2c96a8c856b1, type: 3}
   - {fileID: 8300000, guid: bbd5429897d67b24cabff53b8d59096c, type: 3}
   effectsSFX:
   - {fileID: 8300000, guid: 1e0d8b4c99e550a498ed36928a8f24d7, type: 3}
